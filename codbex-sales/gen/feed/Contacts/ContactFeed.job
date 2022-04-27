@@ -1,0 +1,5 @@
+{
+	"expression": "0 0 0 1 * ? *",
+	"handler": "codbex-sales/gen/feed/Contacts/ContactFeedSynchronizer.js",
+	"description": "ContactFeedSynchronizer Job"
+}

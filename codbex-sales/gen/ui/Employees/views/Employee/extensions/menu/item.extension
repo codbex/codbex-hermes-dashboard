@@ -1,0 +1,5 @@
+{
+	"description": "Employee menu",
+	"extensionPoint": "shell-codbex-sales-menu",
+	"module": "codbex-sales/views/Employee/menu/item.js"
+}

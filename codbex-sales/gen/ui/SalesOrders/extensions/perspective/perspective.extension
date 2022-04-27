@@ -1,0 +1,5 @@
+{
+	"description": "SalesOrders perspective",
+	"extensionPoint": "launchpad-codbex-perspective",
+	"module": "codbex-sales/gen/ui/SalesOrders/extensions/perspective/perspective.js"
+}

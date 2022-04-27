@@ -1,0 +1,5 @@
+{
+	"description": "Payments view",
+	"extensionPoint": "launchpad-codbex-Payments-view",
+	"module": "codbex-sales/gen/ui/Payments/views/master/Payment/extensions/view.js"
+}

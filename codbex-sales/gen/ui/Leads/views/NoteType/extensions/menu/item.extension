@@ -1,0 +1,5 @@
+{
+	"description": "NoteType menu",
+	"extensionPoint": "shell-codbex-sales-menu",
+	"module": "codbex-sales/views/NoteType/menu/item.js"
+}

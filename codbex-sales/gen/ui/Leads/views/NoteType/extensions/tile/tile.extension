@@ -1,0 +1,5 @@
+{
+	"description": "Leads tiles",
+	"extensionPoint": "launchpad-codbex-tiles",
+	"module": "codbex-sales/gen/ui/Leads/views/NoteType/extensions/tile/tile.js"
+}

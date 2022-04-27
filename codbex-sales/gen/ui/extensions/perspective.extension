@@ -1,0 +1,5 @@
+{
+	"description": "Home perspective",
+	"extensionPoint": "launchpad-codbex-perspective",
+	"module": "codbex-sales/gen/ui/extensions/perspective.js"
+}

@@ -1,0 +1,5 @@
+{
+	"description": "Opportunities tiles",
+	"extensionPoint": "launchpad-codbex-tiles",
+	"module": "codbex-sales/gen/ui/Opportunities/views/OpportunityStatus/extensions/tile/tile.js"
+}

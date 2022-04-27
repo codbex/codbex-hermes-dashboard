@@ -1,0 +1,166 @@
+CURRENCY_CODE,CURRENCY_NAME,CURRENCY_NUMERIC,CURRENCY_ROUNDING,CURRENCY_ACTIVE
+AFN,Afghani,971,2,0
+EUR,Euro,978,2,1
+ALL,Lek,008,2,0
+DZD,Algerian Dinar,012,2,0
+USD,US Dollar,840,2,1
+AOA,Kwanza,973,2,0
+XCD,East Caribbean Dollar,951,2,0
+ARS,Argentine Peso,032,2,0
+AMD,Armenian Dram,051,2,0
+AWG,Aruban Florin,533,2,0
+AUD,Australian Dollar,036,2,0
+AZN,Azerbaijan Manat,944,2,0
+BSD,Bahamian Dollar,044,2,0
+BHD,Bahraini Dinar,048,3,0
+BDT,Taka,050,2,0
+BBD,Barbados Dollar,052,2,0
+BYN,Belarusian Ruble,933,2,0
+BZD,Belize Dollar,084,2,0
+XOF,CFA Franc BCEAO,952,0,0
+BMD,Bermudian Dollar,060,2,0
+INR,Indian Rupee,356,2,0
+BTN,Ngultrum,064,2,0
+BOB,Boliviano,068,2,0
+BOV,Mvdol,984,2,0
+BAM,Convertible Mark,977,2,0
+BWP,Pula,072,2,0
+NOK,Norwegian Krone,578,2,0
+BRL,Brazilian Real,986,2,0
+BND,Brunei Dollar,096,2,0
+BGN,Bulgarian Lev,975,2,1
+BIF,Burundi Franc,108,0,0
+CVE,Cabo Verde Escudo,132,2,0
+KHR,Riel,116,2,0
+CAD,Canadian Dollar,124,2,0
+KYD,Cayman Islands Dollar,136,2,0
+XAF,CFA Franc BEAC,950,0,0
+CLP,Chilean Peso,152,0,0
+CLF,Unidad de Fomento,990,4,0
+CNY,Yuan Renminbi,156,2,0
+COP,Colombian Peso,170,2,0
+COU,Unidad de Valor Real,970,2,0
+KMF,Comorian Franc ,174,0,0
+CDF,Congolese Franc,976,2,0
+NZD,New Zealand Dollar,554,2,0
+CRC,Costa Rican Colon,188,2,0
+HRK,Kuna,191,2,0
+CUP,Cuban Peso,192,2,0
+CUC,Peso Convertible,931,2,0
+ANG,Netherlands Antillean Guilder,532,2,0
+CZK,Czech Koruna,203,2,0
+DKK,Danish Krone,208,2,0
+DJF,Djibouti Franc,262,0,0
+DOP,Dominican Peso,214,2,0
+EGP,Egyptian Pound,818,2,0
+SVC,El Salvador Colon,222,2,0
+ERN,Nakfa,232,2,0
+SZL,Lilangeni,748,2,0
+ETB,Ethiopian Birr,230,2,0
+FKP,Falkland Islands Pound,238,2,0
+FJD,Fiji Dollar,242,2,0
+XPF,CFP Franc,953,0,0
+GMD,Dalasi,270,2,0
+GEL,Lari,981,2,0
+GHS,Ghana Cedi,936,2,0
+GIP,Gibraltar Pound,292,2,0
+GTQ,Quetzal,320,2,0
+GBP,Pound Sterling,826,2,0
+GNF,Guinean Franc,324,0,0
+GYD,Guyana Dollar,328,2,0
+HTG,Gourde,332,2,0
+HNL,Lempira,340,2,0
+HKD,Hong Kong Dollar,344,2,0
+HUF,Forint,348,2,0
+ISK,Iceland Krona,352,0,0
+IDR,Rupiah,360,2,0
+IRR,Iranian Rial,364,2,0
+IQD,Iraqi Dinar,368,3,0
+ILS,New Israeli Sheqel,376,2,0
+JMD,Jamaican Dollar,388,2,0
+JPY,Yen,392,0,0
+JOD,Jordanian Dinar,400,3,0
+KZT,Tenge,398,2,0
+KES,Kenyan Shilling,404,2,0
+KPW,North Korean Won,408,2,0
+KRW,Won,410,0,0
+KWD,Kuwaiti Dinar,414,3,0
+KGS,Som,417,2,0
+LAK,Lao Kip,418,2,0
+LBP,Lebanese Pound,422,2,0
+LSL,Loti,426,2,0
+ZAR,Rand,710,2,0
+LRD,Liberian Dollar,430,2,0
+LYD,Libyan Dinar,434,3,0
+CHF,Swiss Franc,756,2,1
+MOP,Pataca,446,2,0
+MKD,Denar,807,2,0
+MGA,Malagasy Ariary,969,2,0
+MWK,Malawi Kwacha,454,2,0
+MYR,Malaysian Ringgit,458,2,0
+MVR,Rufiyaa,462,2,0
+MRU,Ouguiya,929,2,0
+MUR,Mauritius Rupee,480,2,0
+MXN,Mexican Peso,484,2,0
+MXV,Mexican Unidad de Inversion (UDI),979,2,0
+MDL,Moldovan Leu,498,2,0
+MNT,Tugrik,496,2,0
+MAD,Moroccan Dirham,504,2,0
+MZN,Mozambique Metical,943,2,0
+MMK,Kyat,104,2,0
+NAD,Namibia Dollar,516,2,0
+NPR,Nepalese Rupee,524,2,0
+NIO,Cordoba Oro,558,2,0
+NGN,Naira,566,2,0
+OMR,Rial Omani,512,3,0
+PKR,Pakistan Rupee,586,2,0
+PAB,Balboa,590,2,0
+PGK,Kina,598,2,0
+PYG,Guarani,600,0,0
+PEN,Sol,604,2,0
+PHP,Philippine Peso,608,2,0
+PLN,Zloty,985,2,0
+QAR,Qatari Rial,634,2,0
+RON,Romanian Leu,946,2,0
+RUB,Russian Ruble,643,2,0
+RWF,Rwanda Franc,646,0,0
+SHP,Saint Helena Pound,654,2,0
+WST,Tala,882,2,0
+STN,Dobra,930,2,0
+SAR,Saudi Riyal,682,2,0
+RSD,Serbian Dinar,941,2,0
+SCR,Seychelles Rupee,690,2,0
+SLL,Leone,694,2,0
+SGD,Singapore Dollar,702,2,0
+SBD,Solomon Islands Dollar,090,2,0
+SOS,Somali Shilling,706,2,0
+SSP,South Sudanese Pound,728,2,0
+LKR,Sri Lanka Rupee,144,2,0
+SDG,Sudanese Pound,938,2,0
+SRD,Surinam Dollar,968,2,0
+SEK,Swedish Krona,752,2,0
+SYP,Syrian Pound,760,2,0
+TWD,New Taiwan Dollar,901,2,0
+TJS,Somoni,972,2,0
+TZS,Tanzanian Shilling,834,2,0
+THB,Baht,764,2,0
+TOP,Pa’anga,776,2,0
+TTD,Trinidad and Tobago Dollar,780,2,0
+TND,Tunisian Dinar,788,3,0
+TRY,Turkish Lira,949,2,0
+TMT,Turkmenistan New Manat,934,2,0
+UGX,Uganda Shilling,800,0,0
+UAH,Hryvnia,980,2,0
+AED,UAE Dirham,784,2,0
+USN,US Dollar (Next day),997,2,0
+UYU,Peso Uruguayo,858,2,0
+UYI,Uruguay Peso en Unidades Indexadas (UI),940,0,0
+UYW,Unidad Previsional,927,4,0
+UZS,Uzbekistan Sum,860,2,0
+VUV,Vatu,548,0,0
+VES,Bolívar Soberano,928,2,0
+VED,Bolívar Soberano,926,2,0
+VND,Dong,704,0,0
+YER,Yemeni Rial,886,2,0
+ZMW,Zambian Kwacha,967,2,0
+ZWL,Zimbabwe Dollar,932,2,0

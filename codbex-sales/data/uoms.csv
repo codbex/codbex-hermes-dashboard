@@ -1,0 +1,31 @@
+UOM_ID,UOM_NAME,UOM_UNIT,UOM_DIMENSION,UOM_NUMERATOR,UOM_DENOMINATOR,UOM_ROUNDING
+1,Meter,m,1,1,1,0
+2,Kilogram,kg,2,1,1,0
+3,Second,s,3,1,1,0
+4,Kilometer,km,1,1000,1,0
+5,Milimeter,mm,1,1000,1,0
+6,Mile,mi,1,1610,1,0
+7,Gram,g,2,1,1000,0
+8,Milligram,mg,2,1,1000000,0
+9,Microgram,μg,2,1,1000000000,0
+10,Tonne,t,2,1000,1,3
+11,Pound,lb,2,453592,1000000,0
+12,Ounce,oz,2,567,20000,0
+13,Minute,mins,3,60,1,0
+14,Hour,hours,3,3600,1,0
+15,Day,days,3,86400,1,0
+16,Week,weeks,3,604800,1,0
+17,Month,months,3,2628000,1,0
+18,Year,years,3,31536000,1,0
+19,Square meter,m2,4,1,1,0
+20,Square kilometer,km2,4,1000000,1,3
+21,Hectare,ha,4,10000,1,0
+22,Acre,ac,4,4046860,1000,0
+23,Cubic meter,m3,5,1,1,3
+24,Liter,l,5,1,1000,0
+25,Gallon,gal,5,3785410,1000000000,0
+26,Each,EA,6,1,1,0
+27,Joule,J,7,1,1,0
+28,Kilojoule,kJ,7,1000,1,3
+29,Kilowatt hours,kwh,7,3600000,1,3
+30,Proportion,%,8,1,1,2

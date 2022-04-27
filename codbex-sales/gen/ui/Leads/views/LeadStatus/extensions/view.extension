@@ -1,0 +1,5 @@
+{
+	"description": "LeadStatus view",
+	"extensionPoint": "launchpad-codbex-Leads-view",
+	"module": "codbex-sales/gen/ui/Leads/views/LeadStatus/extensions/view.js"
+}

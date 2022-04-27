@@ -1,0 +1,5 @@
+{
+	"description": "OpportunityStatus menu",
+	"extensionPoint": "shell-codbex-sales-menu",
+	"module": "codbex-sales/views/OpportunityStatus/menu/item.js"
+}

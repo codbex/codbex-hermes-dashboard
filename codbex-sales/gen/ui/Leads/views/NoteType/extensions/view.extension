@@ -1,0 +1,5 @@
+{
+	"description": "NoteType view",
+	"extensionPoint": "launchpad-codbex-Leads-view",
+	"module": "codbex-sales/gen/ui/Leads/views/NoteType/extensions/view.js"
+}

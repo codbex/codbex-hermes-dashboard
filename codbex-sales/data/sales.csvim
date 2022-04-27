@@ -1,0 +1,57 @@
+[
+  {
+    "table": "CODBEX_DIMENSION",
+    "schema": "PUBLIC",
+    "file": "/codbex-sales/data/dimensions.csv",
+    "header": true,
+    "useHeaderNames": true,
+    "delimField": ",",
+    "delimEnclosing": "\"",
+    "distinguishEmptyFromNull": true,
+    "keys": []
+  },
+  {
+    "table": "CODBEX_UOM",
+    "schema": "PUBLIC",
+    "file": "/codbex-sales/data/uoms.csv",
+    "header": true,
+    "useHeaderNames": true,
+    "delimField": ",",
+    "delimEnclosing": "\"",
+    "distinguishEmptyFromNull": true,
+    "keys": []
+  },
+  {
+    "table": "CODBEX_INDUSTRY",
+    "schema": "PUBLIC",
+    "file": "/codbex-sales/data/industries.csv",
+    "header": true,
+    "useHeaderNames": true,
+    "delimField": ",",
+    "delimEnclosing": "\"",
+    "distinguishEmptyFromNull": true,
+    "keys": []
+  },
+  {
+    "table": "CODBEX_CURRENCY",
+    "schema": "PUBLIC",
+    "file": "/codbex-sales/data/currencies.csv",
+    "header": true,
+    "useHeaderNames": true,
+    "delimField": ",",
+    "delimEnclosing": "\"",
+    "distinguishEmptyFromNull": true,
+    "keys": []
+  },
+  {
+    "table": "CODBEX_COUNTRY",
+    "schema": "PUBLIC",
+    "file": "/codbex-sales/data/countries.csv",
+    "header": true,
+    "useHeaderNames": true,
+    "delimField": ",",
+    "delimEnclosing": "\"",
+    "distinguishEmptyFromNull": true,
+    "keys": []
+  }
+]

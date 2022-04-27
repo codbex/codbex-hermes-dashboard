@@ -1,0 +1,5 @@
+{
+	"description": "OpportunityNote view",
+	"extensionPoint": "launchpad-codbex-Opportunities-Opportunity-view",
+	"module": "codbex-sales/gen/ui/Opportunities/views/master/details/OpportunityNote/extensions/view.js"
+}

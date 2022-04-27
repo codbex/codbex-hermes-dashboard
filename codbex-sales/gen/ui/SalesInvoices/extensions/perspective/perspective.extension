@@ -1,0 +1,5 @@
+{
+	"description": "SalesInvoices perspective",
+	"extensionPoint": "launchpad-codbex-perspective",
+	"module": "codbex-sales/gen/ui/SalesInvoices/extensions/perspective/perspective.js"
+}

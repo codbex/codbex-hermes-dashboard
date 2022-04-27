@@ -1,0 +1,5 @@
+{
+	"description": "Country menu",
+	"extensionPoint": "shell-codbex-sales-menu",
+	"module": "codbex-sales/views/Country/menu/item.js"
+}

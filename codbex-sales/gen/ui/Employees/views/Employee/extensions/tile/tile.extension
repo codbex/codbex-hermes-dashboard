@@ -1,0 +1,5 @@
+{
+	"description": "Employees tiles",
+	"extensionPoint": "launchpad-codbex-tiles",
+	"module": "codbex-sales/gen/ui/Employees/views/Employee/extensions/tile/tile.js"
+}

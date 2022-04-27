@@ -1,0 +1,4 @@
+{
+	"description": "Extension Point for the SalesOrders View Providers",
+	"name": "launchpad-codbex-SalesOrders-view"
+}

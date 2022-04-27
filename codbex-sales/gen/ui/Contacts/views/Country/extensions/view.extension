@@ -1,0 +1,5 @@
+{
+	"description": "Country view",
+	"extensionPoint": "launchpad-codbex-Contacts-view",
+	"module": "codbex-sales/gen/ui/Contacts/views/Country/extensions/view.js"
+}

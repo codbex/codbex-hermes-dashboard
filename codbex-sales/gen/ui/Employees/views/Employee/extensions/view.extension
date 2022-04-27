@@ -1,0 +1,5 @@
+{
+	"description": "Employee view",
+	"extensionPoint": "launchpad-codbex-Employees-view",
+	"module": "codbex-sales/gen/ui/Employees/views/Employee/extensions/view.js"
+}
