@@ -15,6 +15,11 @@ var dao = daoApi.create({
 			name: "Name",
 			column: "LEADSTATUS_NAME",
 			type: "VARCHAR",
+			required: true
+		}, {
+			name: "Description",
+			column: "LEADSTATUS_DESCRIPTION",
+			type: "VARCHAR",
 		}]
 });
 

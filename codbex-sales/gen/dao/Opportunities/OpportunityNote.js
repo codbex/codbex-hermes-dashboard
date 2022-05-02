@@ -12,8 +12,8 @@ var dao = daoApi.create({
 			id: true,
 			autoIncrement: true,
 		}, {
-			name: "NoteTypeId",
-			column: "OPPORTUNITYNOTE_NOTETYPEID",
+			name: "Type",
+			column: "OPPORTUNITYNOTE_TYPE",
 			type: "INTEGER",
 		}, {
 			name: "Opportunity",

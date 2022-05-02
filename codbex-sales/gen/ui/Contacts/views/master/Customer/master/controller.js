@@ -37,6 +37,9 @@ angular.module('page')
 		onEntityRefresh: function(callback) {
 			on('codbex-sales.Contacts.Customer.refresh', callback);
 		},
+		onCountryModified: function(callback) {
+			on('codbex-sales.Contacts.Country.modified', callback);
+		},
 		messageEntityModified: function() {
 			message('modified');
 		},
@@ -48,6 +51,9 @@ angular.module('page')
 .controller('PageController', function ($scope, $http, $messageHub) {
 
 	var api = '/services/v4/js/codbex-sales/gen/api/Contacts/Customer.js';
+	var countryOptionsApi = '/services/v4/js/codbex-sales/gen/api/Contacts/Country.js';
+
+	$scope.countryOptions = [];
 
 	$scope.dateOptions = {
 		startingDay: 1
@@ -58,6 +64,14 @@ angular.module('page')
 	$scope.dateFormat = $scope.dateFormats[0];
 	$scope.monthFormat = $scope.monthFormats[1];
 	$scope.weekFormat = $scope.weekFormats[3];
+
+	function countryOptionsLoad() {
+		$http.get(countryOptionsApi)
+		.then(function(data) {
+			$scope.countryOptions = data.data;
+		});
+	}
+	countryOptionsLoad();
 
 	$scope.dataPage = 1;
 	$scope.dataCount = 0;
@@ -158,7 +172,17 @@ angular.module('page')
 		var entity = $scope.entity;
 	};
 
+	$scope.countryOptionValue = function(optionKey) {
+		for (var i = 0 ; i < $scope.countryOptions.length; i ++) {
+			if ($scope.countryOptions[i].Id === optionKey) {
+				return $scope.countryOptions[i].Name;
+			}
+		}
+		return null;
+	};
+
 	$messageHub.onEntityRefresh($scope.loadPage($scope.dataPage));
+	$messageHub.onCountryModified(countryOptionsLoad);
 
 	$scope.selectEntity = function(entity) {
 		$scope.selectedEntity = entity;

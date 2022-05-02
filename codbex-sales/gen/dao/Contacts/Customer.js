@@ -16,8 +16,40 @@ var dao = daoApi.create({
 			column: "CUSTOMER_NAME",
 			type: "VARCHAR",
 		}, {
-			name: "Address",
-			column: "CUSTOMER_ADDRESSID",
+			name: "Line1",
+			column: "CUSTOMER_LINE1",
+			type: "VARCHAR",
+		}, {
+			name: "Line2",
+			column: "CUSTOMER_LINE2",
+			type: "VARCHAR",
+		}, {
+			name: "City",
+			column: "CUSTOMER_CITY",
+			type: "VARCHAR",
+		}, {
+			name: "County",
+			column: "CUSTOMER_COUNTY",
+			type: "VARCHAR",
+		}, {
+			name: "PostalCode",
+			column: "CUSTOMER_POSTALCODE",
+			type: "VARCHAR",
+		}, {
+			name: "Email",
+			column: "CUSTOMER_EMAIL",
+			type: "VARCHAR",
+		}, {
+			name: "Phone",
+			column: "CUSTOMER_PHONE",
+			type: "VARCHAR",
+		}, {
+			name: "Fax",
+			column: "CUSTOMER_FAX",
+			type: "VARCHAR",
+		}, {
+			name: "Country",
+			column: "CUSTOMER_COUNTRY",
 			type: "INTEGER",
 		}]
 });

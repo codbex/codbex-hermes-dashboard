@@ -1,0 +1,10 @@
+LEADSTATUS_ID,LEADSTATUS_NAME,LEADSTATUS_DESCRIPTION
+1,Initial,Lead is created
+2,Open,Sales Representative have to contact the Lead
+3,Contacted,Sales Representative has contacted the Lead
+4,Replied,Lead has replied
+5,Opportunity,Lead converted to Opportunity
+6,Quotation,Lead converted to Quotation
+7,Lost,Process has been stopped
+8,Confirmed,Lead confess agreement
+9,Closed,Lead should not be contacted any more

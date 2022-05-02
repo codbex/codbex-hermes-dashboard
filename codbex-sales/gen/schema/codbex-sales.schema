@@ -21,31 +21,31 @@
                     },
                     {
                         "type": "VARCHAR",
-                        "length": 20,
+                        "length": 50,
                         "nullable": true,
                         "name": "LEAD_COMPANYNAME"
                     },
                     {
                         "type": "VARCHAR",
-                        "length": 127,
+                        "length": 120,
                         "nullable": true,
                         "name": "LEAD_CONTACTNAME"
                     },
                     {
                         "type": "VARCHAR",
-                        "length": 127,
+                        "length": 50,
                         "nullable": true,
                         "name": "LEAD_CONTACTDESIGNATION"
                     },
                     {
                         "type": "VARCHAR",
-                        "length": 127,
+                        "length": 120,
                         "nullable": true,
                         "name": "LEAD_CONTACTEMAIL"
                     },
                     {
                         "type": "VARCHAR",
-                        "length": 20,
+                        "length": 120,
                         "nullable": true,
                         "name": "LEAD_CONTACTPHONE"
                     },
@@ -134,6 +134,12 @@
                         "length": 0,
                         "nullable": true,
                         "name": "OPPORTUNITY_PROBABILITY"
+                    },
+                    {
+                        "type": "DOUBLE",
+                        "length": 0,
+                        "nullable": true,
+                        "name": "OPPORTUNITY_AMOUNT"
                     }
                 ]
             },
@@ -171,8 +177,7 @@
                     },
                     {
                         "type": "VARCHAR",
-                        "length": 127,
-                        "nullable": true,
+                        "length": 20,
                         "name": "OPPORTUNITYTYPE_NAME"
                     }
                 ]
@@ -192,8 +197,13 @@
                     {
                         "type": "VARCHAR",
                         "length": 20,
-                        "nullable": true,
                         "name": "LEADSTATUS_NAME"
+                    },
+                    {
+                        "type": "VARCHAR",
+                        "length": 200,
+                        "nullable": true,
+                        "name": "LEADSTATUS_DESCRIPTION"
                     }
                 ]
             },
@@ -216,10 +226,58 @@
                         "name": "CUSTOMER_NAME"
                     },
                     {
+                        "type": "VARCHAR",
+                        "length": 50,
+                        "nullable": true,
+                        "name": "CUSTOMER_LINE1"
+                    },
+                    {
+                        "type": "VARCHAR",
+                        "length": 50,
+                        "nullable": true,
+                        "name": "CUSTOMER_LINE2"
+                    },
+                    {
+                        "type": "VARCHAR",
+                        "length": 50,
+                        "nullable": true,
+                        "name": "CUSTOMER_CITY"
+                    },
+                    {
+                        "type": "VARCHAR",
+                        "length": 20,
+                        "nullable": true,
+                        "name": "CUSTOMER_COUNTY"
+                    },
+                    {
+                        "type": "VARCHAR",
+                        "length": 10,
+                        "nullable": true,
+                        "name": "CUSTOMER_POSTALCODE"
+                    },
+                    {
+                        "type": "VARCHAR",
+                        "length": 120,
+                        "nullable": true,
+                        "name": "CUSTOMER_EMAIL"
+                    },
+                    {
+                        "type": "VARCHAR",
+                        "length": 20,
+                        "nullable": true,
+                        "name": "CUSTOMER_PHONE"
+                    },
+                    {
+                        "type": "VARCHAR",
+                        "length": 20,
+                        "nullable": true,
+                        "name": "CUSTOMER_FAX"
+                    },
+                    {
                         "type": "INTEGER",
                         "length": 0,
                         "nullable": true,
-                        "name": "CUSTOMER_ADDRESSID"
+                        "name": "CUSTOMER_COUNTRY"
                     }
                 ]
             },
@@ -237,19 +295,19 @@
                     },
                     {
                         "type": "VARCHAR",
-                        "length": 20,
+                        "length": 50,
                         "nullable": true,
                         "name": "CONTACT_FIRSTNAME"
                     },
                     {
                         "type": "VARCHAR",
-                        "length": 20,
+                        "length": 50,
                         "nullable": true,
                         "name": "CONTACT_MIDDLENAME"
                     },
                     {
                         "type": "VARCHAR",
-                        "length": 20,
+                        "length": 50,
                         "nullable": true,
                         "name": "CONTACT_LASTNAME"
                     },
@@ -263,105 +321,67 @@
                         "type": "INTEGER",
                         "length": 0,
                         "nullable": true,
-                        "name": "CONTACT_ADDRESSID"
-                    },
-                    {
-                        "type": "INTEGER",
-                        "length": 0,
-                        "nullable": true,
                         "name": "CONTACT_ACTIVE"
                     },
                     {
                         "type": "VARCHAR",
-                        "length": 20,
+                        "length": 20000,
                         "nullable": true,
                         "name": "CODBEX_CONTACT_NOTE"
-                    }
-                ]
-            },
-            {
-                "name": "CODBEX_ADDRESS",
-                "type": "TABLE",
-                "columns": [
+                    },
                     {
-                        "type": "INTEGER",
-                        "length": 0,
-                        "primaryKey": true,
-                        "identity": true,
+                        "type": "VARCHAR",
+                        "length": 50,
                         "nullable": true,
-                        "name": "ADDRESS_ID"
+                        "name": "CONTACT_LINE1"
+                    },
+                    {
+                        "type": "VARCHAR",
+                        "length": 50,
+                        "nullable": true,
+                        "name": "CONTACT_LINE2"
+                    },
+                    {
+                        "type": "VARCHAR",
+                        "length": 50,
+                        "nullable": true,
+                        "name": "CONTACT_CITY"
                     },
                     {
                         "type": "VARCHAR",
                         "length": 20,
                         "nullable": true,
-                        "name": "ADDRESS_NAME"
+                        "name": "CONTACT_COUNTY"
+                    },
+                    {
+                        "type": "VARCHAR",
+                        "length": 10,
+                        "nullable": true,
+                        "name": "CONTACT_POSTALCODE"
+                    },
+                    {
+                        "type": "VARCHAR",
+                        "length": 120,
+                        "nullable": true,
+                        "name": "CONTACT_EMAIL"
                     },
                     {
                         "type": "VARCHAR",
                         "length": 20,
                         "nullable": true,
-                        "name": "ADDRESS_LINE1"
+                        "name": "CONTACT_PHONE"
                     },
                     {
                         "type": "VARCHAR",
                         "length": 20,
                         "nullable": true,
-                        "name": "ADDRESS_LINE2"
-                    },
-                    {
-                        "type": "VARCHAR",
-                        "length": 20,
-                        "nullable": true,
-                        "name": "ADDRESS_LINE3"
-                    },
-                    {
-                        "type": "VARCHAR",
-                        "length": 20,
-                        "nullable": true,
-                        "name": "ADDRESS_CITY"
-                    },
-                    {
-                        "type": "VARCHAR",
-                        "length": 20,
-                        "nullable": true,
-                        "name": "ADDRESS_COUNTY"
-                    },
-                    {
-                        "type": "VARCHAR",
-                        "length": 20,
-                        "nullable": true,
-                        "name": "ADDRESS_PROVINCE"
-                    },
-                    {
-                        "type": "VARCHAR",
-                        "length": 20,
-                        "nullable": true,
-                        "name": "ADDRESS_POSTALCODE"
-                    },
-                    {
-                        "type": "VARCHAR",
-                        "length": 20,
-                        "nullable": true,
-                        "name": "ADDRESS_EMAIL"
-                    },
-                    {
-                        "type": "VARCHAR",
-                        "length": 20,
-                        "nullable": true,
-                        "name": "ADDRESS_PHONE"
-                    },
-                    {
-                        "type": "VARCHAR",
-                        "length": 20,
-                        "nullable": true,
-                        "name": "ADDRESS_FAX"
+                        "name": "CONTACT_FAX"
                     },
                     {
                         "type": "INTEGER",
                         "length": 0,
                         "nullable": true,
-                        "name": "ADDRESS_COUNTRY"
+                        "name": "CONTACT_COUNTRY"
                     }
                 ]
             },
@@ -420,6 +440,12 @@
                         "length": 20,
                         "nullable": true,
                         "name": "OPPORTUNITYSTATUS_NAME"
+                    },
+                    {
+                        "type": "VARCHAR",
+                        "length": 200,
+                        "nullable": true,
+                        "name": "OPPORTUNITYSTATUS_DESCRIPTION"
                     }
                 ]
             },
@@ -476,7 +502,6 @@
                     {
                         "type": "VARCHAR",
                         "length": 20,
-                        "nullable": true,
                         "name": "NOTETYPE_NAME"
                     }
                 ]
@@ -580,7 +605,7 @@
                         "type": "INTEGER",
                         "length": 0,
                         "nullable": true,
-                        "name": "OPPORTUNITYNOTE_NOTETYPEID"
+                        "name": "OPPORTUNITYNOTE_TYPE"
                     },
                     {
                         "type": "INTEGER",
@@ -590,7 +615,7 @@
                     },
                     {
                         "type": "VARCHAR",
-                        "length": 20,
+                        "length": 20000,
                         "nullable": true,
                         "name": "OPPORTUNITYNOTE_NOTE"
                     },
@@ -1454,13 +1479,13 @@
                 "referencedColumns": "OPPORTUNITYPROBABILITY_ID"
             },
             {
-                "name": "Customer_Address",
+                "name": "Customer_Country",
                 "type": "foreignKey",
                 "table": "CODBEX_CUSTOMER",
-                "constraintName": "Customer_Address",
-                "columns": "CUSTOMER_ADDRESSID",
-                "referencedTable": "CODBEX_ADDRESS",
-                "referencedColumns": "ADDRESS_ID"
+                "constraintName": "Customer_Country",
+                "columns": "CUSTOMER_COUNTRY",
+                "referencedTable": "CODBEX_COUNTRY",
+                "referencedColumns": "COUNTRY_ID"
             },
             {
                 "name": "Contact_Customer",
@@ -1472,20 +1497,11 @@
                 "referencedColumns": "CUSTOMER_ID"
             },
             {
-                "name": "Contact_Address",
+                "name": "Contact_Country",
                 "type": "foreignKey",
                 "table": "CODBEX_CONTACT",
-                "constraintName": "Contact_Address",
-                "columns": "CONTACT_ADDRESSID",
-                "referencedTable": "CODBEX_ADDRESS",
-                "referencedColumns": "ADDRESS_ID"
-            },
-            {
-                "name": "Address_Country",
-                "type": "foreignKey",
-                "table": "CODBEX_ADDRESS",
-                "constraintName": "Address_Country",
-                "columns": "ADDRESS_COUNTRY",
+                "constraintName": "Contact_Country",
+                "columns": "CONTACT_COUNTRY",
                 "referencedTable": "CODBEX_COUNTRY",
                 "referencedColumns": "COUNTRY_ID"
             },
@@ -1521,7 +1537,7 @@
                 "type": "foreignKey",
                 "table": "CODBEX_OPPORTUNITYNOTE",
                 "constraintName": "OpportunityNote_NoteType",
-                "columns": "OPPORTUNITYNOTE_NOTETYPEID",
+                "columns": "OPPORTUNITYNOTE_TYPE",
                 "referencedTable": "CODBEX_NOTETYPE",
                 "referencedColumns": "NOTETYPE_ID"
             },

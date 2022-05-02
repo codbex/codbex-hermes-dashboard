@@ -47,6 +47,10 @@ var dao = daoApi.create({
 			name: "Probability",
 			column: "OPPORTUNITY_PROBABILITY",
 			type: "INTEGER",
+		}, {
+			name: "Amount",
+			column: "OPPORTUNITY_AMOUNT",
+			type: "DOUBLE",
 		}]
 });
 

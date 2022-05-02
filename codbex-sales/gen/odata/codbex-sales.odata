@@ -116,6 +116,11 @@
                     "name": "Probability",
                     "column": "OPPORTUNITY_PROBABILITY",
                     "nullable": true
+                },
+                {
+                    "name": "Amount",
+                    "column": "OPPORTUNITY_AMOUNT",
+                    "nullable": true
                 }
             ],
             "navigations": [
@@ -163,7 +168,7 @@
                 {
                     "name": "Name",
                     "column": "OPPORTUNITYTYPE_NAME",
-                    "nullable": true
+                    "nullable": false
                 }
             ],
             "navigations": [
@@ -185,6 +190,11 @@
                 {
                     "name": "Name",
                     "column": "LEADSTATUS_NAME",
+                    "nullable": false
+                },
+                {
+                    "name": "Description",
+                    "column": "LEADSTATUS_DESCRIPTION",
                     "nullable": true
                 }
             ],
@@ -210,8 +220,48 @@
                     "nullable": true
                 },
                 {
-                    "name": "Address",
-                    "column": "CUSTOMER_ADDRESSID",
+                    "name": "Line1",
+                    "column": "CUSTOMER_LINE1",
+                    "nullable": true
+                },
+                {
+                    "name": "Line2",
+                    "column": "CUSTOMER_LINE2",
+                    "nullable": true
+                },
+                {
+                    "name": "City",
+                    "column": "CUSTOMER_CITY",
+                    "nullable": true
+                },
+                {
+                    "name": "County",
+                    "column": "CUSTOMER_COUNTY",
+                    "nullable": true
+                },
+                {
+                    "name": "PostalCode",
+                    "column": "CUSTOMER_POSTALCODE",
+                    "nullable": true
+                },
+                {
+                    "name": "Email",
+                    "column": "CUSTOMER_EMAIL",
+                    "nullable": true
+                },
+                {
+                    "name": "Phone",
+                    "column": "CUSTOMER_PHONE",
+                    "nullable": true
+                },
+                {
+                    "name": "Fax",
+                    "column": "CUSTOMER_FAX",
+                    "nullable": true
+                },
+                {
+                    "name": "Country",
+                    "column": "CUSTOMER_COUNTRY",
                     "nullable": true
                 }
             ],
@@ -272,11 +322,6 @@
                     "nullable": true
                 },
                 {
-                    "name": "Address",
-                    "column": "CONTACT_ADDRESSID",
-                    "nullable": true
-                },
-                {
                     "name": "Active",
                     "column": "CONTACT_ACTIVE",
                     "nullable": true
@@ -285,90 +330,54 @@
                     "name": "Note",
                     "column": "CODBEX_CONTACT_NOTE",
                     "nullable": true
-                }
-            ],
-            "navigations": []
-        },
-        {
-            "name": "Address",
-            "alias": "Address",
-            "table": "CODBEX_ADDRESS",
-            "properties": [
-                {
-                    "name": "Id",
-                    "column": "ADDRESS_ID"
-                },
-                {
-                    "name": "Name",
-                    "column": "ADDRESS_NAME",
-                    "nullable": true
                 },
                 {
                     "name": "Line1",
-                    "column": "ADDRESS_LINE1",
+                    "column": "CONTACT_LINE1",
                     "nullable": true
                 },
                 {
                     "name": "Line2",
-                    "column": "ADDRESS_LINE2",
-                    "nullable": true
-                },
-                {
-                    "name": "Line3",
-                    "column": "ADDRESS_LINE3",
+                    "column": "CONTACT_LINE2",
                     "nullable": true
                 },
                 {
                     "name": "City",
-                    "column": "ADDRESS_CITY",
+                    "column": "CONTACT_CITY",
                     "nullable": true
                 },
                 {
                     "name": "County",
-                    "column": "ADDRESS_COUNTY",
-                    "nullable": true
-                },
-                {
-                    "name": "Province",
-                    "column": "ADDRESS_PROVINCE",
+                    "column": "CONTACT_COUNTY",
                     "nullable": true
                 },
                 {
                     "name": "PostalCode",
-                    "column": "ADDRESS_POSTALCODE",
+                    "column": "CONTACT_POSTALCODE",
                     "nullable": true
                 },
                 {
                     "name": "Email",
-                    "column": "ADDRESS_EMAIL",
+                    "column": "CONTACT_EMAIL",
                     "nullable": true
                 },
                 {
                     "name": "Phone",
-                    "column": "ADDRESS_PHONE",
+                    "column": "CONTACT_PHONE",
                     "nullable": true
                 },
                 {
                     "name": "Fax",
-                    "column": "ADDRESS_FAX",
+                    "column": "CONTACT_FAX",
                     "nullable": true
                 },
                 {
                     "name": "Country",
-                    "column": "ADDRESS_COUNTRY",
+                    "column": "CONTACT_COUNTRY",
                     "nullable": true
                 }
             ],
-            "navigations": [
-                {
-                    "name": "Customer",
-                    "association": "AddressCustomer"
-                },
-                {
-                    "name": "Contact",
-                    "association": "AddressContact"
-                }
-            ]
+            "navigations": []
         },
         {
             "name": "Country",
@@ -402,8 +411,12 @@
             ],
             "navigations": [
                 {
-                    "name": "Address",
-                    "association": "CountryAddress"
+                    "name": "Customer",
+                    "association": "CountryCustomer"
+                },
+                {
+                    "name": "Contact",
+                    "association": "CountryContact"
                 }
             ]
         },
@@ -419,6 +432,11 @@
                 {
                     "name": "Name",
                     "column": "OPPORTUNITYSTATUS_NAME",
+                    "nullable": true
+                },
+                {
+                    "name": "Description",
+                    "column": "OPPORTUNITYSTATUS_DESCRIPTION",
                     "nullable": true
                 }
             ],
@@ -473,7 +491,7 @@
                 {
                     "name": "Name",
                     "column": "NOTETYPE_NAME",
-                    "nullable": true
+                    "nullable": false
                 }
             ],
             "navigations": [
@@ -597,8 +615,8 @@
                     "column": "OPPORTUNITYNOTE_ID"
                 },
                 {
-                    "name": "NoteTypeId",
-                    "column": "OPPORTUNITYNOTE_NOTETYPEID",
+                    "name": "Type",
+                    "column": "OPPORTUNITYNOTE_TYPE",
                     "nullable": true
                 },
                 {
@@ -1557,40 +1575,27 @@
             }
         },
         {
-            "name": "AddressCustomer",
-            "from": {
-                "entity": "Address",
-                "property": "Id",
-                "multiplicity": "1"
-            },
-            "to": {
-                "entity": "Customer",
-                "property": "Address",
-                "multiplicity": "*"
-            }
-        },
-        {
-            "name": "AddressContact",
-            "from": {
-                "entity": "Address",
-                "property": "Id",
-                "multiplicity": "1"
-            },
-            "to": {
-                "entity": "Contact",
-                "property": "Address",
-                "multiplicity": "*"
-            }
-        },
-        {
-            "name": "CountryAddress",
+            "name": "CountryCustomer",
             "from": {
                 "entity": "Country",
                 "property": "Id",
                 "multiplicity": "1"
             },
             "to": {
-                "entity": "Address",
+                "entity": "Customer",
+                "property": "Country",
+                "multiplicity": "*"
+            }
+        },
+        {
+            "name": "CountryContact",
+            "from": {
+                "entity": "Country",
+                "property": "Id",
+                "multiplicity": "1"
+            },
+            "to": {
+                "entity": "Contact",
                 "property": "Country",
                 "multiplicity": "*"
             }
@@ -1630,7 +1635,7 @@
             },
             "to": {
                 "entity": "OpportunityNote",
-                "property": "NoteTypeId",
+                "property": "Type",
                 "multiplicity": "*"
             }
         },

@@ -46,8 +46,8 @@
 					<td>{{next.MiddleName}}</td>
 					<td>{{next.LastName}}</td>
 					<td>{{next.Identifier}}</td>
-					<td>{{next.Email}}</td>
-					<td>{{next.Phone}}</td>
+					<td><a href="mailto:{{next.Email}}">{{next.Email}}</a></td>
+					<td><a href="tel:{{next.Phone}}">{{next.Phone}}</a></td>
 					<td>{{next.Manager}}</td>
 					<td>{{organisationOptionValue(next.Organisation)}}</td>
 					<td>
@@ -89,11 +89,11 @@
 						</div>
 						<div class="form-group">
 							<label>Email</label>
-							<input required  type="text"  maxlength="20" class="form-control" placeholder="Enter email" ng-model="entity.Email" ng-change="updateCalculatedProperties()">
+							<input required  type="email" maxlength="20" class="form-control" placeholder="Enter email" ng-model="entity.Email" ng-change="updateCalculatedProperties()">
 						</div>
 						<div class="form-group">
 							<label>Phone</label>
-							<input   type="text"  maxlength="20" class="form-control" placeholder="Enter phone" ng-model="entity.Phone" ng-change="updateCalculatedProperties()">
+							<input   type="tel" pattern="\+?[0-9 \-]{9,16}" title="\+?[0-9 \-]{9,16}" maxlength="20" class="form-control" placeholder="Enter phone" ng-model="entity.Phone" ng-change="updateCalculatedProperties()">
 						</div>
 						<div class="form-group">
 							<label>Manager</label>

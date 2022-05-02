@@ -1,0 +1,4 @@
+OPPORTUNITYSTATUS_ID,OPPORTUNITYSTATUS_NAME,OPPORTUNITYSTATUS_DESCRIPTION
+1,Open,Sales Representative works on it
+2,Lost,Process has been stopped
+3,Closed,Finished successfully

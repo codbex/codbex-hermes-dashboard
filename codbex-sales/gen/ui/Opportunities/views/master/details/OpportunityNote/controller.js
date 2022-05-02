@@ -37,6 +37,9 @@ angular.module('page')
 		onEntityRefresh: function(callback) {
 			on('codbex-sales.Opportunities.OpportunityNote.refresh', callback);
 		},
+		onNoteTypeModified: function(callback) {
+			on('codbex-sales.Opportunities.NoteType.modified', callback);
+		},
 		onOpportunityModified: function(callback) {
 			on('codbex-sales.Opportunities.Opportunity.modified', callback);
 		},
@@ -51,6 +54,7 @@ angular.module('page')
 .controller('PageController', function ($scope, $http, $messageHub) {
 
 	var api = '/services/v4/js/codbex-sales/gen/api/Opportunities/OpportunityNote.js';
+	var typeOptionsApi = '/services/v4/js/codbex-sales/gen/api/Leads/NoteType.js';
 	var opportunityOptionsApi = '/services/v4/js/codbex-sales/gen/api/Opportunities/Opportunity.js';
 
 	$scope.dateOptions = {
@@ -63,7 +67,17 @@ angular.module('page')
 	$scope.monthFormat = $scope.monthFormats[1];
 	$scope.weekFormat = $scope.weekFormats[3];
 
+	$scope.typeOptions = [];
+
 	$scope.opportunityOptions = [];
+
+	function typeOptionsLoad() {
+		$http.get(typeOptionsApi)
+		.then(function(data) {
+			$scope.typeOptions = data.data;
+		});
+	}
+	typeOptionsLoad();
 
 	function opportunityOptionsLoad() {
 		$http.get(opportunityOptionsApi)
@@ -174,6 +188,22 @@ angular.module('page')
 		var entity = $scope.entity;
 	};
 
+	$scope.timestampOpenCalendar = function($event) {
+		$scope.timestampCalendarStatus.opened = true;
+	};
+
+	$scope.timestampCalendarStatus = {
+		opened: false
+	};
+
+	$scope.typeOptionValue = function(optionKey) {
+		for (var i = 0 ; i < $scope.typeOptions.length; i ++) {
+			if ($scope.typeOptions[i].Id === optionKey) {
+				return $scope.typeOptions[i].Type;
+			}
+		}
+		return null;
+	};
 	$scope.opportunityOptionValue = function(optionKey) {
 		for (var i = 0 ; i < $scope.opportunityOptions.length; i ++) {
 			if ($scope.opportunityOptions[i].Id === optionKey) {
@@ -184,6 +214,7 @@ angular.module('page')
 	};
 
 	$messageHub.onEntityRefresh($scope.loadPage($scope.dataPage));
+	$messageHub.onNoteTypeModified(typeOptionsLoad);
 	$messageHub.onOpportunityModified(opportunityOptionsLoad);
 
 	$messageHub.onOpportunitySelected(function(event) {

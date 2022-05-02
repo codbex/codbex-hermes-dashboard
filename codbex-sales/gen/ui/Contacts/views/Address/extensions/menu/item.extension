@@ -1,5 +1,0 @@
-{
-	"description": "Address menu",
-	"extensionPoint": "shell-codbex-sales-menu",
-	"module": "codbex-sales/views/Address/menu/item.js"
-}

@@ -28,7 +28,6 @@
 					<th>#</th>
 					<th class="text-capitalize">Id</th>
 					<th class="text-capitalize">Type</th>
-					<th class="text-capitalize">Lead</th>
 					<th class="text-capitalize">Note</th>
 					<th class="text-capitalize">Timestamp</th>
 					<th></th>
@@ -40,7 +39,7 @@
 					<td>{{next.Id}}</td>
 					<td>{{typeOptionValue(next.Type)}}</td>
 					<td>{{next.Note}}</td>
-					<td>{{next.Timestamp}}</td>
+					<td>{{next.Timestamp | date:dateFormat}}</td>
 					<td>
 						<i class="close fa fa-remove" ng-click="openDeleteDialog(next)" style="font-size: 1.4em"></i>
 						<i class="close fa fa-bars" ng-click="openEditDialog(next)" style="margin-right: 0.5em; font-size: 1.4em"></i>
@@ -69,11 +68,29 @@
 						</div>
 						<div class="form-group">
 							<label>Note</label>
-							<textarea    maxlength="20" class="form-control" placeholder="Enter note" ng-model="entity.Note" ng-change="updateCalculatedProperties()"></textarea>
+							<textarea    maxlength="20000" class="form-control" placeholder="Enter note" ng-model="entity.Note" ng-change="updateCalculatedProperties()"></textarea>
 						</div>
 						<div class="form-group">
 							<label>Timestamp</label>
-							<input   type="text"  maxlength="20" class="form-control" placeholder="Enter timestamp" ng-model="entity.Timestamp" ng-change="updateCalculatedProperties()">
+							<p class="input-group">
+								<input type="text" 
+																											ng-model="entity.Timestamp"
+									class="form-control"
+									uib-datepicker-popup=""
+									is-open="timestampCalendarStatus.opened" 
+									datepicker-options="dateOptions"
+									close-text="Close"
+									ng-change="updateCalculatedProperties()"
+								>
+								<span class="input-group-btn">
+									<button type="button"
+										class="btn btn-default"
+										ng-click="timestampOpenCalendar($event)"
+									>
+										<i class="fa fa-calendar"></i>
+									</button>
+								</span>
+		           			</p>
 						</div>
 						<div class="modal-footer">
 							<input type="submit" value="Save" class="btn btn-primary btn-lg" ng-show="actionType === 'new'" ng-click="create()">

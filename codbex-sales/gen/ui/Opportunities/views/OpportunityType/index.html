@@ -59,7 +59,7 @@
 					<form name="entityForm" ng-hide="actionType === 'delete'">
 						<div class="form-group">
 							<label>Name</label>
-							<input   type="text"  maxlength="20" class="form-control" placeholder="Enter name" ng-model="entity.Name" ng-change="updateCalculatedProperties()">
+							<input required  type="text"  maxlength="20" class="form-control" placeholder="Enter name" ng-model="entity.Name" ng-change="updateCalculatedProperties()">
 						</div>
 						<div class="modal-footer">
 							<input type="submit" value="Save" class="btn btn-primary btn-lg" ng-show="actionType === 'new'" ng-click="create()">

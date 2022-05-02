@@ -53,5 +53,71 @@
     "delimEnclosing": "\"",
     "distinguishEmptyFromNull": true,
     "keys": []
+  },
+  {
+    "table": "CODBEX_LEADSTATUS",
+    "schema": "PUBLIC",
+    "file": "/codbex-sales/data/lead-statuses.csv",
+    "header": true,
+    "useHeaderNames": true,
+    "delimField": ",",
+    "delimEnclosing": "\"",
+    "distinguishEmptyFromNull": true,
+    "keys": []
+  },
+  {
+    "table": "CODBEX_NOTETYPE",
+    "schema": "PUBLIC",
+    "file": "/codbex-sales/data/note-types.csv",
+    "header": true,
+    "useHeaderNames": true,
+    "delimField": ",",
+    "delimEnclosing": "\"",
+    "distinguishEmptyFromNull": true,
+    "keys": []
+  },
+  {
+    "table": "CODBEX_OPPORTUNITYTYPE",
+    "schema": "PUBLIC",
+    "file": "/codbex-sales/data/opportunity-types.csv",
+    "header": true,
+    "useHeaderNames": true,
+    "delimField": ",",
+    "delimEnclosing": "\"",
+    "distinguishEmptyFromNull": true,
+    "keys": []
+  },
+  {
+    "table": "CODBEX_OPPORTUNITYPRIORITY",
+    "schema": "PUBLIC",
+    "file": "/codbex-sales/data/opportunity-priorities.csv",
+    "header": true,
+    "useHeaderNames": true,
+    "delimField": ",",
+    "delimEnclosing": "\"",
+    "distinguishEmptyFromNull": true,
+    "keys": []
+  },
+  {
+    "table": "CODBEX_OPPORTUNITYSTATUS",
+    "schema": "PUBLIC",
+    "file": "/codbex-sales/data/opportunity-statuses.csv",
+    "header": true,
+    "useHeaderNames": true,
+    "delimField": ",",
+    "delimEnclosing": "\"",
+    "distinguishEmptyFromNull": true,
+    "keys": []
+  },
+  {
+    "table": "CODBEX_OPPORTUNITYPROBABILITY",
+    "schema": "PUBLIC",
+    "file": "/codbex-sales/data/opportunity-probabilities.csv",
+    "header": true,
+    "useHeaderNames": true,
+    "delimField": ",",
+    "delimEnclosing": "\"",
+    "distinguishEmptyFromNull": true,
+    "keys": []
   }
 ]

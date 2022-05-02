@@ -188,6 +188,14 @@ angular.module('page')
 		var entity = $scope.entity;
 	};
 
+	$scope.timestampOpenCalendar = function($event) {
+		$scope.timestampCalendarStatus.opened = true;
+	};
+
+	$scope.timestampCalendarStatus = {
+		opened: false
+	};
+
 	$scope.typeOptionValue = function(optionKey) {
 		for (var i = 0 ; i < $scope.typeOptions.length; i ++) {
 			if ($scope.typeOptions[i].Id === optionKey) {

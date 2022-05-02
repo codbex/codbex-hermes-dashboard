@@ -47,7 +47,7 @@
 					<td>{{next.CompanyName}}</td>
 					<td>{{next.ContactName}}</td>
 					<td>{{next.ContactDesignation}}</td>
-					<td>{{next.ContactEmail}}</td>
+					<td><a href="mailto:{{next.ContactEmail}}">{{next.ContactEmail}}</a></td>
 					<td>{{next.ContactPhone}}</td>
 					<td>{{industryOptionValue(next.Industry)}}</td>
 					<td>{{statusOptionValue(next.Status)}}</td>
@@ -80,23 +80,23 @@
 						</div>
 						<div class="form-group">
 							<label>CompanyName</label>
-							<input   type="text"  maxlength="20" class="form-control" placeholder="Enter companyname" ng-model="entity.CompanyName" ng-change="updateCalculatedProperties()">
+							<input   type="text"  maxlength="50" class="form-control" placeholder="Enter companyname" ng-model="entity.CompanyName" ng-change="updateCalculatedProperties()">
 						</div>
 						<div class="form-group">
 							<label>ContactName</label>
-							<input   type="text"  maxlength="20" class="form-control" placeholder="Enter contactname" ng-model="entity.ContactName" ng-change="updateCalculatedProperties()">
+							<input   type="text"  maxlength="120" class="form-control" placeholder="Enter contactname" ng-model="entity.ContactName" ng-change="updateCalculatedProperties()">
 						</div>
 						<div class="form-group">
 							<label>ContactDesignation</label>
-							<input   type="text"  maxlength="20" class="form-control" placeholder="Enter contactdesignation" ng-model="entity.ContactDesignation" ng-change="updateCalculatedProperties()">
+							<input   type="text"  maxlength="50" class="form-control" placeholder="Enter contactdesignation" ng-model="entity.ContactDesignation" ng-change="updateCalculatedProperties()">
 						</div>
 						<div class="form-group">
 							<label>ContactEmail</label>
-							<input   type="text"  maxlength="20" class="form-control" placeholder="Enter contactemail" ng-model="entity.ContactEmail" ng-change="updateCalculatedProperties()">
+							<input   type="email" maxlength="120" class="form-control" placeholder="Enter contactemail" ng-model="entity.ContactEmail" ng-change="updateCalculatedProperties()">
 						</div>
 						<div class="form-group">
 							<label>ContactPhone</label>
-							<input   type="text"  maxlength="20" class="form-control" placeholder="Enter contactphone" ng-model="entity.ContactPhone" ng-change="updateCalculatedProperties()">
+							<input   type="text"  maxlength="120" class="form-control" placeholder="Enter contactphone" ng-model="entity.ContactPhone" ng-change="updateCalculatedProperties()">
 						</div>
 						<div class="form-group">
 							<label>Industry</label>

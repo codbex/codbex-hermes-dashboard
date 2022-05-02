@@ -15,6 +15,7 @@ var dao = daoApi.create({
 			name: "Name",
 			column: "OPPORTUNITYTYPE_NAME",
 			type: "VARCHAR",
+			required: true
 		}]
 });
 

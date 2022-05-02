@@ -28,6 +28,7 @@
 					<th>#</th>
 					<th class="text-capitalize">Id</th>
 					<th class="text-capitalize">Name</th>
+					<th class="text-capitalize">Description</th>
 					<th></th>
 				</tr>
 			</thead>
@@ -36,6 +37,7 @@
 					<td>{{(dataPage - 1) * dataLimit + $index + 1}}</td>
 					<td>{{next.Id}}</td>
 					<td>{{next.Name}}</td>
+					<td>{{next.Description}}</td>
 					<td>
 						<i class="close fa fa-remove" ng-click="openDeleteDialog(next)" style="font-size: 1.4em"></i>
 						<i class="close fa fa-bars" ng-click="openEditDialog(next)" style="margin-right: 0.5em; font-size: 1.4em"></i>					</td>
@@ -60,6 +62,10 @@
 						<div class="form-group">
 							<label>Name</label>
 							<input   type="text"  maxlength="20" class="form-control" placeholder="Enter name" ng-model="entity.Name" ng-change="updateCalculatedProperties()">
+						</div>
+						<div class="form-group">
+							<label>Description</label>
+							<input   type="text"  maxlength="200" class="form-control" placeholder="Enter description" ng-model="entity.Description" ng-change="updateCalculatedProperties()">
 						</div>
 						<div class="modal-footer">
 							<input type="submit" value="Save" class="btn btn-primary btn-lg" ng-show="actionType === 'new'" ng-click="create()">

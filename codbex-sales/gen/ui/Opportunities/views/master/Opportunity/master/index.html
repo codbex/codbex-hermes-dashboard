@@ -36,6 +36,7 @@
 					<th class="text-capitalize">Owner</th>
 					<th class="text-capitalize">Priority</th>
 					<th class="text-capitalize">Probability</th>
+					<th class="text-capitalize">Amount</th>
 					<th></th>
 				</tr>
 			</thead>
@@ -52,6 +53,7 @@
 					<td>{{ownerOptionValue(next.Owner)}}</td>
 					<td>{{priorityOptionValue(next.Priority)}}</td>
 					<td>{{next.Probability}}</td>
+					<td>{{next.Amount}}</td>
 					<td>
 						<i class="close fa fa-remove" ng-click="openDeleteDialog(next)" style="font-size: 1.4em"></i>
 						<i class="close fa fa-bars" ng-click="openEditDialog(next)" style="margin-right: 0.5em; font-size: 1.4em"></i>
@@ -109,6 +111,10 @@
 						<div class="form-group">
 							<label>Probability</label>
 							<input   type="text"  maxlength="20" class="form-control" placeholder="Enter probability" ng-model="entity.Probability" ng-change="updateCalculatedProperties()">
+						</div>
+						<div class="form-group">
+							<label>Amount</label>
+							<input   type="number" class="form-control" placeholder="Enter amount" ng-model="entity.Amount" ng-change="updateCalculatedProperties()">
 						</div>
 						<div class="modal-footer">
 							<input type="submit" value="Save" class="btn btn-primary btn-lg" ng-show="actionType === 'new'" ng-click="create()">

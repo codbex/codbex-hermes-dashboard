@@ -28,10 +28,6 @@ var dao = daoApi.create({
 			column: "CONTACT_CUSTOMERID",
 			type: "INTEGER",
 		}, {
-			name: "Address",
-			column: "CONTACT_ADDRESSID",
-			type: "INTEGER",
-		}, {
 			name: "Active",
 			column: "CONTACT_ACTIVE",
 			type: "INTEGER",
@@ -39,6 +35,42 @@ var dao = daoApi.create({
 			name: "Note",
 			column: "CODBEX_CONTACT_NOTE",
 			type: "VARCHAR",
+		}, {
+			name: "Line1",
+			column: "CONTACT_LINE1",
+			type: "VARCHAR",
+		}, {
+			name: "Line2",
+			column: "CONTACT_LINE2",
+			type: "VARCHAR",
+		}, {
+			name: "City",
+			column: "CONTACT_CITY",
+			type: "VARCHAR",
+		}, {
+			name: "County",
+			column: "CONTACT_COUNTY",
+			type: "VARCHAR",
+		}, {
+			name: "PostalCode",
+			column: "CONTACT_POSTALCODE",
+			type: "VARCHAR",
+		}, {
+			name: "Email",
+			column: "CONTACT_EMAIL",
+			type: "VARCHAR",
+		}, {
+			name: "Phone",
+			column: "CONTACT_PHONE",
+			type: "VARCHAR",
+		}, {
+			name: "Fax",
+			column: "CONTACT_FAX",
+			type: "VARCHAR",
+		}, {
+			name: "Country",
+			column: "CONTACT_COUNTRY",
+			type: "INTEGER",
 		}]
 });
 

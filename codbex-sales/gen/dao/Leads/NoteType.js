@@ -15,6 +15,7 @@ var dao = daoApi.create({
 			name: "Name",
 			column: "NOTETYPE_NAME",
 			type: "VARCHAR",
+			required: true
 		}]
 });
 
