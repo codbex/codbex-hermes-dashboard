@@ -51,7 +51,7 @@ exports.get = function(id) {
 };
 
 exports.create = function(entity) {
-	entity["Total"] = Quantity * Price;
+	entity["Total"] = entity["Quantity"] * entity["Price"];
 	var id = dao.insert(entity);
 	triggerEvent("Create", {
 		table: "CODBEX_QUOTATIONITEM",
@@ -65,7 +65,7 @@ exports.create = function(entity) {
 };
 
 exports.update = function(entity) {
-	entity["Total"] = Quantity * Price
+	entity["Total"] = entity["Quantity"] * entity["Price"]
 	dao.update(entity);
 	triggerEvent("Update", {
 		table: "CODBEX_QUOTATIONITEM",

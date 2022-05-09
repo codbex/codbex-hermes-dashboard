@@ -51,6 +51,10 @@ var dao = daoApi.create({
 			name: "Amount",
 			column: "OPPORTUNITY_AMOUNT",
 			type: "DOUBLE",
+		}, {
+			name: "Currency",
+			column: "OPPORTUNITY_CURRENCY",
+			type: "CHAR",
 		}]
 });
 

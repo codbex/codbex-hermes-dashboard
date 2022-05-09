@@ -49,6 +49,9 @@ angular.module('page')
 		onOpportunityModified: function(callback) {
 			on('codbex-sales.Quotations.Opportunity.modified', callback);
 		},
+		onQuotationStatusModified: function(callback) {
+			on('codbex-sales.Quotations.QuotationStatus.modified', callback);
+		},
 		messageEntityModified: function() {
 			message('modified');
 		},
@@ -64,6 +67,7 @@ angular.module('page')
 	var customerOptionsApi = '/services/v4/js/codbex-sales/gen/api/Contacts/Customer.js';
 	var currencyOptionsApi = '/services/v4/js/codbex-sales/gen/api/Products/Currency.js';
 	var opportunityOptionsApi = '/services/v4/js/codbex-sales/gen/api/Opportunities/Opportunity.js';
+	var statusOptionsApi = '/services/v4/js/codbex-sales/gen/api/Quotations/QuotationStatus.js';
 
 	$scope.ownerOptions = [];
 
@@ -72,6 +76,8 @@ angular.module('page')
 	$scope.currencyOptions = [];
 
 	$scope.opportunityOptions = [];
+
+	$scope.statusOptions = [];
 
 	$scope.dateOptions = {
 		startingDay: 1
@@ -115,6 +121,14 @@ angular.module('page')
 	}
 	opportunityOptionsLoad();
 
+	function statusOptionsLoad() {
+		$http.get(statusOptionsApi)
+		.then(function(data) {
+			$scope.statusOptions = data.data;
+		});
+	}
+	statusOptionsLoad();
+
 	$scope.dataPage = 1;
 	$scope.dataCount = 0;
 	$scope.dataOffset = 0;
@@ -140,7 +154,7 @@ angular.module('page')
 		$scope.dataPage = pageNumber;
 		$http.get(api + '/count')
 		.then(function(data) {
-			$scope.dataCount = data;
+			$scope.dataCount = data.data;
 			$scope.dataPages = Math.ceil($scope.dataCount / $scope.dataLimit);
 			$http.get(api + '?$offset=' + ((pageNumber - 1) * $scope.dataLimit) + '&$limit=' + $scope.dataLimit)
 			.then(function(data) {
@@ -159,6 +173,7 @@ angular.module('page')
 	$scope.openEditDialog = function(entity) {
 		$scope.actionType = 'update';
 		$scope.entity = entity;
+		$scope.entityForm.$valid = true;
 		toggleEntityModal();
 	};
 
@@ -214,6 +229,14 @@ angular.module('page')
 		var entity = $scope.entity;
 	};
 
+	$scope.dateOpenCalendar = function($event) {
+		$scope.dateCalendarStatus.opened = true;
+	};
+
+	$scope.dateCalendarStatus = {
+		opened: false
+	};
+
 	$scope.ownerOptionValue = function(optionKey) {
 		for (var i = 0 ; i < $scope.ownerOptions.length; i ++) {
 			if ($scope.ownerOptions[i].Id === optionKey) {
@@ -250,11 +273,21 @@ angular.module('page')
 		return null;
 	};
 
+	$scope.statusOptionValue = function(optionKey) {
+		for (var i = 0 ; i < $scope.statusOptions.length; i ++) {
+			if ($scope.statusOptions[i].Id === optionKey) {
+				return $scope.statusOptions[i].Name;
+			}
+		}
+		return null;
+	};
+
 	$messageHub.onEntityRefresh($scope.loadPage($scope.dataPage));
 	$messageHub.onEmployeeModified(ownerOptionsLoad);
 	$messageHub.onCustomerModified(customerOptionsLoad);
 	$messageHub.onCurrencyModified(currencyOptionsLoad);
 	$messageHub.onOpportunityModified(opportunityOptionsLoad);
+	$messageHub.onQuotationStatusModified(statusOptionsLoad);
 
 	$scope.selectEntity = function(entity) {
 		$scope.selectedEntity = entity;

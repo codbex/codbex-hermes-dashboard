@@ -119,5 +119,27 @@
     "delimEnclosing": "\"",
     "distinguishEmptyFromNull": true,
     "keys": []
+  },
+  {
+    "table": "CODBEX_QUOTATIONSTATUS",
+    "schema": "PUBLIC",
+    "file": "/codbex-sales/data/quotation-statuses.csv",
+    "header": true,
+    "useHeaderNames": true,
+    "delimField": ",",
+    "delimEnclosing": "\"",
+    "distinguishEmptyFromNull": true,
+    "keys": []
+  },
+  {
+    "table": "CODBEX_DELIVERYSTATUS",
+    "schema": "PUBLIC",
+    "file": "/codbex-sales/data/delivery-statuses.csv",
+    "header": true,
+    "useHeaderNames": true,
+    "delimField": ",",
+    "delimEnclosing": "\"",
+    "distinguishEmptyFromNull": true,
+    "keys": []
   }
 ]

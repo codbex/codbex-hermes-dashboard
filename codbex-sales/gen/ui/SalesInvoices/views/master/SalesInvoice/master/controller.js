@@ -43,6 +43,9 @@ angular.module('page')
 		onCustomerModified: function(callback) {
 			on('codbex-sales.SalesInvoices.Customer.modified', callback);
 		},
+		onSalesOrderModified: function(callback) {
+			on('codbex-sales.SalesInvoices.SalesOrder.modified', callback);
+		},
 		onCurrencyModified: function(callback) {
 			on('codbex-sales.SalesInvoices.Currency.modified', callback);
 		},
@@ -59,11 +62,14 @@ angular.module('page')
 	var api = '/services/v4/js/codbex-sales/gen/api/SalesInvoices/SalesInvoice.js';
 	var ownerOptionsApi = '/services/v4/js/codbex-sales/gen/api/Employees/Employee.js';
 	var customerOptionsApi = '/services/v4/js/codbex-sales/gen/api/Contacts/Customer.js';
+	var salesorderOptionsApi = '/services/v4/js/codbex-sales/gen/api/SalesOrders/SalesOrder.js';
 	var currencyOptionsApi = '/services/v4/js/codbex-sales/gen/api/Products/Currency.js';
 
 	$scope.ownerOptions = [];
 
 	$scope.customerOptions = [];
+
+	$scope.salesorderOptions = [];
 
 	$scope.currencyOptions = [];
 
@@ -92,6 +98,14 @@ angular.module('page')
 		});
 	}
 	customerOptionsLoad();
+
+	function salesorderOptionsLoad() {
+		$http.get(salesorderOptionsApi)
+		.then(function(data) {
+			$scope.salesorderOptions = data.data;
+		});
+	}
+	salesorderOptionsLoad();
 
 	function currencyOptionsLoad() {
 		$http.get(currencyOptionsApi)
@@ -126,7 +140,7 @@ angular.module('page')
 		$scope.dataPage = pageNumber;
 		$http.get(api + '/count')
 		.then(function(data) {
-			$scope.dataCount = data;
+			$scope.dataCount = data.data;
 			$scope.dataPages = Math.ceil($scope.dataCount / $scope.dataLimit);
 			$http.get(api + '?$offset=' + ((pageNumber - 1) * $scope.dataLimit) + '&$limit=' + $scope.dataLimit)
 			.then(function(data) {
@@ -145,6 +159,7 @@ angular.module('page')
 	$scope.openEditDialog = function(entity) {
 		$scope.actionType = 'update';
 		$scope.entity = entity;
+		$scope.entityForm.$valid = true;
 		toggleEntityModal();
 	};
 
@@ -200,6 +215,14 @@ angular.module('page')
 		var entity = $scope.entity;
 	};
 
+	$scope.dateOpenCalendar = function($event) {
+		$scope.dateCalendarStatus.opened = true;
+	};
+
+	$scope.dateCalendarStatus = {
+		opened: false
+	};
+
 	$scope.ownerOptionValue = function(optionKey) {
 		for (var i = 0 ; i < $scope.ownerOptions.length; i ++) {
 			if ($scope.ownerOptions[i].Id === optionKey) {
@@ -218,6 +241,15 @@ angular.module('page')
 		return null;
 	};
 
+	$scope.salesorderOptionValue = function(optionKey) {
+		for (var i = 0 ; i < $scope.salesorderOptions.length; i ++) {
+			if ($scope.salesorderOptions[i].Id === optionKey) {
+				return $scope.salesorderOptions[i].Name;
+			}
+		}
+		return null;
+	};
+
 	$scope.currencyOptionValue = function(optionKey) {
 		for (var i = 0 ; i < $scope.currencyOptions.length; i ++) {
 			if ($scope.currencyOptions[i].Code === optionKey) {
@@ -230,6 +262,7 @@ angular.module('page')
 	$messageHub.onEntityRefresh($scope.loadPage($scope.dataPage));
 	$messageHub.onEmployeeModified(ownerOptionsLoad);
 	$messageHub.onCustomerModified(customerOptionsLoad);
+	$messageHub.onSalesOrderModified(salesorderOptionsLoad);
 	$messageHub.onCurrencyModified(currencyOptionsLoad);
 
 	$scope.selectEntity = function(entity) {

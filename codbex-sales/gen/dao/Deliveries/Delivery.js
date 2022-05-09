@@ -1,6 +1,7 @@
 var query = require("db/v4/query");
 var producer = require("messaging/v4/producer");
 var daoApi = require("db/v4/dao");
+var EntityUtils = require("codbex-sales/gen/dao/utils/EntityUtils");
 
 var dao = daoApi.create({
 	table: "CODBEX_DELIVERY",
@@ -12,13 +13,13 @@ var dao = daoApi.create({
 			id: true,
 			autoIncrement: true,
 		}, {
-			name: "Timestamp",
-			column: "DELIVERY_TIMESTAMP",
-			type: "VARCHAR",
+			name: "Initiated",
+			column: "DELIVERY_INITIATED",
+			type: "TIMESTAMP",
 		}, {
 			name: "ETA",
 			column: "DELIVERY_ETA",
-			type: "VARCHAR",
+			type: "DATE",
 		}, {
 			name: "SalesOrderItem",
 			column: "DELIVERY_SALESORDERITEM",
@@ -31,14 +32,20 @@ var dao = daoApi.create({
 });
 
 exports.list = function(settings) {
-	return dao.list(settings);
+	return dao.list(settings).map(function(e) {
+		EntityUtils.setLocalDate(e, "ETA");
+		return e;
+	});
 };
 
 exports.get = function(id) {
-	return dao.find(id);
+	var entity = dao.find(id);
+	EntityUtils.setLocalDate(entity, "ETA");
+	return entity;
 };
 
 exports.create = function(entity) {
+	EntityUtils.setLocalDate(entity, "ETA");
 	var id = dao.insert(entity);
 	triggerEvent("Create", {
 		table: "CODBEX_DELIVERY",
@@ -52,6 +59,7 @@ exports.create = function(entity) {
 };
 
 exports.update = function(entity) {
+	EntityUtils.setLocalDate(entity, "ETA");
 	dao.update(entity);
 	triggerEvent("Update", {
 		table: "CODBEX_DELIVERY",

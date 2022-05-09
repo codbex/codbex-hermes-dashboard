@@ -43,7 +43,7 @@
 					<td>{{(dataPage - 1) * dataLimit + $index + 1}}</td>
 					<td>{{next.Id}}</td>
 					<td>{{next.Name}}</td>
-					<td>{{next.Date}}</td>
+					<td>{{next.Date | date:dateFormat}}</td>
 					<td>{{next.Number}}</td>
 					<td>{{ownerOptionValue(next.Owner)}}</td>
 					<td>{{customerOptionValue(next.Customer)}}</td>
@@ -78,7 +78,25 @@
 						</div>
 						<div class="form-group">
 							<label>Date</label>
-							<input   type="text"  maxlength="20" class="form-control" placeholder="Enter date" ng-model="entity.Date" ng-change="updateCalculatedProperties()">
+							<p class="input-group">
+								<input type="text"
+																											ng-model="entity.Date"
+									class="form-control"
+									uib-datepicker-popup=""
+									is-open="dateCalendarStatus.opened" 
+									datepicker-options="dateOptions"
+									close-text="Close"
+									ng-change="updateCalculatedProperties()
+								>
+								<span class="input-group-btn">
+									<button type="button"
+										class="btn btn-default"
+										ng-click="dateOpenCalendar($event)"
+									>
+										<i class="fa fa-calendar"></i>
+									</button>
+								</span>
+		           			</p>
 						</div>
 						<div class="form-group">
 							<label>Number</label>

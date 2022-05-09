@@ -358,9 +358,11 @@
                         "dataUnique": "false",
                         "isCalculatedProperty": "false",
                         "name": "Probability",
+                        "widgetDropDownKey": "Id",
+                        "widgetDropDownValue": "Name",
                         "widgetIsMajor": "true",
                         "widgetLength": "20",
-                        "widgetType": "TEXTBOX",
+                        "widgetType": "DROPDOWN",
                         "relationshipName": "Opportunity_OpportunityProbability",
                         "relationshipEntityName": "OpportunityProbability",
                         "relationshipEntityPerspectiveName": "Opportunities"
@@ -378,7 +380,28 @@
                         "name": "Amount",
                         "widgetIsMajor": "true",
                         "widgetLength": "20",
+                        "widgetPattern": "###,###,###.00",
                         "widgetType": "NUMBER"
+                    },
+                    {
+                        "calculatedPropertyExpression": "",
+                        "dataAutoIncrement": "false",
+                        "dataLength": "3",
+                        "dataName": "OPPORTUNITY_CURRENCY",
+                        "dataNullable": "true",
+                        "dataPrimaryKey": "false",
+                        "dataType": "CHAR",
+                        "dataUnique": "false",
+                        "isCalculatedProperty": "false",
+                        "name": "Currency",
+                        "widgetDropDownKey": "Code",
+                        "widgetDropDownValue": "Name",
+                        "widgetIsMajor": "true",
+                        "widgetLength": "20",
+                        "widgetType": "DROPDOWN",
+                        "relationshipName": "Opportunity_Currency",
+                        "relationshipEntityName": "Currency",
+                        "relationshipEntityPerspectiveName": "Products"
                     }
                 ],
                 "dataCount": "SELECT COUNT(*) AS COUNT FROM CODBEX_OPPORTUNITY",
@@ -1584,7 +1607,7 @@
                         "isCalculatedProperty": "false",
                         "name": "Type",
                         "widgetDropDownKey": "Id",
-                        "widgetDropDownValue": "Type",
+                        "widgetDropDownValue": "Name",
                         "widgetIsMajor": "true",
                         "widgetLength": "20",
                         "widgetType": "DROPDOWN",
@@ -1804,7 +1827,7 @@
                         "name": "Date",
                         "widgetIsMajor": "true",
                         "widgetLength": "20",
-                        "widgetType": "TEXTBOX"
+                        "widgetType": "DATE"
                     },
                     {
                         "calculatedPropertyExpression": "",
@@ -1915,6 +1938,26 @@
                         "relationshipName": "Quotation_Opportunity",
                         "relationshipEntityName": "Opportunity",
                         "relationshipEntityPerspectiveName": "Opportunities"
+                    },
+                    {
+                        "calculatedPropertyExpression": "",
+                        "dataAutoIncrement": "false",
+                        "dataLength": "0",
+                        "dataName": "QUOTATION_STATUS",
+                        "dataNullable": "true",
+                        "dataPrimaryKey": "false",
+                        "dataType": "INTEGER",
+                        "dataUnique": "false",
+                        "isCalculatedProperty": "false",
+                        "name": "Status",
+                        "widgetDropDownKey": "Id",
+                        "widgetDropDownValue": "Name",
+                        "widgetIsMajor": "true",
+                        "widgetLength": "20",
+                        "widgetType": "DROPDOWN",
+                        "relationshipName": "Quotation_QuotationStatus",
+                        "relationshipEntityName": "QuotationStatus",
+                        "relationshipEntityPerspectiveName": "Quotations"
                     }
                 ],
                 "dataCount": "SELECT COUNT(*) AS COUNT FROM CODBEX_QUOTATION",
@@ -1953,7 +1996,7 @@
                     {
                         "calculatedPropertyExpression": "",
                         "dataAutoIncrement": "false",
-                        "dataLength": "127",
+                        "dataLength": "120",
                         "dataName": "PRODUCT_NAME",
                         "dataNullable": "true",
                         "dataPrimaryKey": "false",
@@ -1962,13 +2005,13 @@
                         "isCalculatedProperty": "false",
                         "name": "Name",
                         "widgetIsMajor": "true",
-                        "widgetLength": "20",
+                        "widgetLength": "120",
                         "widgetType": "TEXTBOX"
                     },
                     {
                         "calculatedPropertyExpression": "",
                         "dataAutoIncrement": "false",
-                        "dataLength": "127",
+                        "dataLength": "120",
                         "dataName": "PRODUCT_PROPERTY3",
                         "dataNullable": "true",
                         "dataPrimaryKey": "false",
@@ -1977,7 +2020,7 @@
                         "isCalculatedProperty": "false",
                         "name": "Code",
                         "widgetIsMajor": "true",
-                        "widgetLength": "20",
+                        "widgetLength": "120",
                         "widgetType": "TEXTBOX"
                     },
                     {
@@ -1991,9 +2034,11 @@
                         "dataUnique": "false",
                         "isCalculatedProperty": "false",
                         "name": "Type",
+                        "widgetDropDownKey": "Id",
+                        "widgetDropDownValue": "Name",
                         "widgetIsMajor": "true",
                         "widgetLength": "20",
-                        "widgetType": "TEXTBOX",
+                        "widgetType": "DROPDOWN",
                         "relationshipName": "Product_ProductType",
                         "relationshipEntityName": "ProductType",
                         "relationshipEntityPerspectiveName": "Products"
@@ -2009,9 +2054,11 @@
                         "dataUnique": "false",
                         "isCalculatedProperty": "false",
                         "name": "Group",
+                        "widgetDropDownKey": "Id",
+                        "widgetDropDownValue": "Name",
                         "widgetIsMajor": "true",
                         "widgetLength": "20",
-                        "widgetType": "TEXTBOX",
+                        "widgetType": "DROPDOWN",
                         "relationshipName": "Product_ProductGroup",
                         "relationshipEntityName": "ProductGroup",
                         "relationshipEntityPerspectiveName": "Products"
@@ -2042,9 +2089,11 @@
                         "dataUnique": "false",
                         "isCalculatedProperty": "false",
                         "name": "UoM",
+                        "widgetDropDownKey": "Id",
+                        "widgetDropDownValue": "Name",
                         "widgetIsMajor": "true",
                         "widgetLength": "20",
-                        "widgetType": "TEXTBOX",
+                        "widgetType": "DROPDOWN",
                         "relationshipName": "Product_UoM",
                         "relationshipEntityName": "UoM",
                         "relationshipEntityPerspectiveName": "Products"
@@ -2404,7 +2453,7 @@
                         "relationshipType": "COMPOSITION",
                         "widgetDropDownKey": "Id",
                         "widgetDropDownValue": "Name",
-                        "widgetIsMajor": "true",
+                        "widgetIsMajor": "false",
                         "widgetLength": "20",
                         "widgetType": "DROPDOWN",
                         "relationshipName": "QuotationItem_Quotation",
@@ -2464,7 +2513,7 @@
                         "name": "Quantity",
                         "widgetIsMajor": "true",
                         "widgetLength": "20",
-                        "widgetType": "TEXTBOX"
+                        "widgetType": "NUMBER"
                     },
                     {
                         "calculatedPropertyExpression": "",
@@ -2479,10 +2528,10 @@
                         "name": "Price",
                         "widgetIsMajor": "true",
                         "widgetLength": "20",
-                        "widgetType": "TEXTBOX"
+                        "widgetType": "NUMBER"
                     },
                     {
-                        "calculatedPropertyExpression": "Quantity * Price",
+                        "calculatedPropertyExpression": "entity[\"Quantity\"] * entity[\"Price\"]",
                         "dataAutoIncrement": "false",
                         "dataLength": "0",
                         "dataName": "QUOTATIONITEM_TOTAL",
@@ -2494,7 +2543,7 @@
                         "name": "Total",
                         "widgetIsMajor": "true",
                         "widgetLength": "20",
-                        "widgetType": "TEXTBOX"
+                        "widgetType": "NUMBER"
                     },
                     {
                         "calculatedPropertyExpression": "",
@@ -2672,7 +2721,7 @@
                         "name": "Date",
                         "widgetIsMajor": "true",
                         "widgetLength": "20",
-                        "widgetType": "TEXTBOX"
+                        "widgetType": "DATE"
                     },
                     {
                         "calculatedPropertyExpression": "",
@@ -2831,9 +2880,11 @@
                         "name": "SalesOrder",
                         "relationshipCardinality": "1_n",
                         "relationshipType": "COMPOSITION",
-                        "widgetIsMajor": "true",
+                        "widgetDropDownKey": "Id",
+                        "widgetDropDownValue": "Name",
+                        "widgetIsMajor": "false",
                         "widgetLength": "20",
-                        "widgetType": "TEXTBOX",
+                        "widgetType": "DROPDOWN",
                         "relationshipName": "SalesOrderItem_SalesOrder",
                         "relationshipEntityName": "SalesOrder",
                         "relationshipEntityPerspectiveName": "SalesOrders"
@@ -2849,9 +2900,11 @@
                         "dataUnique": "false",
                         "isCalculatedProperty": "false",
                         "name": "Product",
+                        "widgetDropDownKey": "Id",
+                        "widgetDropDownValue": "Name",
                         "widgetIsMajor": "true",
                         "widgetLength": "20",
-                        "widgetType": "TEXTBOX",
+                        "widgetType": "DROPDOWN",
                         "relationshipName": "SalesOrderItem_Product",
                         "relationshipEntityName": "Product",
                         "relationshipEntityPerspectiveName": "Products"
@@ -2867,9 +2920,11 @@
                         "dataUnique": "false",
                         "isCalculatedProperty": "false",
                         "name": "UoM",
+                        "widgetDropDownKey": "Id",
+                        "widgetDropDownValue": "Name",
                         "widgetIsMajor": "true",
                         "widgetLength": "20",
-                        "widgetType": "TEXTBOX",
+                        "widgetType": "DROPDOWN",
                         "relationshipName": "SalesOrderItem_UoM",
                         "relationshipEntityName": "UoM",
                         "relationshipEntityPerspectiveName": "Products"
@@ -2887,7 +2942,7 @@
                         "name": "Quantity",
                         "widgetIsMajor": "true",
                         "widgetLength": "20",
-                        "widgetType": "TEXTBOX"
+                        "widgetType": "NUMBER"
                     },
                     {
                         "calculatedPropertyExpression": "",
@@ -2902,7 +2957,7 @@
                         "name": "Price",
                         "widgetIsMajor": "true",
                         "widgetLength": "20",
-                        "widgetType": "TEXTBOX"
+                        "widgetType": "NUMBER"
                     },
                     {
                         "calculatedPropertyExpression": "",
@@ -2917,7 +2972,7 @@
                         "name": "Total",
                         "widgetIsMajor": "true",
                         "widgetLength": "20",
-                        "widgetType": "TEXTBOX"
+                        "widgetType": "NUMBER"
                     },
                     {
                         "calculatedPropertyExpression": "",
@@ -2930,15 +2985,17 @@
                         "dataUnique": "false",
                         "isCalculatedProperty": "false",
                         "name": "Currency",
+                        "widgetDropDownKey": "Code",
+                        "widgetDropDownValue": "Name",
                         "widgetIsMajor": "true",
                         "widgetLength": "20",
-                        "widgetType": "TEXTBOX",
+                        "widgetType": "DROPDOWN",
                         "relationshipName": "SalesOrderItem_Currency",
                         "relationshipEntityName": "Currency",
                         "relationshipEntityPerspectiveName": "Products"
                     },
                     {
-                        "calculatedPropertyExpression": "SalesOrder + ' ' + Product",
+                        "calculatedPropertyExpression": "entity[\"SalesOrder\"] + ' ' + entity[\"Product\"]",
                         "dataAutoIncrement": "false",
                         "dataLength": "20",
                         "dataName": "CODBEX_SALESORDERITEM_NAME",
@@ -2990,16 +3047,16 @@
                         "calculatedPropertyExpression": "",
                         "dataAutoIncrement": "false",
                         "dataLength": "20",
-                        "dataName": "DELIVERY_TIMESTAMP",
+                        "dataName": "DELIVERY_INITIATED",
                         "dataNullable": "true",
                         "dataPrimaryKey": "false",
-                        "dataType": "VARCHAR",
+                        "dataType": "TIMESTAMP",
                         "dataUnique": "false",
                         "isCalculatedProperty": "false",
-                        "name": "Timestamp",
+                        "name": "Initiated",
                         "widgetIsMajor": "true",
                         "widgetLength": "20",
-                        "widgetType": "TEXTBOX"
+                        "widgetType": "DATE"
                     },
                     {
                         "calculatedPropertyExpression": "",
@@ -3008,13 +3065,13 @@
                         "dataName": "DELIVERY_ETA",
                         "dataNullable": "true",
                         "dataPrimaryKey": "false",
-                        "dataType": "VARCHAR",
+                        "dataType": "DATE",
                         "dataUnique": "false",
                         "isCalculatedProperty": "false",
                         "name": "ETA",
                         "widgetIsMajor": "true",
                         "widgetLength": "20",
-                        "widgetType": "TEXTBOX"
+                        "widgetType": "DATE"
                     },
                     {
                         "calculatedPropertyExpression": "",
@@ -3136,7 +3193,7 @@
                         "name": "Note",
                         "widgetIsMajor": "true",
                         "widgetLength": "20",
-                        "widgetType": "TEXTBOX"
+                        "widgetType": "TEXTAREA"
                     }
                 ],
                 "dataCount": "SELECT COUNT(*) AS COUNT FROM CODBEX_DELIVERYEVENT",
@@ -3153,7 +3210,7 @@
                 "perspectiveOrder": "600",
                 "title": "DeliveryEvent",
                 "tooltip": "DeliveryEvent",
-                "type": "PRIMARY"
+                "type": "DEPENDENT"
             },
             {
                 "properties": [
@@ -3200,7 +3257,7 @@
                         "name": "Date",
                         "widgetIsMajor": "true",
                         "widgetLength": "20",
-                        "widgetType": "TEXTBOX"
+                        "widgetType": "DATE"
                     },
                     {
                         "calculatedPropertyExpression": "",
@@ -3268,9 +3325,11 @@
                         "dataUnique": "false",
                         "isCalculatedProperty": "false",
                         "name": "SalesOrder",
+                        "widgetDropDownKey": "Id",
+                        "widgetDropDownValue": "Name",
                         "widgetIsMajor": "true",
                         "widgetLength": "20",
-                        "widgetType": "TEXTBOX",
+                        "widgetType": "DROPDOWN",
                         "relationshipName": "SalesInvoice_SalesOrder",
                         "relationshipEntityName": "SalesOrder",
                         "relationshipEntityPerspectiveName": "SalesOrders"
@@ -3288,7 +3347,7 @@
                         "name": "Total",
                         "widgetIsMajor": "true",
                         "widgetLength": "20",
-                        "widgetType": "TEXTBOX"
+                        "widgetType": "NUMBER"
                     },
                     {
                         "calculatedPropertyExpression": "",
@@ -3533,7 +3592,7 @@
                         "name": "Amount",
                         "widgetIsMajor": "true",
                         "widgetLength": "20",
-                        "widgetType": "TEXTBOX"
+                        "widgetType": "NUMBER"
                     },
                     {
                         "calculatedPropertyExpression": "",
@@ -3568,7 +3627,7 @@
                         "name": "Date",
                         "widgetIsMajor": "true",
                         "widgetLength": "20",
-                        "widgetType": "TEXTBOX"
+                        "widgetType": "DATE"
                     },
                     {
                         "calculatedPropertyExpression": "",
@@ -3637,6 +3696,21 @@
                         "name": "Name",
                         "widgetIsMajor": "true",
                         "widgetLength": "20",
+                        "widgetType": "TEXTBOX"
+                    },
+                    {
+                        "calculatedPropertyExpression": "",
+                        "dataAutoIncrement": "false",
+                        "dataLength": "200",
+                        "dataName": "DELIVERYSTATUS_DESCRIPTION",
+                        "dataNullable": "true",
+                        "dataPrimaryKey": "false",
+                        "dataType": "VARCHAR",
+                        "dataUnique": "false",
+                        "isCalculatedProperty": "false",
+                        "name": "Description",
+                        "widgetIsMajor": "true",
+                        "widgetLength": "200",
                         "widgetType": "TEXTBOX"
                     }
                 ],
@@ -3731,6 +3805,70 @@
                 "title": "PaymentSalesInvoice",
                 "tooltip": "PaymentSalesInvoice",
                 "type": "DEPENDENT"
+            },
+            {
+                "properties": [
+                    {
+                        "calculatedPropertyExpression": "",
+                        "dataAutoIncrement": "true",
+                        "dataLength": "0",
+                        "dataName": "QUOTATIONSTATUS_ID",
+                        "dataNullable": "true",
+                        "dataPrimaryKey": "true",
+                        "dataType": "INTEGER",
+                        "dataUnique": "false",
+                        "isCalculatedProperty": "false",
+                        "name": "Id",
+                        "widgetIsMajor": "true",
+                        "widgetLength": "20",
+                        "widgetType": "TEXTBOX"
+                    },
+                    {
+                        "calculatedPropertyExpression": "",
+                        "dataAutoIncrement": "false",
+                        "dataLength": "20",
+                        "dataName": "QUOTATIONSTATUS_NAME",
+                        "dataNullable": "true",
+                        "dataPrimaryKey": "false",
+                        "dataType": "VARCHAR",
+                        "dataUnique": "false",
+                        "isCalculatedProperty": "false",
+                        "name": "Name",
+                        "widgetIsMajor": "true",
+                        "widgetLength": "20",
+                        "widgetType": "TEXTBOX"
+                    },
+                    {
+                        "calculatedPropertyExpression": "",
+                        "dataAutoIncrement": "false",
+                        "dataLength": "200",
+                        "dataName": "QUOTATIONSTATUS_DESCRIPTION",
+                        "dataNullable": "true",
+                        "dataPrimaryKey": "false",
+                        "dataType": "VARCHAR",
+                        "dataUnique": "false",
+                        "isCalculatedProperty": "false",
+                        "name": "Description",
+                        "widgetIsMajor": "true",
+                        "widgetLength": "200",
+                        "widgetType": "TEXTBOX"
+                    }
+                ],
+                "dataCount": "SELECT COUNT(*) AS COUNT FROM CODBEX_QUOTATIONSTATUS",
+                "dataName": "CODBEX_QUOTATIONSTATUS",
+                "dataQuery": "",
+                "icon": "file-text-o",
+                "layoutType": "MANAGE",
+                "menuIndex": "100",
+                "menuKey": "quotationstatus",
+                "menuLabel": "QuotationStatus",
+                "name": "QuotationStatus",
+                "perspectiveIcon": "file-text-o",
+                "perspectiveName": "Quotations",
+                "perspectiveOrder": "300",
+                "title": "QuotationStatus",
+                "tooltip": "QuotationStatus",
+                "type": "PRIMARY"
             }
         ]
     }

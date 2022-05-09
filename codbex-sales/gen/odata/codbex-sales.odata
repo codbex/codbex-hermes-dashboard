@@ -121,6 +121,11 @@
                     "name": "Amount",
                     "column": "OPPORTUNITY_AMOUNT",
                     "nullable": true
+                },
+                {
+                    "name": "Currency",
+                    "column": "OPPORTUNITY_CURRENCY",
+                    "nullable": true
                 }
             ],
             "navigations": [
@@ -729,6 +734,11 @@
                     "name": "Opportunity",
                     "column": "QUOTATION_OPPORTUNITY",
                     "nullable": true
+                },
+                {
+                    "name": "Status",
+                    "column": "QUOTATION_STATUS",
+                    "nullable": true
                 }
             ],
             "navigations": [
@@ -1011,6 +1021,10 @@
             ],
             "navigations": [
                 {
+                    "name": "Opportunity",
+                    "association": "CurrencyOpportunity"
+                },
+                {
                     "name": "Quotation",
                     "association": "CurrencyQuotation"
                 },
@@ -1168,8 +1182,8 @@
                     "column": "DELIVERY_ID"
                 },
                 {
-                    "name": "Timestamp",
-                    "column": "DELIVERY_TIMESTAMP",
+                    "name": "Initiated",
+                    "column": "DELIVERY_INITIATED",
                     "nullable": true
                 },
                 {
@@ -1385,6 +1399,11 @@
                     "name": "Name",
                     "column": "DELIVERYSTATUS_NAME",
                     "nullable": true
+                },
+                {
+                    "name": "Description",
+                    "column": "DELIVERYSTATUS_DESCRIPTION",
+                    "nullable": true
                 }
             ],
             "navigations": [
@@ -1415,6 +1434,33 @@
                 }
             ],
             "navigations": []
+        },
+        {
+            "name": "QuotationStatus",
+            "alias": "QuotationStatus",
+            "table": "CODBEX_QUOTATIONSTATUS",
+            "properties": [
+                {
+                    "name": "Id",
+                    "column": "QUOTATIONSTATUS_ID"
+                },
+                {
+                    "name": "Name",
+                    "column": "QUOTATIONSTATUS_NAME",
+                    "nullable": true
+                },
+                {
+                    "name": "Description",
+                    "column": "QUOTATIONSTATUS_DESCRIPTION",
+                    "nullable": true
+                }
+            ],
+            "navigations": [
+                {
+                    "name": "Quotation",
+                    "association": "QuotationStatusQuotation"
+                }
+            ]
         }
     ],
     "associations": [
@@ -1900,6 +1946,19 @@
             }
         },
         {
+            "name": "CurrencyOpportunity",
+            "from": {
+                "entity": "Currency",
+                "property": "Code",
+                "multiplicity": "1"
+            },
+            "to": {
+                "entity": "Opportunity",
+                "property": "Currency",
+                "multiplicity": "*"
+            }
+        },
+        {
             "name": "CurrencyQuotation",
             "from": {
                 "entity": "Currency",
@@ -2091,6 +2150,19 @@
             "to": {
                 "entity": "Delivery",
                 "property": "DeliveryStatus",
+                "multiplicity": "*"
+            }
+        },
+        {
+            "name": "QuotationStatusQuotation",
+            "from": {
+                "entity": "QuotationStatus",
+                "property": "Id",
+                "multiplicity": "1"
+            },
+            "to": {
+                "entity": "Quotation",
+                "property": "Status",
                 "multiplicity": "*"
             }
         }

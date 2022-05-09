@@ -27,7 +27,6 @@
 				<tr>
 					<th>#</th>
 					<th class="text-capitalize">Id</th>
-					<th class="text-capitalize">SalesOrder</th>
 					<th class="text-capitalize">Product</th>
 					<th class="text-capitalize">UoM</th>
 					<th class="text-capitalize">Quantity</th>
@@ -42,12 +41,12 @@
 				<tr ng-repeat="next in data">
 					<td>{{(dataPage - 1) * dataLimit + $index + 1}}</td>
 					<td>{{next.Id}}</td>
-					<td>{{next.Product}}</td>
-					<td>{{next.UoM}}</td>
+					<td>{{productOptionValue(next.Product)}}</td>
+					<td>{{uomOptionValue(next.UoM)}}</td>
 					<td>{{next.Quantity}}</td>
 					<td>{{next.Price}}</td>
 					<td>{{next.Total}}</td>
-					<td>{{next.Currency}}</td>
+					<td>{{currencyOptionValue(next.Currency)}}</td>
 					<td>{{next.Name}}</td>
 					<td>
 						<i class="close fa fa-remove" ng-click="openDeleteDialog(next)" style="font-size: 1.4em"></i>
@@ -73,27 +72,27 @@
 					<form name="entityForm" ng-hide="actionType === 'delete'">
 						<div class="form-group">
 							<label>Product</label>
-							<input   type="text"  maxlength="20" class="form-control" placeholder="Enter product" ng-model="entity.Product" ng-change="updateCalculatedProperties()">
+							<select  class="form-control" ng-options="o.Id as o.Name for o in productOptions" ng-model="entity.Product" ng-change="updateCalculatedProperties()"></select>
 						</div>
 						<div class="form-group">
 							<label>UoM</label>
-							<input   type="text"  maxlength="20" class="form-control" placeholder="Enter uom" ng-model="entity.UoM" ng-change="updateCalculatedProperties()">
+							<select  class="form-control" ng-options="o.Id as o.Name for o in uomOptions" ng-model="entity.UoM" ng-change="updateCalculatedProperties()"></select>
 						</div>
 						<div class="form-group">
 							<label>Quantity</label>
-							<input   type="text"  maxlength="20" class="form-control" placeholder="Enter quantity" ng-model="entity.Quantity" ng-change="updateCalculatedProperties()">
+							<input   type="number" class="form-control" placeholder="Enter quantity" ng-model="entity.Quantity" ng-change="updateCalculatedProperties()">
 						</div>
 						<div class="form-group">
 							<label>Price</label>
-							<input   type="text"  maxlength="20" class="form-control" placeholder="Enter price" ng-model="entity.Price" ng-change="updateCalculatedProperties()">
+							<input   type="number" class="form-control" placeholder="Enter price" ng-model="entity.Price" ng-change="updateCalculatedProperties()">
 						</div>
 						<div class="form-group">
 							<label>Total</label>
-							<input   type="text"  maxlength="20" class="form-control" placeholder="Enter total" ng-model="entity.Total" ng-change="updateCalculatedProperties()">
+							<input   type="number" class="form-control" placeholder="Enter total" ng-model="entity.Total" ng-change="updateCalculatedProperties()">
 						</div>
 						<div class="form-group">
 							<label>Currency</label>
-							<input   type="text"  maxlength="20" class="form-control" placeholder="Enter currency" ng-model="entity.Currency" ng-change="updateCalculatedProperties()">
+							<select  class="form-control" ng-options="o.Code as o.Name for o in currencyOptions" ng-model="entity.Currency" ng-change="updateCalculatedProperties()"></select>
 						</div>
 						<div class="form-group">
 							<label>Name</label>

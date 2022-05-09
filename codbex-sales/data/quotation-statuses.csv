@@ -1,0 +1,4 @@
+QUOTATIONSTATUS_ID,QUOTATIONSTATUS_NAME,QUOTATIONSTATUS_DESCRIPTION
+1,Open,Quotation has been sent to the customer
+2,Rejected,Quotation has been rejected by the customer
+3,Approved,Quotation has been accepted by the customer

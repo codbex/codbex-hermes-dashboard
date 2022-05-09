@@ -52,6 +52,12 @@ angular.module('page')
 		onOpportunityPriorityModified: function(callback) {
 			on('codbex-sales.Opportunities.OpportunityPriority.modified', callback);
 		},
+		onOpportunityProbabilityModified: function(callback) {
+			on('codbex-sales.Opportunities.OpportunityProbability.modified', callback);
+		},
+		onCurrencyModified: function(callback) {
+			on('codbex-sales.Opportunities.Currency.modified', callback);
+		},
 		messageEntityModified: function() {
 			message('modified');
 		},
@@ -68,6 +74,8 @@ angular.module('page')
 	var customerOptionsApi = '/services/v4/js/codbex-sales/gen/api/Contacts/Customer.js';
 	var ownerOptionsApi = '/services/v4/js/codbex-sales/gen/api/Employees/Employee.js';
 	var priorityOptionsApi = '/services/v4/js/codbex-sales/gen/api/Opportunities/OpportunityPriority.js';
+	var probabilityOptionsApi = '/services/v4/js/codbex-sales/gen/api/Opportunities/OpportunityProbability.js';
+	var currencyOptionsApi = '/services/v4/js/codbex-sales/gen/api/Products/Currency.js';
 
 	$scope.typeOptions = [];
 
@@ -78,6 +86,10 @@ angular.module('page')
 	$scope.ownerOptions = [];
 
 	$scope.priorityOptions = [];
+
+	$scope.probabilityOptions = [];
+
+	$scope.currencyOptions = [];
 
 	$scope.dateOptions = {
 		startingDay: 1
@@ -129,6 +141,22 @@ angular.module('page')
 	}
 	priorityOptionsLoad();
 
+	function probabilityOptionsLoad() {
+		$http.get(probabilityOptionsApi)
+		.then(function(data) {
+			$scope.probabilityOptions = data.data;
+		});
+	}
+	probabilityOptionsLoad();
+
+	function currencyOptionsLoad() {
+		$http.get(currencyOptionsApi)
+		.then(function(data) {
+			$scope.currencyOptions = data.data;
+		});
+	}
+	currencyOptionsLoad();
+
 	$scope.dataPage = 1;
 	$scope.dataCount = 0;
 	$scope.dataOffset = 0;
@@ -154,7 +182,7 @@ angular.module('page')
 		$scope.dataPage = pageNumber;
 		$http.get(api + '/count')
 		.then(function(data) {
-			$scope.dataCount = data;
+			$scope.dataCount = data.data;
 			$scope.dataPages = Math.ceil($scope.dataCount / $scope.dataLimit);
 			$http.get(api + '?$offset=' + ((pageNumber - 1) * $scope.dataLimit) + '&$limit=' + $scope.dataLimit)
 			.then(function(data) {
@@ -173,6 +201,7 @@ angular.module('page')
 	$scope.openEditDialog = function(entity) {
 		$scope.actionType = 'update';
 		$scope.entity = entity;
+		$scope.entityForm.$valid = true;
 		toggleEntityModal();
 	};
 
@@ -273,12 +302,32 @@ angular.module('page')
 		return null;
 	};
 
+	$scope.probabilityOptionValue = function(optionKey) {
+		for (var i = 0 ; i < $scope.probabilityOptions.length; i ++) {
+			if ($scope.probabilityOptions[i].Id === optionKey) {
+				return $scope.probabilityOptions[i].Name;
+			}
+		}
+		return null;
+	};
+
+	$scope.currencyOptionValue = function(optionKey) {
+		for (var i = 0 ; i < $scope.currencyOptions.length; i ++) {
+			if ($scope.currencyOptions[i].Code === optionKey) {
+				return $scope.currencyOptions[i].Name;
+			}
+		}
+		return null;
+	};
+
 	$messageHub.onEntityRefresh($scope.loadPage($scope.dataPage));
 	$messageHub.onOpportunityTypeModified(typeOptionsLoad);
 	$messageHub.onOpportunityStatusModified(statusOptionsLoad);
 	$messageHub.onCustomerModified(customerOptionsLoad);
 	$messageHub.onEmployeeModified(ownerOptionsLoad);
 	$messageHub.onOpportunityPriorityModified(priorityOptionsLoad);
+	$messageHub.onOpportunityProbabilityModified(probabilityOptionsLoad);
+	$messageHub.onCurrencyModified(currencyOptionsLoad);
 
 	$scope.selectEntity = function(entity) {
 		$scope.selectedEntity = entity;

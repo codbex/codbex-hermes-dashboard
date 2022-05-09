@@ -27,7 +27,7 @@
 				<tr>
 					<th>#</th>
 					<th class="text-capitalize">Id</th>
-					<th class="text-capitalize">Timestamp</th>
+					<th class="text-capitalize">Initiated</th>
 					<th class="text-capitalize">ETA</th>
 					<th class="text-capitalize">SalesOrderItem</th>
 					<th class="text-capitalize">DeliveryStatus</th>
@@ -38,8 +38,8 @@
 				<tr ng-repeat="next in data" ng-class="{'bg-info':next && next.Id == selectedEntity.Id}" style="cursor: pointer;" ng-click="selectEntity(next)">
 					<td>{{(dataPage - 1) * dataLimit + $index + 1}}</td>
 					<td>{{next.Id}}</td>
-					<td>{{next.Timestamp}}</td>
-					<td>{{next.ETA}}</td>
+					<td>{{next.Initiated | date:dateFormat}}</td>
+					<td>{{next.ETA | date:dateFormat}}</td>
 					<td>{{salesorderitemOptionValue(next.SalesOrderItem)}}</td>
 					<td>{{deliverystatusOptionValue(next.DeliveryStatus)}}</td>
 					<td>
@@ -65,12 +65,48 @@
 				<div class="modal-body">
 					<form name="entityForm" ng-hide="actionType === 'delete'">
 						<div class="form-group">
-							<label>Timestamp</label>
-							<input   type="text"  maxlength="20" class="form-control" placeholder="Enter timestamp" ng-model="entity.Timestamp" ng-change="updateCalculatedProperties()">
+							<label>Initiated</label>
+							<p class="input-group">
+								<input type="text"
+																											ng-model="entity.Initiated"
+									class="form-control"
+									uib-datepicker-popup=""
+									is-open="initiatedCalendarStatus.opened" 
+									datepicker-options="dateOptions"
+									close-text="Close"
+									ng-change="updateCalculatedProperties()
+								>
+								<span class="input-group-btn">
+									<button type="button"
+										class="btn btn-default"
+										ng-click="initiatedOpenCalendar($event)"
+									>
+										<i class="fa fa-calendar"></i>
+									</button>
+								</span>
+		           			</p>
 						</div>
 						<div class="form-group">
 							<label>ETA</label>
-							<input   type="text"  maxlength="20" class="form-control" placeholder="Enter eta" ng-model="entity.ETA" ng-change="updateCalculatedProperties()">
+							<p class="input-group">
+								<input type="text"
+																											ng-model="entity.ETA"
+									class="form-control"
+									uib-datepicker-popup=""
+									is-open="etaCalendarStatus.opened" 
+									datepicker-options="dateOptions"
+									close-text="Close"
+									ng-change="updateCalculatedProperties()
+								>
+								<span class="input-group-btn">
+									<button type="button"
+										class="btn btn-default"
+										ng-click="etaOpenCalendar($event)"
+									>
+										<i class="fa fa-calendar"></i>
+									</button>
+								</span>
+		           			</p>
 						</div>
 						<div class="form-group">
 							<label>SalesOrderItem</label>

@@ -44,6 +44,10 @@ var dao = daoApi.create({
 			name: "Opportunity",
 			column: "QUOTATION_OPPORTUNITY",
 			type: "INTEGER",
+		}, {
+			name: "Status",
+			column: "QUOTATION_STATUS",
+			type: "INTEGER",
 		}]
 });
 

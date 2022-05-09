@@ -1,0 +1,4 @@
+{
+	"description": "DeliveryEvent view",
+	"module": "codbex-sales/gen/ui/Deliveries/views/master/details/DeliveryEvent/extensions/view.js"
+}

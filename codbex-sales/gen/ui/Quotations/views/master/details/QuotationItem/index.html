@@ -27,7 +27,6 @@
 				<tr>
 					<th>#</th>
 					<th class="text-capitalize">Id</th>
-					<th class="text-capitalize">Quotation</th>
 					<th class="text-capitalize">Product</th>
 					<th class="text-capitalize">UoM</th>
 					<th class="text-capitalize">Quantity</th>
@@ -79,15 +78,15 @@
 						</div>
 						<div class="form-group">
 							<label>Quantity</label>
-							<input   type="text"  maxlength="20" class="form-control" placeholder="Enter quantity" ng-model="entity.Quantity" ng-change="updateCalculatedProperties()">
+							<input   type="number" class="form-control" placeholder="Enter quantity" ng-model="entity.Quantity" ng-change="updateCalculatedProperties()">
 						</div>
 						<div class="form-group">
 							<label>Price</label>
-							<input   type="text"  maxlength="20" class="form-control" placeholder="Enter price" ng-model="entity.Price" ng-change="updateCalculatedProperties()">
+							<input   type="number" class="form-control" placeholder="Enter price" ng-model="entity.Price" ng-change="updateCalculatedProperties()">
 						</div>
 						<div class="form-group">
 							<label>Total</label>
-							<input  readonly type="text"  maxlength="20" class="form-control" placeholder="Enter total" ng-model="entity.Total" ng-change="updateCalculatedProperties()">
+							<input  readonly type="number" class="form-control" placeholder="Enter total" ng-model="entity.Total" ng-change="updateCalculatedProperties()">
 						</div>
 						<div class="form-group">
 							<label>Currency</label>

@@ -140,7 +140,7 @@ angular.module('page')
 		$scope.dataPage = pageNumber;
 		$http.get(api + '/count')
 		.then(function(data) {
-			$scope.dataCount = data;
+			$scope.dataCount = data.data;
 			$scope.dataPages = Math.ceil($scope.dataCount / $scope.dataLimit);
 			$http.get(api + '?$offset=' + ((pageNumber - 1) * $scope.dataLimit) + '&$limit=' + $scope.dataLimit)
 			.then(function(data) {
@@ -159,6 +159,7 @@ angular.module('page')
 	$scope.openEditDialog = function(entity) {
 		$scope.actionType = 'update';
 		$scope.entity = entity;
+		$scope.entityForm.$valid = true;
 		toggleEntityModal();
 	};
 
@@ -212,6 +213,14 @@ angular.module('page')
 
 	$scope.updateCalculatedProperties = function() {
 		var entity = $scope.entity;
+	};
+
+	$scope.dateOpenCalendar = function($event) {
+		$scope.dateCalendarStatus.opened = true;
+	};
+
+	$scope.dateCalendarStatus = {
+		opened: false
 	};
 
 	$scope.ownerOptionValue = function(optionKey) {

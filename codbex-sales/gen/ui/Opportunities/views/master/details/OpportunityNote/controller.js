@@ -130,6 +130,7 @@ angular.module('page')
 	$scope.openEditDialog = function(entity) {
 		$scope.actionType = 'update';
 		$scope.entity = entity;
+		$scope.entityForm.$valid = true;
 		toggleEntityModal();
 	};
 
@@ -199,7 +200,7 @@ angular.module('page')
 	$scope.typeOptionValue = function(optionKey) {
 		for (var i = 0 ; i < $scope.typeOptions.length; i ++) {
 			if ($scope.typeOptions[i].Id === optionKey) {
-				return $scope.typeOptions[i].Type;
+				return $scope.typeOptions[i].Name;
 			}
 		}
 		return null;

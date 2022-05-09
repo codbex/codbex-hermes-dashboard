@@ -35,6 +35,7 @@
 					<th class="text-capitalize">Total</th>
 					<th class="text-capitalize">Currency</th>
 					<th class="text-capitalize">Opportunity</th>
+					<th class="text-capitalize">Status</th>
 					<th></th>
 				</tr>
 			</thead>
@@ -43,13 +44,14 @@
 					<td>{{(dataPage - 1) * dataLimit + $index + 1}}</td>
 					<td>{{next.Id}}</td>
 					<td>{{next.Name}}</td>
-					<td>{{next.Date}}</td>
+					<td>{{next.Date | date:dateFormat}}</td>
 					<td>{{next.Number}}</td>
 					<td>{{ownerOptionValue(next.Owner)}}</td>
 					<td>{{customerOptionValue(next.Customer)}}</td>
 					<td>{{next.Total}}</td>
 					<td>{{currencyOptionValue(next.Currency)}}</td>
 					<td>{{opportunityOptionValue(next.Opportunity)}}</td>
+					<td>{{statusOptionValue(next.Status)}}</td>
 					<td>
 						<i class="close fa fa-remove" ng-click="openDeleteDialog(next)" style="font-size: 1.4em"></i>
 						<i class="close fa fa-bars" ng-click="openEditDialog(next)" style="margin-right: 0.5em; font-size: 1.4em"></i>
@@ -78,7 +80,25 @@
 						</div>
 						<div class="form-group">
 							<label>Date</label>
-							<input   type="text"  maxlength="20" class="form-control" placeholder="Enter date" ng-model="entity.Date" ng-change="updateCalculatedProperties()">
+							<p class="input-group">
+								<input type="text"
+																											ng-model="entity.Date"
+									class="form-control"
+									uib-datepicker-popup=""
+									is-open="dateCalendarStatus.opened" 
+									datepicker-options="dateOptions"
+									close-text="Close"
+									ng-change="updateCalculatedProperties()
+								>
+								<span class="input-group-btn">
+									<button type="button"
+										class="btn btn-default"
+										ng-click="dateOpenCalendar($event)"
+									>
+										<i class="fa fa-calendar"></i>
+									</button>
+								</span>
+		           			</p>
 						</div>
 						<div class="form-group">
 							<label>Number</label>
@@ -103,6 +123,10 @@
 						<div class="form-group">
 							<label>Opportunity</label>
 							<select  class="form-control" ng-options="o.Id as o.Name for o in opportunityOptions" ng-model="entity.Opportunity" ng-change="updateCalculatedProperties()"></select>
+						</div>
+						<div class="form-group">
+							<label>Status</label>
+							<select  class="form-control" ng-options="o.Id as o.Name for o in statusOptions" ng-model="entity.Status" ng-change="updateCalculatedProperties()"></select>
 						</div>
 						<div class="modal-footer">
 							<input type="submit" value="Save" class="btn btn-primary btn-lg" ng-show="actionType === 'new'" ng-click="create()">

@@ -42,10 +42,10 @@
 					<td>{{next.Id}}</td>
 					<td>{{next.Name}}</td>
 					<td>{{next.Code}}</td>
-					<td>{{next.Type}}</td>
-					<td>{{next.Group}}</td>
+					<td>{{typeOptionValue(next.Type)}}</td>
+					<td>{{groupOptionValue(next.Group)}}</td>
 					<td>{{next.ManufacturerCode}}</td>
-					<td>{{next.UoM}}</td>
+					<td>{{uomOptionValue(next.UoM)}}</td>
 					<td>
 						<i class="close fa fa-remove" ng-click="openDeleteDialog(next)" style="font-size: 1.4em"></i>
 						<i class="close fa fa-bars" ng-click="openEditDialog(next)" style="margin-right: 0.5em; font-size: 1.4em"></i>					</td>
@@ -69,19 +69,19 @@
 					<form name="entityForm" ng-hide="actionType === 'delete'">
 						<div class="form-group">
 							<label>Name</label>
-							<input   type="text"  maxlength="20" class="form-control" placeholder="Enter name" ng-model="entity.Name" ng-change="updateCalculatedProperties()">
+							<input   type="text"  maxlength="120" class="form-control" placeholder="Enter name" ng-model="entity.Name" ng-change="updateCalculatedProperties()">
 						</div>
 						<div class="form-group">
 							<label>Code</label>
-							<input   type="text"  maxlength="20" class="form-control" placeholder="Enter code" ng-model="entity.Code" ng-change="updateCalculatedProperties()">
+							<input   type="text"  maxlength="120" class="form-control" placeholder="Enter code" ng-model="entity.Code" ng-change="updateCalculatedProperties()">
 						</div>
 						<div class="form-group">
 							<label>Type</label>
-							<input   type="text"  maxlength="20" class="form-control" placeholder="Enter type" ng-model="entity.Type" ng-change="updateCalculatedProperties()">
+							<select  class="form-control" ng-options="o.Id as o.Name for o in typeOptions" ng-model="entity.Type" ng-change="updateCalculatedProperties()"></select>
 						</div>
 						<div class="form-group">
 							<label>Group</label>
-							<input   type="text"  maxlength="20" class="form-control" placeholder="Enter group" ng-model="entity.Group" ng-change="updateCalculatedProperties()">
+							<select  class="form-control" ng-options="o.Id as o.Name for o in groupOptions" ng-model="entity.Group" ng-change="updateCalculatedProperties()"></select>
 						</div>
 						<div class="form-group">
 							<label>ManufacturerCode</label>
@@ -89,7 +89,7 @@
 						</div>
 						<div class="form-group">
 							<label>UoM</label>
-							<input   type="text"  maxlength="20" class="form-control" placeholder="Enter uom" ng-model="entity.UoM" ng-change="updateCalculatedProperties()">
+							<select  class="form-control" ng-options="o.Id as o.Name for o in uomOptions" ng-model="entity.UoM" ng-change="updateCalculatedProperties()"></select>
 						</div>
 						<div class="modal-footer">
 							<input type="submit" value="Save" class="btn btn-primary btn-lg" ng-show="actionType === 'new'" ng-click="create()">

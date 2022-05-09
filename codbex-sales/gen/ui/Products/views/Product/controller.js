@@ -37,6 +37,15 @@ angular.module('page')
 		onEntityRefresh: function(callback) {
 			on('codbex-sales.Products.Product.refresh', callback);
 		},
+		onProductTypeModified: function(callback) {
+			on('codbex-sales.Products.ProductType.modified', callback);
+		},
+		onProductGroupModified: function(callback) {
+			on('codbex-sales.Products.ProductGroup.modified', callback);
+		},
+		onUoMModified: function(callback) {
+			on('codbex-sales.Products.UoM.modified', callback);
+		},
 		messageEntityModified: function() {
 			message('modified');
 		}
@@ -45,6 +54,15 @@ angular.module('page')
 .controller('PageController', function ($scope, $http, $messageHub) {
 
 	var api = '/services/v4/js/codbex-sales/gen/api/Products/Product.js';
+	var typeOptionsApi = '/services/v4/js/codbex-sales/gen/api/Products/ProductType.js';
+	var groupOptionsApi = '/services/v4/js/codbex-sales/gen/api/Products/ProductGroup.js';
+	var uomOptionsApi = '/services/v4/js/codbex-sales/gen/api/Products/UoM.js';
+
+	$scope.typeOptions = [];
+
+	$scope.groupOptions = [];
+
+	$scope.uomOptions = [];
 
 	$scope.dateOptions = {
 		startingDay: 1
@@ -55,6 +73,30 @@ angular.module('page')
 	$scope.dateFormat = $scope.dateFormats[0];
 	$scope.monthFormat = $scope.monthFormats[1];
 	$scope.weekFormat = $scope.weekFormats[3];
+
+	function typeOptionsLoad() {
+		$http.get(typeOptionsApi)
+		.then(function(data) {
+			$scope.typeOptions = data.data;
+		});
+	}
+	typeOptionsLoad();
+
+	function groupOptionsLoad() {
+		$http.get(groupOptionsApi)
+		.then(function(data) {
+			$scope.groupOptions = data.data;
+		});
+	}
+	groupOptionsLoad();
+
+	function uomOptionsLoad() {
+		$http.get(uomOptionsApi)
+		.then(function(data) {
+			$scope.uomOptions = data.data;
+		});
+	}
+	uomOptionsLoad();
 
 	$scope.dataPage = 1;
 	$scope.dataCount = 0;
@@ -100,6 +142,7 @@ angular.module('page')
 	$scope.openEditDialog = function(entity) {
 		$scope.actionType = 'update';
 		$scope.entity = entity;
+		$scope.entityForm.$valid = true;
 		toggleEntityModal();
 	};
 
@@ -156,8 +199,35 @@ angular.module('page')
 		var entity = $scope.entity;
 	};
 
+	$scope.typeOptionValue = function(optionKey) {
+		for (var i = 0 ; i < $scope.typeOptions.length; i ++) {
+			if ($scope.typeOptions[i].Id === optionKey) {
+				return $scope.typeOptions[i].Name;
+			}
+		}
+		return null;
+	};
+	$scope.groupOptionValue = function(optionKey) {
+		for (var i = 0 ; i < $scope.groupOptions.length; i ++) {
+			if ($scope.groupOptions[i].Id === optionKey) {
+				return $scope.groupOptions[i].Name;
+			}
+		}
+		return null;
+	};
+	$scope.uomOptionValue = function(optionKey) {
+		for (var i = 0 ; i < $scope.uomOptions.length; i ++) {
+			if ($scope.uomOptions[i].Id === optionKey) {
+				return $scope.uomOptions[i].Name;
+			}
+		}
+		return null;
+	};
 
 	$messageHub.onEntityRefresh($scope.loadPage($scope.dataPage));
+	$messageHub.onProductTypeModified(typeOptionsLoad);
+	$messageHub.onProductGroupModified(groupOptionsLoad);
+	$messageHub.onUoMModified(uomOptionsLoad);
 
 	function toggleEntityModal() {
 		$('#entityModal').modal('toggle');

@@ -140,6 +140,12 @@
                         "length": 0,
                         "nullable": true,
                         "name": "OPPORTUNITY_AMOUNT"
+                    },
+                    {
+                        "type": "CHAR",
+                        "length": 3,
+                        "nullable": true,
+                        "name": "OPPORTUNITY_CURRENCY"
                     }
                 ]
             },
@@ -726,6 +732,12 @@
                         "length": 0,
                         "nullable": true,
                         "name": "QUOTATION_OPPORTUNITY"
+                    },
+                    {
+                        "type": "INTEGER",
+                        "length": 0,
+                        "nullable": true,
+                        "name": "QUOTATION_STATUS"
                     }
                 ]
             },
@@ -743,13 +755,13 @@
                     },
                     {
                         "type": "VARCHAR",
-                        "length": 127,
+                        "length": 120,
                         "nullable": true,
                         "name": "PRODUCT_NAME"
                     },
                     {
                         "type": "VARCHAR",
-                        "length": 127,
+                        "length": 120,
                         "nullable": true,
                         "name": "PRODUCT_PROPERTY3"
                     },
@@ -1132,13 +1144,13 @@
                         "name": "DELIVERY_ID"
                     },
                     {
-                        "type": "VARCHAR",
+                        "type": "TIMESTAMP",
                         "length": 20,
                         "nullable": true,
-                        "name": "DELIVERY_TIMESTAMP"
+                        "name": "DELIVERY_INITIATED"
                     },
                     {
-                        "type": "VARCHAR",
+                        "type": "DATE",
                         "length": 20,
                         "nullable": true,
                         "name": "DELIVERY_ETA"
@@ -1368,6 +1380,12 @@
                         "length": 20,
                         "nullable": true,
                         "name": "DELIVERYSTATUS_NAME"
+                    },
+                    {
+                        "type": "VARCHAR",
+                        "length": 200,
+                        "nullable": true,
+                        "name": "DELIVERYSTATUS_DESCRIPTION"
                     }
                 ]
             },
@@ -1394,6 +1412,32 @@
                         "length": 0,
                         "nullable": true,
                         "name": "PAYMENTSALESINVOICE_SALESINVOICE"
+                    }
+                ]
+            },
+            {
+                "name": "CODBEX_QUOTATIONSTATUS",
+                "type": "TABLE",
+                "columns": [
+                    {
+                        "type": "INTEGER",
+                        "length": 0,
+                        "primaryKey": true,
+                        "identity": true,
+                        "nullable": true,
+                        "name": "QUOTATIONSTATUS_ID"
+                    },
+                    {
+                        "type": "VARCHAR",
+                        "length": 20,
+                        "nullable": true,
+                        "name": "QUOTATIONSTATUS_NAME"
+                    },
+                    {
+                        "type": "VARCHAR",
+                        "length": 200,
+                        "nullable": true,
+                        "name": "QUOTATIONSTATUS_DESCRIPTION"
                     }
                 ]
             },
@@ -1477,6 +1521,15 @@
                 "columns": "OPPORTUNITY_PROBABILITY",
                 "referencedTable": "CODBEX_OPPORTUNITYPROBABILITY",
                 "referencedColumns": "OPPORTUNITYPROBABILITY_ID"
+            },
+            {
+                "name": "Opportunity_Currency",
+                "type": "foreignKey",
+                "table": "CODBEX_OPPORTUNITY",
+                "constraintName": "Opportunity_Currency",
+                "columns": "OPPORTUNITY_CURRENCY",
+                "referencedTable": "CODBEX_CURRENCY",
+                "referencedColumns": "CURRENCY_CODE"
             },
             {
                 "name": "Customer_Country",
@@ -1585,6 +1638,15 @@
                 "columns": "QUOTATION_OPPORTUNITY",
                 "referencedTable": "CODBEX_OPPORTUNITY",
                 "referencedColumns": "OPPORTUNITY_ID"
+            },
+            {
+                "name": "Quotation_QuotationStatus",
+                "type": "foreignKey",
+                "table": "CODBEX_QUOTATION",
+                "constraintName": "Quotation_QuotationStatus",
+                "columns": "QUOTATION_STATUS",
+                "referencedTable": "CODBEX_QUOTATIONSTATUS",
+                "referencedColumns": "QUOTATIONSTATUS_ID"
             },
             {
                 "name": "Product_ProductType",

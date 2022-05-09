@@ -158,6 +158,7 @@ angular.module('page')
 	$scope.openEditDialog = function(entity) {
 		$scope.actionType = 'update';
 		$scope.entity = entity;
+		$scope.entityForm.$valid = true;
 		toggleEntityModal();
 	};
 
@@ -214,7 +215,7 @@ angular.module('page')
 
 	$scope.updateCalculatedProperties = function() {
 		var entity = $scope.entity;
-		entity["Total"] = Quantity * Price;
+		entity["Total"] = entity["Quantity"] * entity["Price"];
 	};
 
 	$scope.quotationOptionValue = function(optionKey) {

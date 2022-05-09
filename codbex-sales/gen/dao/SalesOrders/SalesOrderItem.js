@@ -55,7 +55,7 @@ exports.get = function(id) {
 };
 
 exports.create = function(entity) {
-	entity["Name"] = SalesOrder + ' ' + Product;
+	entity["Name"] = entity["SalesOrder"] + ' ' + entity["Product"];
 	var id = dao.insert(entity);
 	triggerEvent("Create", {
 		table: "CODBEX_SALESORDERITEM",
@@ -69,7 +69,7 @@ exports.create = function(entity) {
 };
 
 exports.update = function(entity) {
-	entity["Name"] = SalesOrder + ' ' + Product
+	entity["Name"] = entity["SalesOrder"] + ' ' + entity["Product"]
 	dao.update(entity);
 	triggerEvent("Update", {
 		table: "CODBEX_SALESORDERITEM",
