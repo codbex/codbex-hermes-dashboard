@@ -380,7 +380,7 @@
                         "name": "Amount",
                         "widgetIsMajor": "true",
                         "widgetLength": "20",
-                        "widgetPattern": "###,###,###.00",
+                        "widgetPattern": "",
                         "widgetType": "NUMBER"
                     },
                     {
@@ -3870,6 +3870,8 @@
                 "tooltip": "QuotationStatus",
                 "type": "PRIMARY"
             }
-        ]
+        ],
+        "perspectives": [],
+        "sidebar": []
     }
 }

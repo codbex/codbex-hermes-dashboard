@@ -59,7 +59,6 @@ rs.service()
 	.resource("")
 		.post(function(ctx, request, response) {
 			var entity = request.getJSON();
-			validateEntity(entity);
 			entity.Id = dao.create(entity);
 			response.setHeader("Content-Location", "/services/v4/js/codbex-sales/gen/api/Opportunity.js/" + entity.Id);
 			http.sendResponseCreated(entity);
@@ -78,7 +77,6 @@ rs.service()
 		.put(function(ctx, request) {
 			var entity = request.getJSON();
 			entity.Id = ctx.pathParameters.id;
-			validateEntity(entity);
 			dao.update(entity);
 			http.sendResponseOk(entity);
 		})
@@ -113,17 +111,3 @@ rs.service()
 			}
         })
 .execute();
-
-function ValidationError(message) {
-	this.name = "ValidationError";
-    this.message = message;
-    this.stack = (new Error()).stack;
-}
-
-function validateEntity(entity) {
-	var isValid = true;
-	isValid = isValid && entity.Amount && entity.Amount.match(/^###,###,###.00$/) !== null;
-	if (!isValid) {
-		throw new ValidationError("The input data doesn't match the required property pattern");
-	}
-}
