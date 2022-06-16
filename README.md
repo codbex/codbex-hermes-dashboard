@@ -1,2 +1,2 @@
-# codbex-sales
+# codbex-hermes
 Sales Application
