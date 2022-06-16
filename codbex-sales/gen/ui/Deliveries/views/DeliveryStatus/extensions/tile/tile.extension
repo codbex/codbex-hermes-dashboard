@@ -1,5 +1,0 @@
-{
-	"description": "Deliveries tiles",
-	"extensionPoint": "launchpad-codbex-tiles",
-	"module": "codbex-sales/gen/ui/Deliveries/views/DeliveryStatus/extensions/tile/tile.js"
-}

@@ -1,5 +1,0 @@
-{
-	"description": "QuotationStatus menu",
-	"extensionPoint": "shell-codbex-sales-menu",
-	"module": "codbex-sales/views/QuotationStatus/menu/item.js"
-}

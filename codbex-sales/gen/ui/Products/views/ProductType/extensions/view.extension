@@ -1,5 +1,0 @@
-{
-	"description": "ProductType view",
-	"extensionPoint": "launchpad-codbex-Products-view",
-	"module": "codbex-sales/gen/ui/Products/views/ProductType/extensions/view.js"
-}

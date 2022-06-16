@@ -1,5 +1,0 @@
-{
-	"description": "OpportunityPriority menu",
-	"extensionPoint": "shell-codbex-sales-menu",
-	"module": "codbex-sales/views/OpportunityPriority/menu/item.js"
-}

@@ -1,5 +1,0 @@
-{
-	"description": "PaymentSalesInvoice view",
-	"extensionPoint": "launchpad-codbex-Payments-Payment-view",
-	"module": "codbex-sales/gen/ui/Payments/views/master/details/PaymentSalesInvoice/extensions/view.js"
-}

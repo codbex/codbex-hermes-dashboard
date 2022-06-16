@@ -1,5 +1,0 @@
-{
-	"description": "Dimension menu",
-	"extensionPoint": "shell-codbex-sales-menu",
-	"module": "codbex-sales/views/Dimension/menu/item.js"
-}

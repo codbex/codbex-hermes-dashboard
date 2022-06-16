@@ -1,5 +1,0 @@
-{
-	"description": "Payments tiles",
-	"extensionPoint": "launchpad-codbex-tiles",
-	"module": "codbex-sales/gen/ui/Payments/views/Payment/extensions/tile/tile.js"
-}

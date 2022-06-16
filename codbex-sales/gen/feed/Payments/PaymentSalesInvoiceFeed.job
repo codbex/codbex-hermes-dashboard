@@ -1,5 +1,0 @@
-{
-	"expression": "0 0 0 1 * ? *",
-	"handler": "codbex-sales/gen/feed/Payments/PaymentSalesInvoiceFeedSynchronizer.js",
-	"description": "PaymentSalesInvoiceFeedSynchronizer Job"
-}

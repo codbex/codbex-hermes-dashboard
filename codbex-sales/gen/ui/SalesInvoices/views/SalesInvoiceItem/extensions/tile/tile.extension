@@ -1,5 +1,0 @@
-{
-	"description": "SalesInvoices tiles",
-	"extensionPoint": "launchpad-codbex-tiles",
-	"module": "codbex-sales/gen/ui/SalesInvoices/views/SalesInvoiceItem/extensions/tile/tile.js"
-}

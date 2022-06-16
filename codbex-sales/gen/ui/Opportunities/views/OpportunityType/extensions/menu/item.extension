@@ -1,5 +1,0 @@
-{
-	"description": "OpportunityType menu",
-	"extensionPoint": "shell-codbex-sales-menu",
-	"module": "codbex-sales/views/OpportunityType/menu/item.js"
-}

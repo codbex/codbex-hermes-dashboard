@@ -1,5 +1,0 @@
-{
-	"description": "LeadStatus menu",
-	"extensionPoint": "shell-codbex-sales-menu",
-	"module": "codbex-sales/views/LeadStatus/menu/item.js"
-}

@@ -1,5 +1,0 @@
-{
-	"description": "DeliveryStatus view",
-	"extensionPoint": "launchpad-codbex-Deliveries-view",
-	"module": "codbex-sales/gen/ui/Deliveries/views/DeliveryStatus/extensions/view.js"
-}

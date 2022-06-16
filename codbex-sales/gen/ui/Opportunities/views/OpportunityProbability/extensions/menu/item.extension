@@ -1,5 +1,0 @@
-{
-	"description": "OpportunityProbability menu",
-	"extensionPoint": "shell-codbex-sales-menu",
-	"module": "codbex-sales/views/OpportunityProbability/menu/item.js"
-}

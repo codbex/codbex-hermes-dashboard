@@ -1,5 +1,0 @@
-{
-	"description": "Contacts tiles",
-	"extensionPoint": "launchpad-codbex-tiles",
-	"module": "codbex-sales/gen/ui/Contacts/views/Country/extensions/tile/tile.js"
-}

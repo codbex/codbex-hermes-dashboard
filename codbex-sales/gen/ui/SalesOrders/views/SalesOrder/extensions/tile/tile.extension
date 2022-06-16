@@ -1,5 +1,0 @@
-{
-	"description": "SalesOrders tiles",
-	"extensionPoint": "launchpad-codbex-tiles",
-	"module": "codbex-sales/gen/ui/SalesOrders/views/SalesOrder/extensions/tile/tile.js"
-}

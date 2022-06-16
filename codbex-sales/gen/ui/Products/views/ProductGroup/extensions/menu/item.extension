@@ -1,5 +1,0 @@
-{
-	"description": "ProductGroup menu",
-	"extensionPoint": "shell-codbex-sales-menu",
-	"module": "codbex-sales/views/ProductGroup/menu/item.js"
-}

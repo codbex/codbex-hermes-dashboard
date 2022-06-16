@@ -1,5 +1,0 @@
-{
-	"description": "QuotationItem view",
-	"extensionPoint": "launchpad-codbex-Quotations-Quotation-view",
-	"module": "codbex-sales/gen/ui/Quotations/views/master/details/QuotationItem/extensions/view.js"
-}

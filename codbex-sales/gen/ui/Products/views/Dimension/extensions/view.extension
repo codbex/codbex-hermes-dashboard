@@ -1,5 +1,0 @@
-{
-	"description": "Dimension view",
-	"extensionPoint": "launchpad-codbex-Products-view",
-	"module": "codbex-sales/gen/ui/Products/views/Dimension/extensions/view.js"
-}

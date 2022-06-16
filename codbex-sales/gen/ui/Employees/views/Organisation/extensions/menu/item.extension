@@ -1,5 +1,0 @@
-{
-	"description": "Organisation menu",
-	"extensionPoint": "shell-codbex-sales-menu",
-	"module": "codbex-sales/views/Organisation/menu/item.js"
-}

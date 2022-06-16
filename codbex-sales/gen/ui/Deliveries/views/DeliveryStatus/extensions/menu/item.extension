@@ -1,5 +1,0 @@
-{
-	"description": "DeliveryStatus menu",
-	"extensionPoint": "shell-codbex-sales-menu",
-	"module": "codbex-sales/views/DeliveryStatus/menu/item.js"
-}

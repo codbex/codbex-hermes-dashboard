@@ -1,5 +1,0 @@
-{
-	"description": "SalesOrders view",
-	"extensionPoint": "launchpad-codbex-SalesOrders-view",
-	"module": "codbex-sales/gen/ui/SalesOrders/views/master/SalesOrder/extensions/view.js"
-}

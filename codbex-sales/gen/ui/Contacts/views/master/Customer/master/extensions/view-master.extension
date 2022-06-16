@@ -1,5 +1,0 @@
-{
-	"description": "Contacts view",
-	"extensionPoint": "launchpad-codbex-Contacts-Customer-view",
-	"module": "codbex-sales/gen/ui/Contacts/views/master/Customer/master/extensions/view.js"
-}

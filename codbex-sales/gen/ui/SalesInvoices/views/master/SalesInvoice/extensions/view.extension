@@ -1,5 +1,0 @@
-{
-	"description": "SalesInvoices view",
-	"extensionPoint": "launchpad-codbex-SalesInvoices-view",
-	"module": "codbex-sales/gen/ui/SalesInvoices/views/master/SalesInvoice/extensions/view.js"
-}

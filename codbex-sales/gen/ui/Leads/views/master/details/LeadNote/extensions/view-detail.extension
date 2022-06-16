@@ -1,5 +1,0 @@
-{
-	"description": "LeadNote view",
-	"extensionPoint": "launchpad-codbex-Leads-Lead-view",
-	"module": "codbex-sales/gen/ui/Leads/views/master/details/LeadNote/extensions/view.js"
-}

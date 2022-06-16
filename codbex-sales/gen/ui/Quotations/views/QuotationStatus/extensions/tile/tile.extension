@@ -1,5 +1,0 @@
-{
-	"description": "Quotations tiles",
-	"extensionPoint": "launchpad-codbex-tiles",
-	"module": "codbex-sales/gen/ui/Quotations/views/QuotationStatus/extensions/tile/tile.js"
-}

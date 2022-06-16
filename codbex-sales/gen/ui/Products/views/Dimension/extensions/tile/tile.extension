@@ -1,5 +1,0 @@
-{
-	"description": "Products tiles",
-	"extensionPoint": "launchpad-codbex-tiles",
-	"module": "codbex-sales/gen/ui/Products/views/Dimension/extensions/tile/tile.js"
-}

@@ -1,5 +1,0 @@
-{
-	"description": "OpportunityType view",
-	"extensionPoint": "launchpad-codbex-Opportunities-view",
-	"module": "codbex-sales/gen/ui/Opportunities/views/OpportunityType/extensions/view.js"
-}

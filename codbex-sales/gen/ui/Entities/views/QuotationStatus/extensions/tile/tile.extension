@@ -1,5 +1,0 @@
-{
-	"description": "Entities tiles",
-	"extensionPoint": "launchpad-codbex-tiles",
-	"module": "codbex-sales/gen/ui/Entities/views/QuotationStatus/extensions/tile/tile.js"
-}
