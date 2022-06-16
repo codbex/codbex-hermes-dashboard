@@ -1,0 +1,24 @@
+# folders
+dist/
+.settings/
+.idea/
+.run/
+target/
+dirigible_local/
+bin/
+
+.editorconfig
+.gitattributes
+files
+.DS_Store
+.project
+.classpath
+*.bak
+*.class
+*.jar
+derby.log
+*.versionsBackup
+*.fpr
+*.iml
+*._trace
+*.log
