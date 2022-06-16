@@ -1,0 +1,5 @@
+{
+	"description": "Deliveries view",
+	"extensionPoint": "launchpad-hermes-Deliveries-Delivery-view",
+	"module": "codbex-hermes/gen/ui/Deliveries/views/master/Delivery/master/extensions/view.js"
+}

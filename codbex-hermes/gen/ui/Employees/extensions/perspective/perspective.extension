@@ -1,0 +1,5 @@
+{
+	"description": "Employees perspective",
+	"extensionPoint": "launchpad-hermes-perspective",
+	"module": "codbex-hermes/gen/ui/Employees/extensions/perspective/perspective.js"
+}

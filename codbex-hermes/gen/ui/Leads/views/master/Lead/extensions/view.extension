@@ -1,0 +1,5 @@
+{
+	"description": "Leads view",
+	"extensionPoint": "launchpad-hermes-Leads-view",
+	"module": "codbex-hermes/gen/ui/Leads/views/master/Lead/extensions/view.js"
+}

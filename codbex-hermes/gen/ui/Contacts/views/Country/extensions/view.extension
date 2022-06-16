@@ -1,0 +1,5 @@
+{
+	"description": "Country view",
+	"extensionPoint": "launchpad-hermes-Contacts-view",
+	"module": "codbex-hermes/gen/ui/Contacts/views/Country/extensions/view.js"
+}

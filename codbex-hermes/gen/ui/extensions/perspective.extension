@@ -1,0 +1,5 @@
+{
+	"description": "Home perspective",
+	"extensionPoint": "launchpad-hermes-perspective",
+	"module": "codbex-hermes/gen/ui/extensions/perspective.js"
+}

@@ -1,0 +1,5 @@
+{
+	"expression": "0 0 0 1 * ? *",
+	"handler": "codbex-hermes/gen/feed/Products/DimensionFeedSynchronizer.js",
+	"description": "DimensionFeedSynchronizer Job"
+}

@@ -1,0 +1,5 @@
+{
+	"description": "OpportunityNote view",
+	"extensionPoint": "launchpad-hermes-Opportunities-Opportunity-view",
+	"module": "codbex-hermes/gen/ui/Opportunities/views/master/details/OpportunityNote/extensions/view.js"
+}

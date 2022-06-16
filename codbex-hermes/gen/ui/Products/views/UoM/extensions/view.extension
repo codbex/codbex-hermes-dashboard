@@ -1,0 +1,5 @@
+{
+	"description": "UoM view",
+	"extensionPoint": "launchpad-hermes-Products-view",
+	"module": "codbex-hermes/gen/ui/Products/views/UoM/extensions/view.js"
+}

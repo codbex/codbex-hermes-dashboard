@@ -1,0 +1,5 @@
+{
+	"description": "Payments tiles",
+	"extensionPoint": "launchpad-hermes-tiles",
+	"module": "codbex-hermes/gen/ui/Payments/views/Payment/extensions/tile/tile.js"
+}

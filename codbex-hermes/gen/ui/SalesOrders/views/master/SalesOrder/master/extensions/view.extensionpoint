@@ -1,0 +1,4 @@
+{
+	"description": "Extension Point for the SalesOrders - SalesOrder Master View Providers",
+	"name": "launchpad-hermes-SalesOrders-SalesOrder-view"
+}

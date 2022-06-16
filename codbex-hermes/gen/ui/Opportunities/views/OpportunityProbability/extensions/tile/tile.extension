@@ -1,0 +1,5 @@
+{
+	"description": "Opportunities tiles",
+	"extensionPoint": "launchpad-hermes-tiles",
+	"module": "codbex-hermes/gen/ui/Opportunities/views/OpportunityProbability/extensions/tile/tile.js"
+}

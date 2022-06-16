@@ -1,0 +1,5 @@
+{
+	"description": "Quotations perspective",
+	"extensionPoint": "launchpad-hermes-perspective",
+	"module": "codbex-hermes/gen/ui/Quotations/extensions/perspective/perspective.js"
+}

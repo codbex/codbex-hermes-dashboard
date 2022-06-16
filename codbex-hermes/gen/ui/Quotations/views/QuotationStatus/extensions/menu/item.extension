@@ -1,0 +1,5 @@
+{
+	"description": "QuotationStatus menu",
+	"extensionPoint": "shell-codbex-hermes-menu",
+	"module": "codbex-hermes/gen/ui/Quotations/views/QuotationStatus/extensions/menu/item.js"
+}

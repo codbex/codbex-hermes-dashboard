@@ -2,7 +2,7 @@
   {
     "table": "CODBEX_DIMENSION",
     "schema": "PUBLIC",
-    "file": "/codbex-sales/data/dimensions.csv",
+    "file": "/codbex-hermes/data/dimensions.csv",
     "header": true,
     "useHeaderNames": true,
     "delimField": ",",
@@ -13,7 +13,7 @@
   {
     "table": "CODBEX_UOM",
     "schema": "PUBLIC",
-    "file": "/codbex-sales/data/uoms.csv",
+    "file": "/codbex-hermes/data/uoms.csv",
     "header": true,
     "useHeaderNames": true,
     "delimField": ",",
@@ -24,7 +24,7 @@
   {
     "table": "CODBEX_INDUSTRY",
     "schema": "PUBLIC",
-    "file": "/codbex-sales/data/industries.csv",
+    "file": "/codbex-hermes/data/industries.csv",
     "header": true,
     "useHeaderNames": true,
     "delimField": ",",
@@ -35,7 +35,7 @@
   {
     "table": "CODBEX_CURRENCY",
     "schema": "PUBLIC",
-    "file": "/codbex-sales/data/currencies.csv",
+    "file": "/codbex-hermes/data/currencies.csv",
     "header": true,
     "useHeaderNames": true,
     "delimField": ",",
@@ -46,7 +46,7 @@
   {
     "table": "CODBEX_COUNTRY",
     "schema": "PUBLIC",
-    "file": "/codbex-sales/data/countries.csv",
+    "file": "/codbex-hermes/data/countries.csv",
     "header": true,
     "useHeaderNames": true,
     "delimField": ",",
@@ -57,7 +57,7 @@
   {
     "table": "CODBEX_LEADSTATUS",
     "schema": "PUBLIC",
-    "file": "/codbex-sales/data/lead-statuses.csv",
+    "file": "/codbex-hermes/data/lead-statuses.csv",
     "header": true,
     "useHeaderNames": true,
     "delimField": ",",
@@ -68,7 +68,7 @@
   {
     "table": "CODBEX_NOTETYPE",
     "schema": "PUBLIC",
-    "file": "/codbex-sales/data/note-types.csv",
+    "file": "/codbex-hermes/data/note-types.csv",
     "header": true,
     "useHeaderNames": true,
     "delimField": ",",
@@ -79,7 +79,7 @@
   {
     "table": "CODBEX_OPPORTUNITYTYPE",
     "schema": "PUBLIC",
-    "file": "/codbex-sales/data/opportunity-types.csv",
+    "file": "/codbex-hermes/data/opportunity-types.csv",
     "header": true,
     "useHeaderNames": true,
     "delimField": ",",
@@ -90,7 +90,7 @@
   {
     "table": "CODBEX_OPPORTUNITYPRIORITY",
     "schema": "PUBLIC",
-    "file": "/codbex-sales/data/opportunity-priorities.csv",
+    "file": "/codbex-hermes/data/opportunity-priorities.csv",
     "header": true,
     "useHeaderNames": true,
     "delimField": ",",
@@ -101,7 +101,7 @@
   {
     "table": "CODBEX_OPPORTUNITYSTATUS",
     "schema": "PUBLIC",
-    "file": "/codbex-sales/data/opportunity-statuses.csv",
+    "file": "/codbex-hermes/data/opportunity-statuses.csv",
     "header": true,
     "useHeaderNames": true,
     "delimField": ",",
@@ -112,7 +112,7 @@
   {
     "table": "CODBEX_OPPORTUNITYPROBABILITY",
     "schema": "PUBLIC",
-    "file": "/codbex-sales/data/opportunity-probabilities.csv",
+    "file": "/codbex-hermes/data/opportunity-probabilities.csv",
     "header": true,
     "useHeaderNames": true,
     "delimField": ",",
@@ -123,7 +123,7 @@
   {
     "table": "CODBEX_QUOTATIONSTATUS",
     "schema": "PUBLIC",
-    "file": "/codbex-sales/data/quotation-statuses.csv",
+    "file": "/codbex-hermes/data/quotation-statuses.csv",
     "header": true,
     "useHeaderNames": true,
     "delimField": ",",
@@ -134,7 +134,7 @@
   {
     "table": "CODBEX_DELIVERYSTATUS",
     "schema": "PUBLIC",
-    "file": "/codbex-sales/data/delivery-statuses.csv",
+    "file": "/codbex-hermes/data/delivery-statuses.csv",
     "header": true,
     "useHeaderNames": true,
     "delimField": ",",

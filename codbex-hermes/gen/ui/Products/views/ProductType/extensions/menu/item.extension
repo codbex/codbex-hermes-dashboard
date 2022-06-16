@@ -1,0 +1,5 @@
+{
+	"description": "ProductType menu",
+	"extensionPoint": "shell-codbex-hermes-menu",
+	"module": "codbex-hermes/gen/ui/Products/views/ProductType/extensions/menu/item.js"
+}

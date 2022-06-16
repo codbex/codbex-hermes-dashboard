@@ -1,0 +1,5 @@
+{
+	"description": "Payments perspective",
+	"extensionPoint": "launchpad-hermes-perspective",
+	"module": "codbex-hermes/gen/ui/Payments/extensions/perspective/perspective.js"
+}

@@ -1,0 +1,4 @@
+{
+	"description": "Extension Point for the codbex-hermes Menu Providers",
+	"name": "launchpad-codbex-hermes-menu"
+}

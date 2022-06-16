@@ -1,0 +1,4 @@
+{
+	"description": "Extension Point for the SalesInvoices View Providers",
+	"name": "launchpad-hermes-SalesInvoices-view"
+}

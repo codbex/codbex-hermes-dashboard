@@ -1,0 +1,5 @@
+{
+	"description": "OpportunityPriority view",
+	"extensionPoint": "launchpad-hermes-Opportunities-view",
+	"module": "codbex-hermes/gen/ui/Opportunities/views/OpportunityPriority/extensions/view.js"
+}

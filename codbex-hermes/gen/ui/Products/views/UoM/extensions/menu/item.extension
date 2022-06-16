@@ -1,0 +1,5 @@
+{
+	"description": "UoM menu",
+	"extensionPoint": "shell-codbex-hermes-menu",
+	"module": "codbex-hermes/gen/ui/Products/views/UoM/extensions/menu/item.js"
+}

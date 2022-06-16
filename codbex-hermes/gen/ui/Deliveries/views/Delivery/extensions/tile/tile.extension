@@ -1,0 +1,5 @@
+{
+	"description": "Deliveries tiles",
+	"extensionPoint": "launchpad-hermes-tiles",
+	"module": "codbex-hermes/gen/ui/Deliveries/views/Delivery/extensions/tile/tile.js"
+}

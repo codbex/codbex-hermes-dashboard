@@ -1,0 +1,5 @@
+{
+	"description": "OpportunityPriority menu",
+	"extensionPoint": "shell-codbex-hermes-menu",
+	"module": "codbex-hermes/gen/ui/Opportunities/views/OpportunityPriority/extensions/menu/item.js"
+}

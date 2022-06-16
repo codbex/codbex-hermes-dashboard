@@ -1,0 +1,5 @@
+{
+	"description": "Country menu",
+	"extensionPoint": "shell-codbex-hermes-menu",
+	"module": "codbex-hermes/gen/ui/Contacts/views/Country/extensions/menu/item.js"
+}
