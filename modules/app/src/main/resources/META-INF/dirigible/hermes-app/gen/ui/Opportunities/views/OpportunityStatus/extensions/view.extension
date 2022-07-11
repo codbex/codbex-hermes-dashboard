@@ -1,5 +1,5 @@
 {
 	"description": "OpportunityStatus view",
 	"extensionPoint": "launchpad-hermes-Opportunities-view",
-	"module": "codbex-hermes/gen/ui/Opportunities/views/OpportunityStatus/extensions/view.js"
+	"module": "hermes-app/gen/ui/Opportunities/views/OpportunityStatus/extensions/view.js"
 }

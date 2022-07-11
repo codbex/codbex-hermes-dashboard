@@ -1,5 +1,5 @@
 {
 	"expression": "0 0 0 1 * ? *",
-	"handler": "codbex-hermes/gen/feed/Products/ProductTypeFeedSynchronizer.js",
+	"handler": "hermes-app/gen/feed/Products/ProductTypeFeedSynchronizer.js",
 	"description": "ProductTypeFeedSynchronizer Job"
 }

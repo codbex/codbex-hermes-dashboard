@@ -1,14 +1,13 @@
 /*
- * Copyright (c) 2022 codbex or an codbex affiliate company and contributors
- *
+ * Copyright (c) 2010-2020 SAP and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v2.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v20.html
- *
- * SPDX-FileCopyrightText: 2022 codbex or an codbex affiliate company and contributors
- * SPDX-License-Identifier: EPL-2.0
+ * Contributors:
+ * SAP - initial API and implementation
  */
+
 var ViewRegistry = function() {
 	
 	var _views = {};
@@ -246,7 +245,7 @@ function LayoutController(viewRegistry, messageHub){
 		if(id){
 			if(!reconstruct){
 				//load from localStorage
-				var savedState = localStorage.getItem('DIRIGIBLE.application.codbex-hermes.'+ id);
+				var savedState = localStorage.getItem('DIRIGIBLE.application.hermes-app.'+ id);
 				if(savedState !== null) {
 					this.config = JSON.parse(savedState);
 				}				
@@ -267,7 +266,7 @@ function LayoutController(viewRegistry, messageHub){
 			};
 		}
 
-		let focusView = localStorage.getItem("DIRIGIBLE.application.codbex-hermes.focusView");
+		let focusView = localStorage.getItem("DIRIGIBLE.application.hermes-app.focusView");
 		if (this.config.content[0] && this.config.content[0].content[0] && this.config.content[0].content[0].content[0] && this.config.content[0].content[0].content[0].content) {
 			let activeItemIndex = 0;
 			for (let i = 0; i < this.config.content[0].content[0].content[0].content.length; i ++) {
@@ -290,7 +289,7 @@ function LayoutController(viewRegistry, messageHub){
 			this.layout.on('stateChanged', function(){
 				//TODO: debounce or do that only with save button! This fires a lot
 				var state = JSON.stringify( this.layout.toConfig() );
-				localStorage.setItem('DIRIGIBLE.application.codbex-hermes.'+ id, state );
+				localStorage.setItem('DIRIGIBLE.application.hermes-app.'+ id, state );
 			}.bind(this));			
 		}
 		

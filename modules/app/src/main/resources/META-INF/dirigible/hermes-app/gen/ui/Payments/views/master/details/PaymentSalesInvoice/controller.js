@@ -1,14 +1,3 @@
-/*
- * Copyright (c) 2022 codbex or an codbex affiliate company and contributors
- *
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v2.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v20.html
- *
- * SPDX-FileCopyrightText: 2022 codbex or an codbex affiliate company and contributors
- * SPDX-License-Identifier: EPL-2.0
- */
 angular.module('page', ['ngAnimate', 'ui.bootstrap']);
 angular.module('page')
 .factory('httpRequestInterceptor', function () {
@@ -35,7 +24,7 @@ angular.module('page')
 	var messageHub = new FramesMessageHub();
 
 	var message = function(evtName, data){
-		messageHub.post({data: data}, 'codbex-hermes.Payments.PaymentSalesInvoice.' + evtName);
+		messageHub.post({data: data}, 'hermes-app.Payments.PaymentSalesInvoice.' + evtName);
 	};
 
 	var on = function(topic, callback){
@@ -46,16 +35,16 @@ angular.module('page')
 		message: message,
 		on: on,
 		onEntityRefresh: function(callback) {
-			on('codbex-hermes.Payments.PaymentSalesInvoice.refresh', callback);
+			on('hermes-app.Payments.PaymentSalesInvoice.refresh', callback);
 		},
 		onPaymentModified: function(callback) {
-			on('codbex-hermes.Payments.Payment.modified', callback);
+			on('hermes-app.Payments.Payment.modified', callback);
 		},
 		onSalesInvoiceModified: function(callback) {
-			on('codbex-hermes.Payments.SalesInvoice.modified', callback);
+			on('hermes-app.Payments.SalesInvoice.modified', callback);
 		},
 		onPaymentSelected: function(callback) {
-			on('codbex-hermes.Payments.Payment.selected', callback);
+			on('hermes-app.Payments.Payment.selected', callback);
 		},
 		messageEntityModified: function() {
 			message('modified');
@@ -64,9 +53,9 @@ angular.module('page')
 }])
 .controller('PageController', function ($scope, $http, $messageHub) {
 
-	var api = '/services/v4/js/codbex-hermes/gen/api/Payments/PaymentSalesInvoice.js';
-	var paymentOptionsApi = '/services/v4/js/codbex-hermes/gen/api/Payments/Payment.js';
-	var salesinvoiceOptionsApi = '/services/v4/js/codbex-hermes/gen/api/SalesInvoices/SalesInvoice.js';
+	var api = '/services/v4/js/hermes-app/gen/api/Payments/PaymentSalesInvoice.js';
+	var paymentOptionsApi = '/services/v4/js/hermes-app/gen/api/Payments/Payment.js';
+	var salesinvoiceOptionsApi = '/services/v4/js/hermes-app/gen/api/SalesInvoices/SalesInvoice.js';
 
 	$scope.dateOptions = {
 		startingDay: 1

@@ -1,5 +1,5 @@
 {
 	"description": "SalesInvoices view",
 	"extensionPoint": "launchpad-hermes-SalesInvoices-view",
-	"module": "codbex-hermes/gen/ui/SalesInvoices/views/master/SalesInvoice/extensions/view.js"
+	"module": "hermes-app/gen/ui/SalesInvoices/views/master/SalesInvoice/extensions/view.js"
 }

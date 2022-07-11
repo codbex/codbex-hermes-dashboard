@@ -1,5 +1,5 @@
 {
 	"description": "DeliveryStatus view",
 	"extensionPoint": "launchpad-hermes-Deliveries-view",
-	"module": "codbex-hermes/gen/ui/Deliveries/views/DeliveryStatus/extensions/view.js"
+	"module": "hermes-app/gen/ui/Deliveries/views/DeliveryStatus/extensions/view.js"
 }

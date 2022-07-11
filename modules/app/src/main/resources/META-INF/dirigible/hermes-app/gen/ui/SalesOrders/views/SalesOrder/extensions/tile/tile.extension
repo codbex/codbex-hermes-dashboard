@@ -1,5 +1,5 @@
 {
 	"description": "SalesOrders tiles",
 	"extensionPoint": "launchpad-hermes-tiles",
-	"module": "codbex-hermes/gen/ui/SalesOrders/views/SalesOrder/extensions/tile/tile.js"
+	"module": "hermes-app/gen/ui/SalesOrders/views/SalesOrder/extensions/tile/tile.js"
 }

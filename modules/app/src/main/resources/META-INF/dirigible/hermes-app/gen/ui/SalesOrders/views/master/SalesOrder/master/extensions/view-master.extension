@@ -1,5 +1,5 @@
 {
 	"description": "SalesOrders view",
 	"extensionPoint": "launchpad-hermes-SalesOrders-SalesOrder-view",
-	"module": "codbex-hermes/gen/ui/SalesOrders/views/master/SalesOrder/master/extensions/view.js"
+	"module": "hermes-app/gen/ui/SalesOrders/views/master/SalesOrder/master/extensions/view.js"
 }

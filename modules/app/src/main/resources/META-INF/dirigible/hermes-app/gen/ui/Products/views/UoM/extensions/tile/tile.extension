@@ -1,5 +1,5 @@
 {
 	"description": "Products tiles",
 	"extensionPoint": "launchpad-hermes-tiles",
-	"module": "codbex-hermes/gen/ui/Products/views/UoM/extensions/tile/tile.js"
+	"module": "hermes-app/gen/ui/Products/views/UoM/extensions/tile/tile.js"
 }

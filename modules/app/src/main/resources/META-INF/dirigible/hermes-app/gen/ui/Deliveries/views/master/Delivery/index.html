@@ -38,7 +38,7 @@
 <body ng-app="workbench" ng-controller="WorkbenchController">
 
 	<div class="shell">
-		<div id="codbex-hermes-Delivery" class="plane plane-inner" views-layout views-layout-model="layoutModel" views-extension-point="launchpad-hermes-Deliveries-Delivery-view"></div>
+		<div id="hermes-app-Delivery" class="plane plane-inner" views-layout views-layout-model="layoutModel" views-extension-point="launchpad-hermes-Deliveries-Delivery-view"></div>
 	</div>
 	<!-- div class="statusbar" status-bar></div -->
 	
@@ -55,9 +55,9 @@
 	<!-- GoldenLayout with Theme Support -->
 	<script type="text/javascript" src="/services/v4/web/resources/goldenlayout/1.5.9/goldenlayout.min.js"></script>
 
-	<script type="text/javascript" src="/services/v4/web/codbex-hermes/gen/ui/resources/js/message-hub.js"></script>	
-	<script type="text/javascript" src="/services/v4/web/codbex-hermes/gen/ui/resources/js/ui-layout.js"></script>
-	<script type="text/javascript" src="/services/v4/web/codbex-hermes/gen/ui/resources/js/ui-core-ng-modules.js"></script>
+	<script type="text/javascript" src="/services/v4/web/hermes-app/gen/ui/resources/js/message-hub.js"></script>	
+	<script type="text/javascript" src="/services/v4/web/hermes-app/gen/ui/resources/js/ui-layout.js"></script>
+	<script type="text/javascript" src="/services/v4/web/hermes-app/gen/ui/resources/js/ui-core-ng-modules.js"></script>
 
 
 	<script type="text/javascript">
@@ -91,7 +91,7 @@
 				}
 			};
 
-			$http.get('/services/v4/js/codbex-hermes/gen/shell/launchpad/views.js?extensionPoint=launchpad-hermes-Deliveries-Delivery-view&pathSegments=6')
+			$http.get('/services/v4/js/hermes-app/gen/shell/launchpad/views.js?extensionPoint=launchpad-hermes-Deliveries-Delivery-view&pathSegments=6')
 			.then(function(views) {
 				var master = [];
 				var details = [];

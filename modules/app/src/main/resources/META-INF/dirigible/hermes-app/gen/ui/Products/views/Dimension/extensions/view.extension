@@ -1,5 +1,5 @@
 {
 	"description": "Dimension view",
 	"extensionPoint": "launchpad-hermes-Products-view",
-	"module": "codbex-hermes/gen/ui/Products/views/Dimension/extensions/view.js"
+	"module": "hermes-app/gen/ui/Products/views/Dimension/extensions/view.js"
 }

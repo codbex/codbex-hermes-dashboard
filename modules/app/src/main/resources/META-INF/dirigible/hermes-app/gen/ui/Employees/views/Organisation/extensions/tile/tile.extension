@@ -1,5 +1,5 @@
 {
 	"description": "Employees tiles",
 	"extensionPoint": "launchpad-hermes-tiles",
-	"module": "codbex-hermes/gen/ui/Employees/views/Organisation/extensions/tile/tile.js"
+	"module": "hermes-app/gen/ui/Employees/views/Organisation/extensions/tile/tile.js"
 }

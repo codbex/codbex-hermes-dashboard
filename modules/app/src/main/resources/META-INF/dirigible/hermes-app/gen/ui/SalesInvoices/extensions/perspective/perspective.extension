@@ -1,5 +1,5 @@
 {
 	"description": "SalesInvoices perspective",
 	"extensionPoint": "launchpad-hermes-perspective",
-	"module": "codbex-hermes/gen/ui/SalesInvoices/extensions/perspective/perspective.js"
+	"module": "hermes-app/gen/ui/SalesInvoices/extensions/perspective/perspective.js"
 }

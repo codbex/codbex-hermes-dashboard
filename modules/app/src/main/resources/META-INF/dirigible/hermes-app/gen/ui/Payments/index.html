@@ -49,7 +49,7 @@
 
 <body ng-app="workbench" ng-controller="WorkbenchController">
 
-	<div menu menu-extension-point="launchpad-codbex-hermes-menu"></div>
+	<div menu menu-extension-point="launchpad-hermes-app-menu"></div>
 
 	<div class="shell">
 		<div class="sidebar list-group" sidebar active="Workbench"></div>
@@ -57,9 +57,9 @@
 	</div>
 	<!-- div class="statusbar" status-bar>${message}</div -->
 
-	<script type="text/javascript" src="/services/v4/web/codbex-hermes/gen/ui/resources/js/message-hub.js"></script>	
-	<script type="text/javascript" src="/services/v4/web/codbex-hermes/gen/ui/resources/js/ui-layout.js"></script>
-	<script type="text/javascript" src="/services/v4/web/codbex-hermes/gen/ui/resources/js/ui-core-ng-modules.js"></script>
+	<script type="text/javascript" src="/services/v4/web/hermes-app/gen/ui/resources/js/message-hub.js"></script>	
+	<script type="text/javascript" src="/services/v4/web/hermes-app/gen/ui/resources/js/ui-layout.js"></script>
+	<script type="text/javascript" src="/services/v4/web/hermes-app/gen/ui/resources/js/ui-core-ng-modules.js"></script>
 
 
 	<script type="text/javascript">
@@ -93,7 +93,7 @@
 				}
 			};
 
-			$http.get('/services/v4/js/codbex-hermes/gen/shell/launchpad/views.js?extensionPoint=launchpad-hermes-Payments-view&pathSegments=6')
+			$http.get('/services/v4/js/hermes-app/gen/shell/launchpad/views.js?extensionPoint=launchpad-hermes-Payments-view&pathSegments=6')
 			.then(function(views) {
 				for (var i = 0 ; i < views.data.length; i ++) {
 					$scope.layoutModel.views.push(views.data[i].id);

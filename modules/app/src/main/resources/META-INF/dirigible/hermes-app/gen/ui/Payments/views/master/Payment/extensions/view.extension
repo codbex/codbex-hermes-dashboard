@@ -1,5 +1,5 @@
 {
 	"description": "Payments view",
 	"extensionPoint": "launchpad-hermes-Payments-view",
-	"module": "codbex-hermes/gen/ui/Payments/views/master/Payment/extensions/view.js"
+	"module": "hermes-app/gen/ui/Payments/views/master/Payment/extensions/view.js"
 }

@@ -1,14 +1,3 @@
-/*
- * Copyright (c) 2022 codbex or an codbex affiliate company and contributors
- *
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v2.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v20.html
- *
- * SPDX-FileCopyrightText: 2022 codbex or an codbex affiliate company and contributors
- * SPDX-License-Identifier: EPL-2.0
- */
 angular.module('page', ['ngAnimate', 'ui.bootstrap']);
 angular.module('page')
 .factory('httpRequestInterceptor', function () {
@@ -35,7 +24,7 @@ angular.module('page')
 	var messageHub = new FramesMessageHub();
 
 	var message = function(evtName, data){
-		messageHub.post({data: data}, 'codbex-hermes.Opportunities.Opportunity.' + evtName);
+		messageHub.post({data: data}, 'hermes-app.Opportunities.Opportunity.' + evtName);
 	};
 
 	var on = function(topic, callback){
@@ -46,28 +35,28 @@ angular.module('page')
 		message: message,
 		on: on,
 		onEntityRefresh: function(callback) {
-			on('codbex-hermes.Opportunities.Opportunity.refresh', callback);
+			on('hermes-app.Opportunities.Opportunity.refresh', callback);
 		},
 		onOpportunityTypeModified: function(callback) {
-			on('codbex-hermes.Opportunities.OpportunityType.modified', callback);
+			on('hermes-app.Opportunities.OpportunityType.modified', callback);
 		},
 		onOpportunityStatusModified: function(callback) {
-			on('codbex-hermes.Opportunities.OpportunityStatus.modified', callback);
+			on('hermes-app.Opportunities.OpportunityStatus.modified', callback);
 		},
 		onCustomerModified: function(callback) {
-			on('codbex-hermes.Opportunities.Customer.modified', callback);
+			on('hermes-app.Opportunities.Customer.modified', callback);
 		},
 		onEmployeeModified: function(callback) {
-			on('codbex-hermes.Opportunities.Employee.modified', callback);
+			on('hermes-app.Opportunities.Employee.modified', callback);
 		},
 		onOpportunityPriorityModified: function(callback) {
-			on('codbex-hermes.Opportunities.OpportunityPriority.modified', callback);
+			on('hermes-app.Opportunities.OpportunityPriority.modified', callback);
 		},
 		onOpportunityProbabilityModified: function(callback) {
-			on('codbex-hermes.Opportunities.OpportunityProbability.modified', callback);
+			on('hermes-app.Opportunities.OpportunityProbability.modified', callback);
 		},
 		onCurrencyModified: function(callback) {
-			on('codbex-hermes.Opportunities.Currency.modified', callback);
+			on('hermes-app.Opportunities.Currency.modified', callback);
 		},
 		messageEntityModified: function() {
 			message('modified');
@@ -79,14 +68,14 @@ angular.module('page')
 }])
 .controller('PageController', function ($scope, $http, $messageHub) {
 
-	var api = '/services/v4/js/codbex-hermes/gen/api/Opportunities/Opportunity.js';
-	var typeOptionsApi = '/services/v4/js/codbex-hermes/gen/api/Opportunities/OpportunityType.js';
-	var statusOptionsApi = '/services/v4/js/codbex-hermes/gen/api/Opportunities/OpportunityStatus.js';
-	var customerOptionsApi = '/services/v4/js/codbex-hermes/gen/api/Contacts/Customer.js';
-	var ownerOptionsApi = '/services/v4/js/codbex-hermes/gen/api/Employees/Employee.js';
-	var priorityOptionsApi = '/services/v4/js/codbex-hermes/gen/api/Opportunities/OpportunityPriority.js';
-	var probabilityOptionsApi = '/services/v4/js/codbex-hermes/gen/api/Opportunities/OpportunityProbability.js';
-	var currencyOptionsApi = '/services/v4/js/codbex-hermes/gen/api/Products/Currency.js';
+	var api = '/services/v4/js/hermes-app/gen/api/Opportunities/Opportunity.js';
+	var typeOptionsApi = '/services/v4/js/hermes-app/gen/api/Opportunities/OpportunityType.js';
+	var statusOptionsApi = '/services/v4/js/hermes-app/gen/api/Opportunities/OpportunityStatus.js';
+	var customerOptionsApi = '/services/v4/js/hermes-app/gen/api/Contacts/Customer.js';
+	var ownerOptionsApi = '/services/v4/js/hermes-app/gen/api/Employees/Employee.js';
+	var priorityOptionsApi = '/services/v4/js/hermes-app/gen/api/Opportunities/OpportunityPriority.js';
+	var probabilityOptionsApi = '/services/v4/js/hermes-app/gen/api/Opportunities/OpportunityProbability.js';
+	var currencyOptionsApi = '/services/v4/js/hermes-app/gen/api/Products/Currency.js';
 
 	$scope.typeOptions = [];
 

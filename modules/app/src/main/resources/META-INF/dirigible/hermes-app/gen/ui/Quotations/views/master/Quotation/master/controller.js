@@ -1,14 +1,3 @@
-/*
- * Copyright (c) 2022 codbex or an codbex affiliate company and contributors
- *
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v2.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v20.html
- *
- * SPDX-FileCopyrightText: 2022 codbex or an codbex affiliate company and contributors
- * SPDX-License-Identifier: EPL-2.0
- */
 angular.module('page', ['ngAnimate', 'ui.bootstrap']);
 angular.module('page')
 .factory('httpRequestInterceptor', function () {
@@ -35,7 +24,7 @@ angular.module('page')
 	var messageHub = new FramesMessageHub();
 
 	var message = function(evtName, data){
-		messageHub.post({data: data}, 'codbex-hermes.Quotations.Quotation.' + evtName);
+		messageHub.post({data: data}, 'hermes-app.Quotations.Quotation.' + evtName);
 	};
 
 	var on = function(topic, callback){
@@ -46,22 +35,22 @@ angular.module('page')
 		message: message,
 		on: on,
 		onEntityRefresh: function(callback) {
-			on('codbex-hermes.Quotations.Quotation.refresh', callback);
+			on('hermes-app.Quotations.Quotation.refresh', callback);
 		},
 		onEmployeeModified: function(callback) {
-			on('codbex-hermes.Quotations.Employee.modified', callback);
+			on('hermes-app.Quotations.Employee.modified', callback);
 		},
 		onCustomerModified: function(callback) {
-			on('codbex-hermes.Quotations.Customer.modified', callback);
+			on('hermes-app.Quotations.Customer.modified', callback);
 		},
 		onCurrencyModified: function(callback) {
-			on('codbex-hermes.Quotations.Currency.modified', callback);
+			on('hermes-app.Quotations.Currency.modified', callback);
 		},
 		onOpportunityModified: function(callback) {
-			on('codbex-hermes.Quotations.Opportunity.modified', callback);
+			on('hermes-app.Quotations.Opportunity.modified', callback);
 		},
 		onQuotationStatusModified: function(callback) {
-			on('codbex-hermes.Quotations.QuotationStatus.modified', callback);
+			on('hermes-app.Quotations.QuotationStatus.modified', callback);
 		},
 		messageEntityModified: function() {
 			message('modified');
@@ -73,12 +62,12 @@ angular.module('page')
 }])
 .controller('PageController', function ($scope, $http, $messageHub) {
 
-	var api = '/services/v4/js/codbex-hermes/gen/api/Quotations/Quotation.js';
-	var ownerOptionsApi = '/services/v4/js/codbex-hermes/gen/api/Employees/Employee.js';
-	var customerOptionsApi = '/services/v4/js/codbex-hermes/gen/api/Contacts/Customer.js';
-	var currencyOptionsApi = '/services/v4/js/codbex-hermes/gen/api/Products/Currency.js';
-	var opportunityOptionsApi = '/services/v4/js/codbex-hermes/gen/api/Opportunities/Opportunity.js';
-	var statusOptionsApi = '/services/v4/js/codbex-hermes/gen/api/Quotations/QuotationStatus.js';
+	var api = '/services/v4/js/hermes-app/gen/api/Quotations/Quotation.js';
+	var ownerOptionsApi = '/services/v4/js/hermes-app/gen/api/Employees/Employee.js';
+	var customerOptionsApi = '/services/v4/js/hermes-app/gen/api/Contacts/Customer.js';
+	var currencyOptionsApi = '/services/v4/js/hermes-app/gen/api/Products/Currency.js';
+	var opportunityOptionsApi = '/services/v4/js/hermes-app/gen/api/Opportunities/Opportunity.js';
+	var statusOptionsApi = '/services/v4/js/hermes-app/gen/api/Quotations/QuotationStatus.js';
 
 	$scope.ownerOptions = [];
 

@@ -8,19 +8,17 @@
   ~ Contributors:
   ~ SAP - initial API and implementation
   -->
-
-
+ 
 <html lang="en">
-
-  <head>
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+ 
     <title>codbex | Home</title>
-
+ 
     <link rel="shortcut icon" type="image/png" href="/services/v4/web/resources/images/favicon.png" />
-
+               
     <!-- FontAwesome icon set -->
     <link type="text/css" href="/webjars/fontawesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
@@ -33,7 +31,8 @@
     </script>
 
     <!-- GoldenLayout with Theme Support -->
-    <link type="text/css" rel="stylesheet" href="/services/v4/web/resources/goldenlayout/1.5.9/goldenlayout-base.css" />
+    <link type="text/css" rel="stylesheet"
+            href="/services/v4/web/resources/goldenlayout/1.5.9/goldenlayout-base.css" />
     <link type="text/css" rel="stylesheet" href="/services/v4/js/theme/resources.js/goldenlayout-theme.css" />
     <script type="text/javascript" src="/services/v4/web/resources/goldenlayout/1.5.9/goldenlayout.min.js">
     </script>
@@ -44,53 +43,52 @@
 
     <!-- Custom IDE Styles -->
     <link type="text/css" rel="stylesheet" href="/services/v4/js/theme/resources.js/ide.css" />
-  </head>
-
-  <body ng-app="operations" ng-controller="Controller as c">
-
-    <div menu menu-extension-point="launchpad-zeus-menu"></div>
-    <div view view-extension-point="launchpad-zeus-view"></div>
-    <div class="shell">
-      <div class="sidebar list-group" sidebar active="Operations"></div>
-      <div id="operations" class="plane">
-
-
-
-        <header class="panel panel-info" style="text-align: center; padding: 4em;">
-          <div class="container">
-            <div class="row">
-              <div class="col-xl-9 mx-auto" style="width: 90%">
-                <h1 class="leading">Hermes</h1>
-                <h3>Sales Management</h3>
-              </div>
-            </div>
+</head>
+ 
+<body ng-app="operations" ng-controller="Controller as c">
+ 
+                <div menu menu-extension-point="launchpad-zeus-menu"></div>
+               	<div view view-extension-point="launchpad-zeus-view"></div>
+                <div class="shell">
+                                <div class="sidebar list-group" sidebar active="Operations"></div>
+                                <div id="operations" class="plane">
+                               
+                               
+                               
+<header class="panel panel-info" style="text-align: center; padding: 4em;">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-9 mx-auto" style="width: 90%">
+            <h1 class="leading">Hermes</h1>
+            <h3>Customer Relationship Management</h3>
           </div>
-        </header>
-
-
-
-        <div tiles></div>
-
-        <br><br><br>
-        <p class="container launchpad-description"></p>
-
+        </div>
       </div>
+    </header>
+   
+    
+    
+<div tiles></div>
+ 
+<br><br><br>
+<p class="container launchpad-description">Customer Relationship Management</p>
+           
+</div>
+           
+            
+            
+                               
+                               
+                                </div>
+                </div>
+                <div class="statusbar" status-bar></div>
 
-
-
-
-
-    </div>
-    </div>
-    <div class="statusbar" status-bar></div>
-
-    <script type="text/javascript" src="/services/v4/web/codbex-hermes/gen/ui/resources/js/message-hub.js"></script>
-    <script type="text/javascript" src="/services/v4/web/codbex-hermes/gen/ui/resources/js/ui-layout.js"></script>
-    <script type="text/javascript" src="/services/v4/web/codbex-hermes/gen/ui/resources/js/ui-core-ng-modules.js">
-    </script>
-
-    <script type="text/javascript">
-      angular.module('operations', ['ngResource', 'ideUiCore'])
+                <script type="text/javascript" src="/services/v4/web/hermes-app/gen/ui/resources/js/message-hub.js"></script>	
+                <script type="text/javascript" src="/services/v4/web/hermes-app/gen/ui/resources/js/ui-layout.js"></script>
+                <script type="text/javascript" src="/services/v4/web/hermes-app/gen/ui/resources/js/ui-core-ng-modules.js"></script>
+               
+                <script type="text/javascript">
+                                angular.module('operations', ['ngResource', 'ideUiCore'])
                                 .config(["messageHubProvider", function(messageHubProvider) {
                                                 messageHubProvider.evtNamePrefix = 'operations';
                                 }])          
@@ -108,5 +106,5 @@
                                                 };
                                                                                
                                 }]);
-    </script>
-  </body>
+                </script>
+</body>

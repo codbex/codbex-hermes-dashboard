@@ -380,7 +380,6 @@
                         "name": "Amount",
                         "widgetIsMajor": "true",
                         "widgetLength": "20",
-                        "widgetPattern": "",
                         "widgetType": "NUMBER"
                     },
                     {

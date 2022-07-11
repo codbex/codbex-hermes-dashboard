@@ -1,14 +1,13 @@
 /*
- * Copyright (c) 2022 codbex or an codbex affiliate company and contributors
- *
+ * Copyright (c) 2010-2020 SAP and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v2.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v20.html
- *
- * SPDX-FileCopyrightText: 2022 codbex or an codbex affiliate company and contributors
- * SPDX-License-Identifier: EPL-2.0
+ * Contributors:
+ * SAP - initial API and implementation
  */
+
 function getPathSegments() {
 	var path = window.location.pathname.substr(0, window.location.pathname.lastIndexOf('/'))
 	var pathSegments = path.substr(path.indexOf('services/')).split('/').length;
@@ -76,13 +75,13 @@ angular.module('ideUiCore', ['ngResource'])
 	}
 }])
 .service('Perspectives', ['$resource', function($resource){
-	return $resource(relativePath + 'services/v4/js/codbex-hermes/gen/shell/launchpad/perspectives.js');
+	return $resource(relativePath + 'services/v4/js/hermes-app/gen/shell/launchpad/perspectives.js');
 }])
 .service('Tiles', ['$resource', function($resource){
-	return $resource(relativePath + 'services/v4/js/codbex-hermes/gen/shell/launchpad/tiles.js');
+	return $resource(relativePath + 'services/v4/js/hermes-app/gen/shell/launchpad/tiles.js');
 }])
 .service('Menu', ['$resource', function($resource){
-	return $resource(relativePath + 'services/v4/js/codbex-hermes/gen/shell/launchpad/menu.js');
+	return $resource(relativePath + 'services/v4/js/hermes-app/gen/shell/launchpad/menu.js');
 }])
 .service('User', ['$http', function($http){
 	return {
@@ -125,7 +124,7 @@ angular.module('ideUiCore', ['ngResource'])
 		ViewRegistrySvc.factory(factoryName, ViewFactories[factoryName]);
 	});		
 	var get = function(viewsExtensionPoint){
-		return $resource(relativePath + 'services/v4/js/codbex-hermes/gen/shell/launchpad/views.js')
+		return $resource(relativePath + 'services/v4/js/hermes-app/gen/shell/launchpad/views.js')
 			.query({
 				'extensionPoint': viewsExtensionPoint,
 				'pathSegments': pathSegments
@@ -192,7 +191,7 @@ angular.module('ideUiCore', ['ngResource'])
 			};
 			scope.user = User.get();
 		},
-		templateUrl: relativePath + 'services/v4/web/codbex-hermes/gen/ui/resources/templates/menu.html'
+		templateUrl: relativePath + 'services/v4/web/hermes-app/gen/ui/resources/templates/menu.html'
 	}
 }])
 .directive('sidebar', ['Perspectives', function(Perspectives){
@@ -205,14 +204,14 @@ angular.module('ideUiCore', ['ngResource'])
 		},
 		link: function(scope, el, attrs){
 			scope.perspectives = Perspectives.query({'pathSegments': pathSegments});
-			scope.activePerspective = localStorage.getItem('DIRIGIBLE.application.codbex-hermes.activePerspective');
+			scope.activePerspective = localStorage.getItem('DIRIGIBLE.application.hermes-app.activePerspective');
 
 			scope.setActivePerspective = function(activePerspective) {
-				localStorage.setItem('DIRIGIBLE.application.codbex-hermes.activePerspective', activePerspective);
+				localStorage.setItem('DIRIGIBLE.application.hermes-app.activePerspective', activePerspective);
 				scope.activePerspective = activePerspective;
 			};
 		},
-		templateUrl: relativePath + 'services/v4/web/codbex-hermes/gen/ui/resources/templates/sidebar.html'
+		templateUrl: relativePath + 'services/v4/web/hermes-app/gen/ui/resources/templates/sidebar.html'
 	}
 }])
 .directive('tiles', ['Tiles', function(Tiles){
@@ -227,11 +226,11 @@ angular.module('ideUiCore', ['ngResource'])
 			scope.tiles= Tiles.query({'pathSegments': pathSegments});
 
 			scope.setActiveView = function(activeView) {
-				localStorage.setItem('DIRIGIBLE.application.codbex-hermes.activePerspective', activeView.group);
-				localStorage.setItem('DIRIGIBLE.application.codbex-hermes.focusView', activeView.name);
+				localStorage.setItem('DIRIGIBLE.application.hermes-app.activePerspective', activeView.group);
+				localStorage.setItem('DIRIGIBLE.application.hermes-app.focusView', activeView.name);
 			};
 		},
-		templateUrl: relativePath + 'services/v4/web/codbex-hermes/gen/ui/resources/templates/tiles.html'
+		templateUrl: relativePath + 'services/v4/web/hermes-app/gen/ui/resources/templates/tiles.html'
 	}
 }])
 .directive('statusBar', ['messageHub', function(messageHub){

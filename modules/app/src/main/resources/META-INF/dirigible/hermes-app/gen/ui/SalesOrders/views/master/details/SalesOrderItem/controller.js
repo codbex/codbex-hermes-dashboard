@@ -1,14 +1,3 @@
-/*
- * Copyright (c) 2022 codbex or an codbex affiliate company and contributors
- *
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v2.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v20.html
- *
- * SPDX-FileCopyrightText: 2022 codbex or an codbex affiliate company and contributors
- * SPDX-License-Identifier: EPL-2.0
- */
 angular.module('page', ['ngAnimate', 'ui.bootstrap']);
 angular.module('page')
 .factory('httpRequestInterceptor', function () {
@@ -35,7 +24,7 @@ angular.module('page')
 	var messageHub = new FramesMessageHub();
 
 	var message = function(evtName, data){
-		messageHub.post({data: data}, 'codbex-hermes.SalesOrders.SalesOrderItem.' + evtName);
+		messageHub.post({data: data}, 'hermes-app.SalesOrders.SalesOrderItem.' + evtName);
 	};
 
 	var on = function(topic, callback){
@@ -46,22 +35,22 @@ angular.module('page')
 		message: message,
 		on: on,
 		onEntityRefresh: function(callback) {
-			on('codbex-hermes.SalesOrders.SalesOrderItem.refresh', callback);
+			on('hermes-app.SalesOrders.SalesOrderItem.refresh', callback);
 		},
 		onSalesOrderModified: function(callback) {
-			on('codbex-hermes.SalesOrders.SalesOrder.modified', callback);
+			on('hermes-app.SalesOrders.SalesOrder.modified', callback);
 		},
 		onProductModified: function(callback) {
-			on('codbex-hermes.SalesOrders.Product.modified', callback);
+			on('hermes-app.SalesOrders.Product.modified', callback);
 		},
 		onUoMModified: function(callback) {
-			on('codbex-hermes.SalesOrders.UoM.modified', callback);
+			on('hermes-app.SalesOrders.UoM.modified', callback);
 		},
 		onCurrencyModified: function(callback) {
-			on('codbex-hermes.SalesOrders.Currency.modified', callback);
+			on('hermes-app.SalesOrders.Currency.modified', callback);
 		},
 		onSalesOrderSelected: function(callback) {
-			on('codbex-hermes.SalesOrders.SalesOrder.selected', callback);
+			on('hermes-app.SalesOrders.SalesOrder.selected', callback);
 		},
 		messageEntityModified: function() {
 			message('modified');
@@ -70,11 +59,11 @@ angular.module('page')
 }])
 .controller('PageController', function ($scope, $http, $messageHub) {
 
-	var api = '/services/v4/js/codbex-hermes/gen/api/SalesOrders/SalesOrderItem.js';
-	var salesorderOptionsApi = '/services/v4/js/codbex-hermes/gen/api/SalesOrders/SalesOrder.js';
-	var productOptionsApi = '/services/v4/js/codbex-hermes/gen/api/Products/Product.js';
-	var uomOptionsApi = '/services/v4/js/codbex-hermes/gen/api/Products/UoM.js';
-	var currencyOptionsApi = '/services/v4/js/codbex-hermes/gen/api/Products/Currency.js';
+	var api = '/services/v4/js/hermes-app/gen/api/SalesOrders/SalesOrderItem.js';
+	var salesorderOptionsApi = '/services/v4/js/hermes-app/gen/api/SalesOrders/SalesOrder.js';
+	var productOptionsApi = '/services/v4/js/hermes-app/gen/api/Products/Product.js';
+	var uomOptionsApi = '/services/v4/js/hermes-app/gen/api/Products/UoM.js';
+	var currencyOptionsApi = '/services/v4/js/hermes-app/gen/api/Products/Currency.js';
 
 	$scope.dateOptions = {
 		startingDay: 1

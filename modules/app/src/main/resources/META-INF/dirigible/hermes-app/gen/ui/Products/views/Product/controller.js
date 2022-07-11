@@ -1,14 +1,3 @@
-/*
- * Copyright (c) 2022 codbex or an codbex affiliate company and contributors
- *
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v2.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v20.html
- *
- * SPDX-FileCopyrightText: 2022 codbex or an codbex affiliate company and contributors
- * SPDX-License-Identifier: EPL-2.0
- */
 angular.module('page', ['ngAnimate', 'ui.bootstrap']);
 angular.module('page')
 .factory('httpRequestInterceptor', function () {
@@ -35,7 +24,7 @@ angular.module('page')
 	var messageHub = new FramesMessageHub();
 
 	var message = function(evtName, data){
-		messageHub.post({data: data}, 'codbex-hermes.Products.Product.' + evtName);
+		messageHub.post({data: data}, 'hermes-app.Products.Product.' + evtName);
 	};
 
 	var on = function(topic, callback){
@@ -46,16 +35,16 @@ angular.module('page')
 		message: message,
 		on: on,
 		onEntityRefresh: function(callback) {
-			on('codbex-hermes.Products.Product.refresh', callback);
+			on('hermes-app.Products.Product.refresh', callback);
 		},
 		onProductTypeModified: function(callback) {
-			on('codbex-hermes.Products.ProductType.modified', callback);
+			on('hermes-app.Products.ProductType.modified', callback);
 		},
 		onProductGroupModified: function(callback) {
-			on('codbex-hermes.Products.ProductGroup.modified', callback);
+			on('hermes-app.Products.ProductGroup.modified', callback);
 		},
 		onUoMModified: function(callback) {
-			on('codbex-hermes.Products.UoM.modified', callback);
+			on('hermes-app.Products.UoM.modified', callback);
 		},
 		messageEntityModified: function() {
 			message('modified');
@@ -64,10 +53,10 @@ angular.module('page')
 }])
 .controller('PageController', function ($scope, $http, $messageHub) {
 
-	var api = '/services/v4/js/codbex-hermes/gen/api/Products/Product.js';
-	var typeOptionsApi = '/services/v4/js/codbex-hermes/gen/api/Products/ProductType.js';
-	var groupOptionsApi = '/services/v4/js/codbex-hermes/gen/api/Products/ProductGroup.js';
-	var uomOptionsApi = '/services/v4/js/codbex-hermes/gen/api/Products/UoM.js';
+	var api = '/services/v4/js/hermes-app/gen/api/Products/Product.js';
+	var typeOptionsApi = '/services/v4/js/hermes-app/gen/api/Products/ProductType.js';
+	var groupOptionsApi = '/services/v4/js/hermes-app/gen/api/Products/ProductGroup.js';
+	var uomOptionsApi = '/services/v4/js/hermes-app/gen/api/Products/UoM.js';
 
 	$scope.typeOptions = [];
 

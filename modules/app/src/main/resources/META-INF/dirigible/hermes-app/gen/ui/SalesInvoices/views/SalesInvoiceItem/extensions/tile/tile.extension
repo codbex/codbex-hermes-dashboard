@@ -1,5 +1,5 @@
 {
 	"description": "SalesInvoices tiles",
 	"extensionPoint": "launchpad-hermes-tiles",
-	"module": "codbex-hermes/gen/ui/SalesInvoices/views/SalesInvoiceItem/extensions/tile/tile.js"
+	"module": "hermes-app/gen/ui/SalesInvoices/views/SalesInvoiceItem/extensions/tile/tile.js"
 }

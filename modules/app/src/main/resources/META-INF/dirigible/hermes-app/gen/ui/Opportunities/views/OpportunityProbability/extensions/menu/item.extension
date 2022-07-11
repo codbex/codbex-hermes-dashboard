@@ -1,5 +1,5 @@
 {
 	"description": "OpportunityProbability menu",
-	"extensionPoint": "shell-codbex-hermes-menu",
-	"module": "codbex-hermes/gen/ui/Opportunities/views/OpportunityProbability/extensions/menu/item.js"
+	"extensionPoint": "shell-hermes-app-menu",
+	"module": "hermes-app/gen/ui/Opportunities/views/OpportunityProbability/extensions/menu/item.js"
 }

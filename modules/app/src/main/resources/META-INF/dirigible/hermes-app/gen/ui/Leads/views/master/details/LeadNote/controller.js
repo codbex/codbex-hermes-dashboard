@@ -1,14 +1,3 @@
-/*
- * Copyright (c) 2022 codbex or an codbex affiliate company and contributors
- *
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v2.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v20.html
- *
- * SPDX-FileCopyrightText: 2022 codbex or an codbex affiliate company and contributors
- * SPDX-License-Identifier: EPL-2.0
- */
 angular.module('page', ['ngAnimate', 'ui.bootstrap']);
 angular.module('page')
 .factory('httpRequestInterceptor', function () {
@@ -35,7 +24,7 @@ angular.module('page')
 	var messageHub = new FramesMessageHub();
 
 	var message = function(evtName, data){
-		messageHub.post({data: data}, 'codbex-hermes.Leads.LeadNote.' + evtName);
+		messageHub.post({data: data}, 'hermes-app.Leads.LeadNote.' + evtName);
 	};
 
 	var on = function(topic, callback){
@@ -46,16 +35,16 @@ angular.module('page')
 		message: message,
 		on: on,
 		onEntityRefresh: function(callback) {
-			on('codbex-hermes.Leads.LeadNote.refresh', callback);
+			on('hermes-app.Leads.LeadNote.refresh', callback);
 		},
 		onNoteTypeModified: function(callback) {
-			on('codbex-hermes.Leads.NoteType.modified', callback);
+			on('hermes-app.Leads.NoteType.modified', callback);
 		},
 		onLeadModified: function(callback) {
-			on('codbex-hermes.Leads.Lead.modified', callback);
+			on('hermes-app.Leads.Lead.modified', callback);
 		},
 		onLeadSelected: function(callback) {
-			on('codbex-hermes.Leads.Lead.selected', callback);
+			on('hermes-app.Leads.Lead.selected', callback);
 		},
 		messageEntityModified: function() {
 			message('modified');
@@ -64,9 +53,9 @@ angular.module('page')
 }])
 .controller('PageController', function ($scope, $http, $messageHub) {
 
-	var api = '/services/v4/js/codbex-hermes/gen/api/Leads/LeadNote.js';
-	var typeOptionsApi = '/services/v4/js/codbex-hermes/gen/api/Leads/NoteType.js';
-	var leadOptionsApi = '/services/v4/js/codbex-hermes/gen/api/Leads/Lead.js';
+	var api = '/services/v4/js/hermes-app/gen/api/Leads/LeadNote.js';
+	var typeOptionsApi = '/services/v4/js/hermes-app/gen/api/Leads/NoteType.js';
+	var leadOptionsApi = '/services/v4/js/hermes-app/gen/api/Leads/Lead.js';
 
 	$scope.dateOptions = {
 		startingDay: 1

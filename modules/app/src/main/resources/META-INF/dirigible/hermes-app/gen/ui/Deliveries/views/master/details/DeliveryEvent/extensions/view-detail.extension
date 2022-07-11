@@ -1,1 +1,4 @@
-{"description":"DeliveryEvent view","module":"codbex-hermes/gen/ui/Deliveries/views/master/details/DeliveryEvent/extensions/view.js","extensionPoint":"launchpad-hermes-Deliveries-Delivery-view"}
+{
+	"description": "DeliveryEvent view",
+	"module": "hermes-app/gen/ui/Deliveries/views/master/details/DeliveryEvent/extensions/view.js"
+}

@@ -1,5 +1,5 @@
 {
 	"description": "OpportunityProbability view",
 	"extensionPoint": "launchpad-hermes-Opportunities-view",
-	"module": "codbex-hermes/gen/ui/Opportunities/views/OpportunityProbability/extensions/view.js"
+	"module": "hermes-app/gen/ui/Opportunities/views/OpportunityProbability/extensions/view.js"
 }

@@ -1,5 +1,5 @@
 {
 	"description": "LeadStatus menu",
-	"extensionPoint": "shell-codbex-hermes-menu",
-	"module": "codbex-hermes/gen/ui/Leads/views/LeadStatus/extensions/menu/item.js"
+	"extensionPoint": "shell-hermes-app-menu",
+	"module": "hermes-app/gen/ui/Leads/views/LeadStatus/extensions/menu/item.js"
 }

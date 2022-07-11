@@ -1,18 +1,7 @@
-/*
- * Copyright (c) 2022 codbex or an codbex affiliate company and contributors
- *
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v2.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v20.html
- *
- * SPDX-FileCopyrightText: 2022 codbex or an codbex affiliate company and contributors
- * SPDX-License-Identifier: EPL-2.0
- */
 var query = require("db/v4/query");
 var producer = require("messaging/v4/producer");
 var daoApi = require("db/v4/dao");
-var EntityUtils = require("codbex-hermes/gen/dao/utils/EntityUtils");
+var EntityUtils = require("hermes-app/gen/dao/utils/EntityUtils");
 
 var dao = daoApi.create({
 	table: "CODBEX_DELIVERY",
@@ -111,5 +100,5 @@ exports.customDataCount = function() {
 };
 
 function triggerEvent(operation, data) {
-	producer.queue("codbex-hermes/Deliveries/Delivery/" + operation).send(JSON.stringify(data));
+	producer.queue("hermes-app/Deliveries/Delivery/" + operation).send(JSON.stringify(data));
 }

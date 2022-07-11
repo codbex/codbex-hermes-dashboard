@@ -1,14 +1,3 @@
-/*
- * Copyright (c) 2022 codbex or an codbex affiliate company and contributors
- *
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v2.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v20.html
- *
- * SPDX-FileCopyrightText: 2022 codbex or an codbex affiliate company and contributors
- * SPDX-License-Identifier: EPL-2.0
- */
 angular.module('page', ['ngAnimate', 'ui.bootstrap']);
 angular.module('page')
 .factory('httpRequestInterceptor', function () {
@@ -35,7 +24,7 @@ angular.module('page')
 	var messageHub = new FramesMessageHub();
 
 	var message = function(evtName, data){
-		messageHub.post({data: data}, 'codbex-hermes.Contacts.Contact.' + evtName);
+		messageHub.post({data: data}, 'hermes-app.Contacts.Contact.' + evtName);
 	};
 
 	var on = function(topic, callback){
@@ -46,16 +35,16 @@ angular.module('page')
 		message: message,
 		on: on,
 		onEntityRefresh: function(callback) {
-			on('codbex-hermes.Contacts.Contact.refresh', callback);
+			on('hermes-app.Contacts.Contact.refresh', callback);
 		},
 		onCustomerModified: function(callback) {
-			on('codbex-hermes.Contacts.Customer.modified', callback);
+			on('hermes-app.Contacts.Customer.modified', callback);
 		},
 		onCountryModified: function(callback) {
-			on('codbex-hermes.Contacts.Country.modified', callback);
+			on('hermes-app.Contacts.Country.modified', callback);
 		},
 		onCustomerSelected: function(callback) {
-			on('codbex-hermes.Contacts.Customer.selected', callback);
+			on('hermes-app.Contacts.Customer.selected', callback);
 		},
 		messageEntityModified: function() {
 			message('modified');
@@ -64,9 +53,9 @@ angular.module('page')
 }])
 .controller('PageController', function ($scope, $http, $messageHub) {
 
-	var api = '/services/v4/js/codbex-hermes/gen/api/Contacts/Contact.js';
-	var customerOptionsApi = '/services/v4/js/codbex-hermes/gen/api/Contacts/Customer.js';
-	var countryOptionsApi = '/services/v4/js/codbex-hermes/gen/api/Contacts/Country.js';
+	var api = '/services/v4/js/hermes-app/gen/api/Contacts/Contact.js';
+	var customerOptionsApi = '/services/v4/js/hermes-app/gen/api/Contacts/Customer.js';
+	var countryOptionsApi = '/services/v4/js/hermes-app/gen/api/Contacts/Country.js';
 
 	$scope.dateOptions = {
 		startingDay: 1

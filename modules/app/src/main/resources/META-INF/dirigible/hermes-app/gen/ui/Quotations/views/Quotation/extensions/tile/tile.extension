@@ -1,5 +1,5 @@
 {
 	"description": "Quotations tiles",
 	"extensionPoint": "launchpad-hermes-tiles",
-	"module": "codbex-hermes/gen/ui/Quotations/views/Quotation/extensions/tile/tile.js"
+	"module": "hermes-app/gen/ui/Quotations/views/Quotation/extensions/tile/tile.js"
 }

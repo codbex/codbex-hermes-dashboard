@@ -1,14 +1,3 @@
-/*
- * Copyright (c) 2022 codbex or an codbex affiliate company and contributors
- *
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v2.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v20.html
- *
- * SPDX-FileCopyrightText: 2022 codbex or an codbex affiliate company and contributors
- * SPDX-License-Identifier: EPL-2.0
- */
 angular.module('page', ['ngAnimate', 'ui.bootstrap']);
 angular.module('page')
 .factory('httpRequestInterceptor', function () {
@@ -35,7 +24,7 @@ angular.module('page')
 	var messageHub = new FramesMessageHub();
 
 	var message = function(evtName, data){
-		messageHub.post({data: data}, 'codbex-hermes.SalesOrders.SalesOrder.' + evtName);
+		messageHub.post({data: data}, 'hermes-app.SalesOrders.SalesOrder.' + evtName);
 	};
 
 	var on = function(topic, callback){
@@ -46,19 +35,19 @@ angular.module('page')
 		message: message,
 		on: on,
 		onEntityRefresh: function(callback) {
-			on('codbex-hermes.SalesOrders.SalesOrder.refresh', callback);
+			on('hermes-app.SalesOrders.SalesOrder.refresh', callback);
 		},
 		onEmployeeModified: function(callback) {
-			on('codbex-hermes.SalesOrders.Employee.modified', callback);
+			on('hermes-app.SalesOrders.Employee.modified', callback);
 		},
 		onCustomerModified: function(callback) {
-			on('codbex-hermes.SalesOrders.Customer.modified', callback);
+			on('hermes-app.SalesOrders.Customer.modified', callback);
 		},
 		onCurrencyModified: function(callback) {
-			on('codbex-hermes.SalesOrders.Currency.modified', callback);
+			on('hermes-app.SalesOrders.Currency.modified', callback);
 		},
 		onQuotationModified: function(callback) {
-			on('codbex-hermes.SalesOrders.Quotation.modified', callback);
+			on('hermes-app.SalesOrders.Quotation.modified', callback);
 		},
 		messageEntityModified: function() {
 			message('modified');
@@ -70,11 +59,11 @@ angular.module('page')
 }])
 .controller('PageController', function ($scope, $http, $messageHub) {
 
-	var api = '/services/v4/js/codbex-hermes/gen/api/SalesOrders/SalesOrder.js';
-	var ownerOptionsApi = '/services/v4/js/codbex-hermes/gen/api/Employees/Employee.js';
-	var customerOptionsApi = '/services/v4/js/codbex-hermes/gen/api/Contacts/Customer.js';
-	var currencyOptionsApi = '/services/v4/js/codbex-hermes/gen/api/Products/Currency.js';
-	var quotationOptionsApi = '/services/v4/js/codbex-hermes/gen/api/Quotations/Quotation.js';
+	var api = '/services/v4/js/hermes-app/gen/api/SalesOrders/SalesOrder.js';
+	var ownerOptionsApi = '/services/v4/js/hermes-app/gen/api/Employees/Employee.js';
+	var customerOptionsApi = '/services/v4/js/hermes-app/gen/api/Contacts/Customer.js';
+	var currencyOptionsApi = '/services/v4/js/hermes-app/gen/api/Products/Currency.js';
+	var quotationOptionsApi = '/services/v4/js/hermes-app/gen/api/Quotations/Quotation.js';
 
 	$scope.ownerOptions = [];
 

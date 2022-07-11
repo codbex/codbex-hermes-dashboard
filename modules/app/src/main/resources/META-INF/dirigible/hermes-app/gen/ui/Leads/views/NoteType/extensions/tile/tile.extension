@@ -1,5 +1,5 @@
 {
 	"description": "Leads tiles",
 	"extensionPoint": "launchpad-hermes-tiles",
-	"module": "codbex-hermes/gen/ui/Leads/views/NoteType/extensions/tile/tile.js"
+	"module": "hermes-app/gen/ui/Leads/views/NoteType/extensions/tile/tile.js"
 }
