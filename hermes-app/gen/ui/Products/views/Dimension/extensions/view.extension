@@ -1,5 +1,0 @@
-{
-	"description": "Dimension view",
-	"extensionPoint": "launchpad-hermes-Products-view",
-	"module": "hermes-app/gen/ui/Products/views/Dimension/extensions/view.js"
-}

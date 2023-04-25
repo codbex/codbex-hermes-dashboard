@@ -1,5 +1,0 @@
-{
-	"description": "SalesOrderItem view",
-	"extensionPoint": "launchpad-hermes-SalesOrders-SalesOrder-view",
-	"module": "hermes-app/gen/ui/SalesOrders/views/master/details/SalesOrderItem/extensions/view.js"
-}

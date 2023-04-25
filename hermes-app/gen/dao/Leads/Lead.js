@@ -1,8 +1,8 @@
-var query = require("db/v4/query");
-var producer = require("messaging/v4/producer");
-var daoApi = require("db/v4/dao");
+const query = require("db/query");
+const producer = require("messaging/producer");
+const daoApi = require("db/dao");
 
-var dao = daoApi.create({
+let dao = daoApi.create({
 	table: "CODBEX_LEAD",
 	properties: [
 		{
@@ -11,43 +11,53 @@ var dao = daoApi.create({
 			type: "INTEGER",
 			id: true,
 			autoIncrement: true,
-		}, {
+		},
+ {
 			name: "Name",
 			column: "LEAD_NAME",
 			type: "VARCHAR",
-		}, {
+		},
+ {
 			name: "CompanyName",
 			column: "LEAD_COMPANYNAME",
 			type: "VARCHAR",
-		}, {
+		},
+ {
 			name: "ContactName",
 			column: "LEAD_CONTACTNAME",
 			type: "VARCHAR",
-		}, {
+		},
+ {
 			name: "ContactDesignation",
 			column: "LEAD_CONTACTDESIGNATION",
 			type: "VARCHAR",
-		}, {
+		},
+ {
 			name: "ContactEmail",
 			column: "LEAD_CONTACTEMAIL",
 			type: "VARCHAR",
-		}, {
+		},
+ {
 			name: "ContactPhone",
 			column: "LEAD_CONTACTPHONE",
 			type: "VARCHAR",
-		}, {
+		},
+ {
 			name: "Industry",
 			column: "LEAD_INDUSTRY",
 			type: "INTEGER",
-		}, {
+		},
+ {
 			name: "Status",
 			column: "LEAD_LEADSTATUS",
 			type: "INTEGER",
-		}, {
+		},
+ {
 			name: "Owner",
 			column: "LEAD_OWNER",
 			type: "INTEGER",
-		}]
+		}
+]
 });
 
 exports.list = function(settings) {
@@ -59,7 +69,7 @@ exports.get = function(id) {
 };
 
 exports.create = function(entity) {
-	var id = dao.insert(entity);
+	let id = dao.insert(entity);
 	triggerEvent("Create", {
 		table: "CODBEX_LEAD",
 		key: {
@@ -100,7 +110,7 @@ exports.count = function() {
 };
 
 exports.customDataCount = function() {
-	var resultSet = query.execute("SELECT COUNT(*) AS COUNT FROM CODBEX_LEAD");
+	let resultSet = query.execute('SELECT COUNT(*) AS COUNT FROM "CODBEX_LEAD"');
 	if (resultSet !== null && resultSet[0] !== null) {
 		if (resultSet[0].COUNT !== undefined && resultSet[0].COUNT !== null) {
 			return resultSet[0].COUNT;

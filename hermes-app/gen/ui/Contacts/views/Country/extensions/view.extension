@@ -1,5 +1,0 @@
-{
-	"description": "Country view",
-	"extensionPoint": "launchpad-hermes-Contacts-view",
-	"module": "hermes-app/gen/ui/Contacts/views/Country/extensions/view.js"
-}

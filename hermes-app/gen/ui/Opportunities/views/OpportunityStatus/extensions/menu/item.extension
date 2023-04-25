@@ -1,5 +1,0 @@
-{
-	"description": "OpportunityStatus menu",
-	"extensionPoint": "shell-hermes-app-menu",
-	"module": "hermes-app/gen/ui/Opportunities/views/OpportunityStatus/extensions/menu/item.js"
-}

@@ -1,5 +1,0 @@
-{
-	"description": "Employee menu",
-	"extensionPoint": "shell-hermes-app-menu",
-	"module": "hermes-app/gen/ui/Employees/views/Employee/extensions/menu/item.js"
-}

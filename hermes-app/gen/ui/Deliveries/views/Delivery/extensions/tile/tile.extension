@@ -1,5 +1,0 @@
-{
-	"description": "Deliveries tiles",
-	"extensionPoint": "launchpad-hermes-tiles",
-	"module": "hermes-app/gen/ui/Deliveries/views/Delivery/extensions/tile/tile.js"
-}

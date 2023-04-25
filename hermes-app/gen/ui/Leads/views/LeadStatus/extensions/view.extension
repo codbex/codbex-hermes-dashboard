@@ -1,5 +1,0 @@
-{
-	"description": "LeadStatus view",
-	"extensionPoint": "launchpad-hermes-Leads-view",
-	"module": "hermes-app/gen/ui/Leads/views/LeadStatus/extensions/view.js"
-}

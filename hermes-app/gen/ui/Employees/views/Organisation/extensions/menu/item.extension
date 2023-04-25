@@ -1,5 +1,0 @@
-{
-	"description": "Organisation menu",
-	"extensionPoint": "shell-hermes-app-menu",
-	"module": "hermes-app/gen/ui/Employees/views/Organisation/extensions/menu/item.js"
-}

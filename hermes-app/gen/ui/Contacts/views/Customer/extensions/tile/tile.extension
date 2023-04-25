@@ -1,5 +1,0 @@
-{
-	"description": "Contacts tiles",
-	"extensionPoint": "launchpad-hermes-tiles",
-	"module": "hermes-app/gen/ui/Contacts/views/Customer/extensions/tile/tile.js"
-}

@@ -1,5 +1,0 @@
-{
-	"description": "UoM menu",
-	"extensionPoint": "shell-hermes-app-menu",
-	"module": "hermes-app/gen/ui/Products/views/UoM/extensions/menu/item.js"
-}

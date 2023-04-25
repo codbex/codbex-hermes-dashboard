@@ -1,5 +1,0 @@
-{
-	"description": "SalesInvoices tiles",
-	"extensionPoint": "launchpad-hermes-tiles",
-	"module": "hermes-app/gen/ui/SalesInvoices/views/SalesInvoice/extensions/tile/tile.js"
-}

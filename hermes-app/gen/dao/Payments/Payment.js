@@ -1,9 +1,9 @@
-var query = require("db/v4/query");
-var producer = require("messaging/v4/producer");
-var daoApi = require("db/v4/dao");
-var EntityUtils = require("hermes-app/gen/dao/utils/EntityUtils");
+const query = require("db/query");
+const producer = require("messaging/producer");
+const daoApi = require("db/dao");
+const EntityUtils = require("hermes-app/gen/dao/utils/EntityUtils");
 
-var dao = daoApi.create({
+let dao = daoApi.create({
 	table: "CODBEX_PAYMENT",
 	properties: [
 		{
@@ -12,45 +12,51 @@ var dao = daoApi.create({
 			type: "INTEGER",
 			id: true,
 			autoIncrement: true,
-		}, {
+		},
+ {
 			name: "Name",
 			column: "PAYMENT_NAME",
 			type: "VARCHAR",
-		}, {
+		},
+ {
 			name: "Amount",
 			column: "PAYMENT_AMOUNT",
 			type: "DOUBLE",
-		}, {
+		},
+ {
 			name: "Currency",
 			column: "PAYMENT_CURRENCY",
 			type: "CHAR",
-		}, {
+		},
+ {
 			name: "Date",
 			column: "PAYMENT_DATE",
 			type: "DATE",
-		}, {
+		},
+ {
 			name: "Customer",
 			column: "PAYMENT_CUSTOMER",
 			type: "INTEGER",
-		}]
+		}
+]
 });
 
 exports.list = function(settings) {
 	return dao.list(settings).map(function(e) {
-		EntityUtils.setLocalDate(e, "Date");
+		EntityUtils.setDate(e, "Date");
 		return e;
 	});
 };
 
 exports.get = function(id) {
-	var entity = dao.find(id);
-	EntityUtils.setLocalDate(entity, "Date");
+	let entity = dao.find(id);
+	EntityUtils.setDate(entity, "Date");
 	return entity;
 };
 
 exports.create = function(entity) {
 	EntityUtils.setLocalDate(entity, "Date");
-	var id = dao.insert(entity);
+	let id = dao.insert(entity);
 	triggerEvent("Create", {
 		table: "CODBEX_PAYMENT",
 		key: {
@@ -63,7 +69,7 @@ exports.create = function(entity) {
 };
 
 exports.update = function(entity) {
-	EntityUtils.setLocalDate(entity, "Date");
+	// EntityUtils.setLocalDate(entity, "Date");
 	dao.update(entity);
 	triggerEvent("Update", {
 		table: "CODBEX_PAYMENT",
@@ -92,7 +98,7 @@ exports.count = function() {
 };
 
 exports.customDataCount = function() {
-	var resultSet = query.execute("SELECT COUNT(*) AS COUNT FROM CODBEX_PAYMENT");
+	let resultSet = query.execute('SELECT COUNT(*) AS COUNT FROM "CODBEX_PAYMENT"');
 	if (resultSet !== null && resultSet[0] !== null) {
 		if (resultSet[0].COUNT !== undefined && resultSet[0].COUNT !== null) {
 			return resultSet[0].COUNT;

@@ -1,5 +1,0 @@
-{
-	"description": "DeliveryStatus menu",
-	"extensionPoint": "shell-hermes-app-menu",
-	"module": "hermes-app/gen/ui/Deliveries/views/DeliveryStatus/extensions/menu/item.js"
-}

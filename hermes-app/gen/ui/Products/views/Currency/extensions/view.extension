@@ -1,5 +1,0 @@
-{
-	"description": "Currency view",
-	"extensionPoint": "launchpad-hermes-Products-view",
-	"module": "hermes-app/gen/ui/Products/views/Currency/extensions/view.js"
-}

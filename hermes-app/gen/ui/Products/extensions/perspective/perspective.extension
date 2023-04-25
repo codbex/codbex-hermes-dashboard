@@ -1,5 +1,0 @@
-{
-	"description": "Products perspective",
-	"extensionPoint": "launchpad-hermes-perspective",
-	"module": "hermes-app/gen/ui/Products/extensions/perspective/perspective.js"
-}

@@ -1,5 +1,0 @@
-{
-	"description": "QuotationStatus menu",
-	"extensionPoint": "shell-hermes-app-menu",
-	"module": "hermes-app/gen/ui/Quotations/views/QuotationStatus/extensions/menu/item.js"
-}

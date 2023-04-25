@@ -1,5 +1,0 @@
-{
-	"description": "OpportunityType view",
-	"extensionPoint": "launchpad-hermes-Opportunities-view",
-	"module": "hermes-app/gen/ui/Opportunities/views/OpportunityType/extensions/view.js"
-}

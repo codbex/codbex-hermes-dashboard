@@ -1,4 +1,4 @@
-var response = require("http/v4/response");
+var response = require("http/response");
 
 // HTTP 200
 exports.sendResponseOk = function(entity) {

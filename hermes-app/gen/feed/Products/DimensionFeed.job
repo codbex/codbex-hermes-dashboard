@@ -1,5 +1,0 @@
-{
-	"expression": "0 0 0 1 * ? *",
-	"handler": "hermes-app/gen/feed/Products/DimensionFeedSynchronizer.js",
-	"description": "DimensionFeedSynchronizer Job"
-}

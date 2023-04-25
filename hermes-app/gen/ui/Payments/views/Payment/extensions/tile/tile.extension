@@ -1,5 +1,0 @@
-{
-	"description": "Payments tiles",
-	"extensionPoint": "launchpad-hermes-tiles",
-	"module": "hermes-app/gen/ui/Payments/views/Payment/extensions/tile/tile.js"
-}

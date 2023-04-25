@@ -1,5 +1,0 @@
-{
-	"description": "NoteType menu",
-	"extensionPoint": "shell-hermes-app-menu",
-	"module": "hermes-app/gen/ui/Leads/views/NoteType/extensions/menu/item.js"
-}

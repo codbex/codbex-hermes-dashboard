@@ -1,16 +1,16 @@
-var rs = require("http/v4/rs");
-var dao = require("hermes-app/gen/dao/SalesOrders/SalesOrderItem");
-var http = require("hermes-app/gen/api/utils/http");
+const rs = require("http/rs");
+const dao = require("hermes-app/gen/dao/SalesOrders/SalesOrderItem");
+const http = require("hermes-app/gen/api/utils/http");
 
 rs.service()
 	.resource("")
 		.get(function(ctx, request) {
-			var queryOptions = {};
-			var parameters = request.getParameterNames();
-			for (var i = 0; i < parameters.length; i ++) {
+			let queryOptions = {};
+			let parameters = request.getParameterNames();
+			for (let i = 0; i < parameters.length; i ++) {
 				queryOptions[parameters[i]] = request.getParameter(parameters[i]);
 			}
-			var entities = dao.list(queryOptions);
+			let entities = dao.list(queryOptions);
 			http.sendResponseOk(entities);
 		})
 		.produces(["application/json"])
@@ -23,9 +23,11 @@ rs.service()
 				http.sendInternalServerError(error.message);
 			}
         })
-	.resource("count")
+	.resource("count/{SalesOrder}")
 		.get(function(ctx, request) {
-			http.sendResponseOk(dao.count());
+			let SalesOrder = parseInt(ctx.pathParameters.SalesOrder);
+			SalesOrder = isNaN(SalesOrder) ? ctx.pathParameters.SalesOrder : SalesOrder;
+			http.sendResponseOk("" + dao.count(SalesOrder));
 		})
 		.catch(function(ctx, error) {
             if (error.name === "ForbiddenError") {
@@ -38,8 +40,8 @@ rs.service()
         })
 	.resource("{id}")
 		.get(function(ctx) {
-			var id = ctx.pathParameters.id;
-			var entity = dao.get(id);
+			let id = ctx.pathParameters.id;
+			let entity = dao.get(id);
 			if (entity) {
 			    http.sendResponseOk(entity);
 			} else {
@@ -58,9 +60,9 @@ rs.service()
         })
 	.resource("")
 		.post(function(ctx, request, response) {
-			var entity = request.getJSON();
+			let entity = request.getJSON();
 			entity.Id = dao.create(entity);
-			response.setHeader("Content-Location", "/services/v4/js/hermes-app/gen/api/SalesOrderItem.js/" + entity.Id);
+			response.setHeader("Content-Location", "/services/js/hermes-app/gen/api/SalesOrderItem.js/" + entity.Id);
 			http.sendResponseCreated(entity);
 		})
 		.produces(["application/json"])
@@ -75,7 +77,7 @@ rs.service()
         })
 	.resource("{id}")
 		.put(function(ctx, request) {
-			var entity = request.getJSON();
+			let entity = request.getJSON();
 			entity.Id = ctx.pathParameters.id;
 			dao.update(entity);
 			http.sendResponseOk(entity);
@@ -92,8 +94,8 @@ rs.service()
         })
 	.resource("{id}")
 		.delete(function(ctx) {
-			var id = ctx.pathParameters.id;
-			var entity = dao.get(id);
+			let id = ctx.pathParameters.id;
+			let entity = dao.get(id);
 			if (entity) {
 				dao.delete(id);
 				http.sendResponseNoContent();

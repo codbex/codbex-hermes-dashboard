@@ -1,5 +1,0 @@
-{
-	"description": "Products tiles",
-	"extensionPoint": "launchpad-hermes-tiles",
-	"module": "hermes-app/gen/ui/Products/views/ProductGroup/extensions/tile/tile.js"
-}

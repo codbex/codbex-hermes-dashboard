@@ -1,5 +1,0 @@
-{
-	"description": "Leads view",
-	"extensionPoint": "launchpad-hermes-Leads-view",
-	"module": "hermes-app/gen/ui/Leads/views/master/Lead/extensions/view.js"
-}

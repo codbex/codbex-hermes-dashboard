@@ -1,8 +1,8 @@
-var query = require("db/v4/query");
-var producer = require("messaging/v4/producer");
-var daoApi = require("db/v4/dao");
+const query = require("db/query");
+const producer = require("messaging/producer");
+const daoApi = require("db/dao");
 
-var dao = daoApi.create({
+let dao = daoApi.create({
 	table: "CODBEX_LEADNOTE",
 	properties: [
 		{
@@ -11,23 +11,28 @@ var dao = daoApi.create({
 			type: "INTEGER",
 			id: true,
 			autoIncrement: true,
-		}, {
+		},
+ {
 			name: "Type",
 			column: "LEADNOTE_NOTETYPEID",
 			type: "INTEGER",
-		}, {
+		},
+ {
 			name: "Lead",
 			column: "LEADNOTE_LEAD",
 			type: "INTEGER",
-		}, {
+		},
+ {
 			name: "Note",
 			column: "LEADNOTE_NOTE",
 			type: "VARCHAR",
-		}, {
+		},
+ {
 			name: "Timestamp",
 			column: "LEADNOTE_TIMESTAMP",
 			type: "TIMESTAMP",
-		}]
+		}
+]
 });
 
 exports.list = function(settings) {
@@ -39,7 +44,7 @@ exports.get = function(id) {
 };
 
 exports.create = function(entity) {
-	var id = dao.insert(entity);
+	let id = dao.insert(entity);
 	triggerEvent("Create", {
 		table: "CODBEX_LEADNOTE",
 		key: {
@@ -75,12 +80,20 @@ exports.delete = function(id) {
 	});
 };
 
-exports.count = function() {
-	return dao.count();
+exports.count = function (Lead) {
+	let resultSet = query.execute('SELECT COUNT(*) AS COUNT FROM "CODBEX_LEADNOTE" WHERE "LEADNOTE_LEAD" = ?', [Lead]);
+	if (resultSet !== null && resultSet[0] !== null) {
+		if (resultSet[0].COUNT !== undefined && resultSet[0].COUNT !== null) {
+			return resultSet[0].COUNT;
+		} else if (resultSet[0].count !== undefined && resultSet[0].count !== null) {
+			return resultSet[0].count;
+		}
+	}
+	return 0;
 };
 
 exports.customDataCount = function() {
-	var resultSet = query.execute("SELECT COUNT(*) AS COUNT FROM CODBEX_LEADNOTE");
+	let resultSet = query.execute('SELECT COUNT(*) AS COUNT FROM "CODBEX_LEADNOTE"');
 	if (resultSet !== null && resultSet[0] !== null) {
 		if (resultSet[0].COUNT !== undefined && resultSet[0].COUNT !== null) {
 			return resultSet[0].COUNT;

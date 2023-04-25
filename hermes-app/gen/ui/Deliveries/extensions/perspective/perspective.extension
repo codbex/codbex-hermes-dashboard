@@ -1,5 +1,0 @@
-{
-	"description": "Deliveries perspective",
-	"extensionPoint": "launchpad-hermes-perspective",
-	"module": "hermes-app/gen/ui/Deliveries/extensions/perspective/perspective.js"
-}

@@ -1,5 +1,0 @@
-{
-	"description": "Quotations tiles",
-	"extensionPoint": "launchpad-hermes-tiles",
-	"module": "hermes-app/gen/ui/Quotations/views/QuotationStatus/extensions/tile/tile.js"
-}

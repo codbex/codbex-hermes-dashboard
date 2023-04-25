@@ -1,5 +1,0 @@
-{
-	"description": "Organisation view",
-	"extensionPoint": "launchpad-hermes-Employees-view",
-	"module": "hermes-app/gen/ui/Employees/views/Organisation/extensions/view.js"
-}

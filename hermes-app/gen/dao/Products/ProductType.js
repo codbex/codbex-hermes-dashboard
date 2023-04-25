@@ -1,8 +1,8 @@
-var query = require("db/v4/query");
-var producer = require("messaging/v4/producer");
-var daoApi = require("db/v4/dao");
+const query = require("db/query");
+const producer = require("messaging/producer");
+const daoApi = require("db/dao");
 
-var dao = daoApi.create({
+let dao = daoApi.create({
 	table: "CODBEX_PRODUCTTYPE",
 	properties: [
 		{
@@ -11,11 +11,13 @@ var dao = daoApi.create({
 			type: "INTEGER",
 			id: true,
 			autoIncrement: true,
-		}, {
+		},
+ {
 			name: "Name",
 			column: "PRODUCTTYPE_NAME",
 			type: "VARCHAR",
-		}]
+		}
+]
 });
 
 exports.list = function(settings) {
@@ -27,7 +29,7 @@ exports.get = function(id) {
 };
 
 exports.create = function(entity) {
-	var id = dao.insert(entity);
+	let id = dao.insert(entity);
 	triggerEvent("Create", {
 		table: "CODBEX_PRODUCTTYPE",
 		key: {
@@ -68,7 +70,7 @@ exports.count = function() {
 };
 
 exports.customDataCount = function() {
-	var resultSet = query.execute("SELECT COUNT(*) AS COUNT FROM CODBEX_PRODUCTTYPE");
+	let resultSet = query.execute('SELECT COUNT(*) AS COUNT FROM "CODBEX_PRODUCTTYPE"');
 	if (resultSet !== null && resultSet[0] !== null) {
 		if (resultSet[0].COUNT !== undefined && resultSet[0].COUNT !== null) {
 			return resultSet[0].COUNT;

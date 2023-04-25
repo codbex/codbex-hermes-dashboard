@@ -1,5 +1,0 @@
-{
-	"expression": "0 0 0 1 * ? *",
-	"handler": "hermes-app/gen/feed/Leads/LeadStatusFeedSynchronizer.js",
-	"description": "LeadStatusFeedSynchronizer Job"
-}

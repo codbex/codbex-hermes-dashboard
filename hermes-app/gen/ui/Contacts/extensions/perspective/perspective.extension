@@ -1,5 +1,0 @@
-{
-	"description": "Contacts perspective",
-	"extensionPoint": "launchpad-hermes-perspective",
-	"module": "hermes-app/gen/ui/Contacts/extensions/perspective/perspective.js"
-}

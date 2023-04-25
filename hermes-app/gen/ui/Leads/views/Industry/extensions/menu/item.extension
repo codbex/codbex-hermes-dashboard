@@ -1,5 +1,0 @@
-{
-	"description": "Industry menu",
-	"extensionPoint": "shell-hermes-app-menu",
-	"module": "hermes-app/gen/ui/Leads/views/Industry/extensions/menu/item.js"
-}

@@ -1,5 +1,0 @@
-{
-	"description": "Leads tiles",
-	"extensionPoint": "launchpad-hermes-tiles",
-	"module": "hermes-app/gen/ui/Leads/views/Industry/extensions/tile/tile.js"
-}

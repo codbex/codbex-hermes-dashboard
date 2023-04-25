@@ -1,5 +1,0 @@
-{
-	"description": "QuotationStatus view",
-	"extensionPoint": "launchpad-hermes-Quotations-view",
-	"module": "hermes-app/gen/ui/Quotations/views/QuotationStatus/extensions/view.js"
-}

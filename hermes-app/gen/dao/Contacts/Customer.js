@@ -1,8 +1,8 @@
-var query = require("db/v4/query");
-var producer = require("messaging/v4/producer");
-var daoApi = require("db/v4/dao");
+const query = require("db/query");
+const producer = require("messaging/producer");
+const daoApi = require("db/dao");
 
-var dao = daoApi.create({
+let dao = daoApi.create({
 	table: "CODBEX_CUSTOMER",
 	properties: [
 		{
@@ -11,47 +11,58 @@ var dao = daoApi.create({
 			type: "INTEGER",
 			id: true,
 			autoIncrement: true,
-		}, {
+		},
+ {
 			name: "Name",
 			column: "CUSTOMER_NAME",
 			type: "VARCHAR",
-		}, {
+		},
+ {
 			name: "Line1",
 			column: "CUSTOMER_LINE1",
 			type: "VARCHAR",
-		}, {
+		},
+ {
 			name: "Line2",
 			column: "CUSTOMER_LINE2",
 			type: "VARCHAR",
-		}, {
+		},
+ {
 			name: "City",
 			column: "CUSTOMER_CITY",
 			type: "VARCHAR",
-		}, {
+		},
+ {
 			name: "County",
 			column: "CUSTOMER_COUNTY",
 			type: "VARCHAR",
-		}, {
+		},
+ {
 			name: "PostalCode",
 			column: "CUSTOMER_POSTALCODE",
 			type: "VARCHAR",
-		}, {
+		},
+ {
 			name: "Email",
 			column: "CUSTOMER_EMAIL",
 			type: "VARCHAR",
-		}, {
+		},
+ {
 			name: "Phone",
 			column: "CUSTOMER_PHONE",
 			type: "VARCHAR",
-		}, {
+		},
+ {
 			name: "Fax",
 			column: "CUSTOMER_FAX",
 			type: "VARCHAR",
-		}, {
+		},
+ {
 			name: "Country",
 			column: "CUSTOMER_COUNTRY",
 			type: "INTEGER",
-		}]
+		}
+]
 });
 
 exports.list = function(settings) {
@@ -63,7 +74,7 @@ exports.get = function(id) {
 };
 
 exports.create = function(entity) {
-	var id = dao.insert(entity);
+	let id = dao.insert(entity);
 	triggerEvent("Create", {
 		table: "CODBEX_CUSTOMER",
 		key: {
@@ -104,7 +115,7 @@ exports.count = function() {
 };
 
 exports.customDataCount = function() {
-	var resultSet = query.execute("SELECT COUNT(*) AS COUNT FROM CODBEX_CUSTOMER");
+	let resultSet = query.execute('SELECT COUNT(*) AS COUNT FROM "CODBEX_CUSTOMER"');
 	if (resultSet !== null && resultSet[0] !== null) {
 		if (resultSet[0].COUNT !== undefined && resultSet[0].COUNT !== null) {
 			return resultSet[0].COUNT;

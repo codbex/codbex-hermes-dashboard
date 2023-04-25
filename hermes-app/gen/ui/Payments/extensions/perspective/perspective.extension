@@ -1,5 +1,0 @@
-{
-	"description": "Payments perspective",
-	"extensionPoint": "launchpad-hermes-perspective",
-	"module": "hermes-app/gen/ui/Payments/extensions/perspective/perspective.js"
-}

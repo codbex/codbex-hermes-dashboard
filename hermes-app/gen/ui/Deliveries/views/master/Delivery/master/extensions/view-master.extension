@@ -1,5 +1,0 @@
-{
-	"description": "Deliveries view",
-	"extensionPoint": "launchpad-hermes-Deliveries-Delivery-view",
-	"module": "hermes-app/gen/ui/Deliveries/views/master/Delivery/master/extensions/view.js"
-}

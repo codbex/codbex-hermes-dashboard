@@ -1,5 +1,0 @@
-{
-	"description": "Contacts view",
-	"extensionPoint": "launchpad-hermes-Contacts-Customer-view",
-	"module": "hermes-app/gen/ui/Contacts/views/master/Customer/master/extensions/view.js"
-}

@@ -169,8 +169,9 @@
                         "relationshipEntityPerspectiveName": "Employees"
                     }
                 ],
-                "dataCount": "SELECT COUNT(*) AS COUNT FROM CODBEX_LEAD",
-                "dataName": "CODBEX_LEAD",
+                "caption": "Manage entity Lead",
+                "dataCount": "SELECT COUNT(*) AS COUNT FROM \"${tablePrefix}_LEAD\"",
+                "dataName": "LEAD",
                 "dataQuery": "",
                 "icon": "lightbulb-o",
                 "layoutType": "MANAGE_MASTER",
@@ -403,8 +404,9 @@
                         "relationshipEntityPerspectiveName": "Products"
                     }
                 ],
-                "dataCount": "SELECT COUNT(*) AS COUNT FROM CODBEX_OPPORTUNITY",
-                "dataName": "CODBEX_OPPORTUNITY",
+                "caption": "Manage entity Opportunity",
+                "dataCount": "SELECT COUNT(*) AS COUNT FROM \"${tablePrefix}_OPPORTUNITY\"",
+                "dataName": "OPPORTUNITY",
                 "dataQuery": "",
                 "icon": "bell-o",
                 "layoutType": "MANAGE_MASTER",
@@ -452,8 +454,9 @@
                         "widgetType": "TEXTBOX"
                     }
                 ],
-                "dataCount": "SELECT COUNT(*) AS COUNT FROM CODBEX_INDUSTRY",
-                "dataName": "CODBEX_INDUSTRY",
+                "caption": "Manage entity Industry",
+                "dataCount": "SELECT COUNT(*) AS COUNT FROM \"${tablePrefix}_INDUSTRY\"",
+                "dataName": "INDUSTRY",
                 "dataQuery": "",
                 "icon": "industry",
                 "layoutType": "MANAGE",
@@ -501,8 +504,9 @@
                         "widgetType": "TEXTBOX"
                     }
                 ],
-                "dataCount": "SELECT COUNT(*) AS COUNT FROM CODBEX_OPPORTUNITYTYPE",
-                "dataName": "CODBEX_OPPORTUNITYTYPE",
+                "caption": "Manage entity OpportunityType",
+                "dataCount": "SELECT COUNT(*) AS COUNT FROM \"${tablePrefix}_OPPORTUNITYTYPE\"",
+                "dataName": "OPPORTUNITYTYPE",
                 "dataQuery": "",
                 "icon": "arrow-circle-o-right",
                 "layoutType": "MANAGE",
@@ -565,8 +569,9 @@
                         "widgetType": "TEXTBOX"
                     }
                 ],
-                "dataCount": "SELECT COUNT(*) AS COUNT FROM CODBEX_LEADSTATUS",
-                "dataName": "CODBEX_LEADSTATUS",
+                "caption": "Manage entity LeadStatus",
+                "dataCount": "SELECT COUNT(*) AS COUNT FROM \"${tablePrefix}_LEADSTATUS\"",
+                "dataName": "LEADSTATUS",
                 "dataQuery": "",
                 "icon": "asterisk",
                 "layoutType": "MANAGE",
@@ -754,8 +759,9 @@
                         "relationshipEntityPerspectiveName": "Contacts"
                     }
                 ],
-                "dataCount": "SELECT COUNT(*) AS COUNT FROM CODBEX_CUSTOMER",
-                "dataName": "CODBEX_CUSTOMER",
+                "caption": "Manage entity Customer",
+                "dataCount": "SELECT COUNT(*) AS COUNT FROM \"${tablePrefix}_CUSTOMER\"",
+                "dataName": "CUSTOMER",
                 "dataQuery": "",
                 "icon": "institution",
                 "layoutType": "MANAGE_MASTER",
@@ -1025,8 +1031,9 @@
                         "relationshipEntityPerspectiveName": "Contacts"
                     }
                 ],
-                "dataCount": "SELECT COUNT(*) AS COUNT FROM CODBEX_CONTACT",
-                "dataName": "CODBEX_CONTACT",
+                "caption": "Manage entity Contact",
+                "dataCount": "SELECT COUNT(*) AS COUNT FROM \"${tablePrefix}_CONTACT\"",
+                "dataName": "CONTACT",
                 "dataQuery": "",
                 "icon": "phone",
                 "layoutType": "MANAGE_DETAILS",
@@ -1119,8 +1126,9 @@
                         "widgetType": "TEXTBOX"
                     }
                 ],
-                "dataCount": "SELECT COUNT(*) AS COUNT FROM CODBEX_COUNTRY",
-                "dataName": "CODBEX_COUNTRY",
+                "caption": "Manage entity Country",
+                "dataCount": "SELECT COUNT(*) AS COUNT FROM \"${tablePrefix}_COUNTRY\"",
+                "dataName": "COUNTRY",
                 "dataQuery": "",
                 "icon": "globe",
                 "layoutType": "MANAGE",
@@ -1183,8 +1191,9 @@
                         "widgetType": "TEXTBOX"
                     }
                 ],
-                "dataCount": "SELECT COUNT(*) AS COUNT FROM CODBEX_OPPORTUNITYSTATUS",
-                "dataName": "CODBEX_OPPORTUNITYSTATUS",
+                "caption": "Manage entity OpportunityStatus",
+                "dataCount": "SELECT COUNT(*) AS COUNT FROM \"${tablePrefix}_OPPORTUNITYSTATUS\"",
+                "dataName": "OPPORTUNITYSTATUS",
                 "dataQuery": "",
                 "icon": "asterisk",
                 "layoutType": "MANAGE",
@@ -1289,8 +1298,9 @@
                         "widgetType": "DATE"
                     }
                 ],
-                "dataCount": "SELECT COUNT(*) AS COUNT FROM CODBEX_LEADNOTE",
-                "dataName": "CODBEX_LEADNOTE",
+                "caption": "Manage entity LeadNote",
+                "dataCount": "SELECT COUNT(*) AS COUNT FROM \"${tablePrefix}_LEADNOTE\"",
+                "dataName": "LEADNOTE",
                 "dataQuery": "",
                 "icon": "comment-o",
                 "layoutType": "MANAGE_DETAILS",
@@ -1338,10 +1348,11 @@
                         "widgetType": "TEXTBOX"
                     }
                 ],
-                "dataCount": "SELECT COUNT(*) AS COUNT FROM CODBEX_NOTETYPE",
-                "dataName": "CODBEX_NOTETYPE",
+                "caption": "Manage entity NoteType",
+                "dataCount": "SELECT COUNT(*) AS COUNT FROM \"${tablePrefix}_NOTETYPE\"",
+                "dataName": "NOTETYPE",
                 "dataQuery": "",
-                "icon": "file-o",
+                "icon": "/services/web/resources/unicons/file.svg",
                 "layoutType": "MANAGE",
                 "menuIndex": "100",
                 "menuKey": "notetype",
@@ -1497,8 +1508,9 @@
                         "relationshipEntityPerspectiveName": "Employees"
                     }
                 ],
-                "dataCount": "SELECT COUNT(*) AS COUNT FROM CODBEX_EMPLOYEE",
-                "dataName": "CODBEX_EMPLOYEE",
+                "caption": "Manage entity Employee",
+                "dataCount": "SELECT COUNT(*) AS COUNT FROM \"${tablePrefix}_EMPLOYEE\"",
+                "dataName": "EMPLOYEE",
                 "dataQuery": "",
                 "icon": "user",
                 "layoutType": "MANAGE",
@@ -1561,8 +1573,9 @@
                         "widgetType": "TEXTBOX"
                     }
                 ],
-                "dataCount": "SELECT COUNT(*) AS COUNT FROM CODBEX_ORGANISATION",
-                "dataName": "CODBEX_ORGANISATION",
+                "caption": "Manage entity Organisation",
+                "dataCount": "SELECT COUNT(*) AS COUNT FROM \"${tablePrefix}_ORGANISATION\"",
+                "dataName": "ORGANISATION",
                 "dataQuery": "",
                 "icon": "users",
                 "layoutType": "MANAGE",
@@ -1667,8 +1680,9 @@
                         "widgetType": "DATE"
                     }
                 ],
-                "dataCount": "SELECT COUNT(*) AS COUNT FROM CODBEX_OPPORTUNITYNOTE",
-                "dataName": "CODBEX_OPPORTUNITYNOTE",
+                "caption": "Manage entity OpportunityNote",
+                "dataCount": "SELECT COUNT(*) AS COUNT FROM \"${tablePrefix}_OPPORTUNITYNOTE\"",
+                "dataName": "OPPORTUNITYNOTE",
                 "dataQuery": "",
                 "icon": "comment-o",
                 "layoutType": "MANAGE_DETAILS",
@@ -1716,8 +1730,9 @@
                         "widgetType": "TEXTBOX"
                     }
                 ],
-                "dataCount": "SELECT COUNT(*) AS COUNT FROM CODBEX_OPPORTUNITYPRIORITY",
-                "dataName": "CODBEX_OPPORTUNITYPRIORITY",
+                "caption": "Manage entity OpportunityPriority",
+                "dataCount": "SELECT COUNT(*) AS COUNT FROM \"${tablePrefix}_OPPORTUNITYPRIORITY\"",
+                "dataName": "OPPORTUNITYPRIORITY",
                 "dataQuery": "",
                 "icon": "arrow-up",
                 "layoutType": "MANAGE",
@@ -1765,8 +1780,9 @@
                         "widgetType": "TEXTBOX"
                     }
                 ],
-                "dataCount": "SELECT COUNT(*) AS COUNT FROM CODBEX_OPPORTUNITYPROBABILITY",
-                "dataName": "CODBEX_OPPORTUNITYPROBABILITY",
+                "caption": "Manage entity OpportunityProbability",
+                "dataCount": "SELECT COUNT(*) AS COUNT FROM \"${tablePrefix}_OPPORTUNITYPROBABILITY\"",
+                "dataName": "OPPORTUNITYPROBABILITY",
                 "dataQuery": "",
                 "icon": "question",
                 "layoutType": "MANAGE",
@@ -1959,8 +1975,9 @@
                         "relationshipEntityPerspectiveName": "Quotations"
                     }
                 ],
-                "dataCount": "SELECT COUNT(*) AS COUNT FROM CODBEX_QUOTATION",
-                "dataName": "CODBEX_QUOTATION",
+                "caption": "Manage entity Quotation",
+                "dataCount": "SELECT COUNT(*) AS COUNT FROM \"${tablePrefix}_QUOTATION\"",
+                "dataName": "QUOTATION",
                 "dataQuery": "",
                 "icon": "file-text-o",
                 "layoutType": "MANAGE_MASTER",
@@ -2098,8 +2115,9 @@
                         "relationshipEntityPerspectiveName": "Products"
                     }
                 ],
-                "dataCount": "SELECT COUNT(*) AS COUNT FROM CODBEX_PRODUCT",
-                "dataName": "CODBEX_PRODUCT",
+                "caption": "Manage entity Product",
+                "dataCount": "SELECT COUNT(*) AS COUNT FROM \"${tablePrefix}_PRODUCT\"",
+                "dataName": "PRODUCT",
                 "dataQuery": "",
                 "icon": "cubes",
                 "layoutType": "MANAGE",
@@ -2147,8 +2165,9 @@
                         "widgetType": "TEXTBOX"
                     }
                 ],
-                "dataCount": "SELECT COUNT(*) AS COUNT FROM CODBEX_PRODUCTTYPE",
-                "dataName": "CODBEX_PRODUCTTYPE",
+                "caption": "Manage entity ProductType",
+                "dataCount": "SELECT COUNT(*) AS COUNT FROM \"${tablePrefix}_PRODUCTTYPE\"",
+                "dataName": "PRODUCTTYPE",
                 "dataQuery": "",
                 "icon": "cube",
                 "layoutType": "MANAGE",
@@ -2211,8 +2230,9 @@
                         "widgetType": "TEXTBOX"
                     }
                 ],
-                "dataCount": "SELECT COUNT(*) AS COUNT FROM CODBEX_PRODUCTGROUP",
-                "dataName": "CODBEX_PRODUCTGROUP",
+                "caption": "Manage entity ProductGroup",
+                "dataCount": "SELECT COUNT(*) AS COUNT FROM \"${tablePrefix}_PRODUCTGROUP\"",
+                "dataName": "PRODUCTGROUP",
                 "dataQuery": "",
                 "icon": "folder-o",
                 "layoutType": "MANAGE",
@@ -2275,8 +2295,9 @@
                         "widgetType": "TEXTBOX"
                     }
                 ],
-                "dataCount": "SELECT COUNT(*) AS COUNT FROM CODBEX_DIMENSION",
-                "dataName": "CODBEX_DIMENSION",
+                "caption": "Manage entity Dimension",
+                "dataCount": "SELECT COUNT(*) AS COUNT FROM \"${tablePrefix}_DIMENSION\"",
+                "dataName": "DIMENSION",
                 "dataQuery": "",
                 "icon": "arrows",
                 "layoutType": "MANAGE",
@@ -2404,8 +2425,9 @@
                         "widgetType": "NUMBER"
                     }
                 ],
-                "dataCount": "SELECT COUNT(*) AS COUNT FROM CODBEX_UOM",
-                "dataName": "CODBEX_UOM",
+                "caption": "Manage entity UoM",
+                "dataCount": "SELECT COUNT(*) AS COUNT FROM \"${tablePrefix}_UOM\"",
+                "dataName": "UOM",
                 "dataQuery": "",
                 "icon": "balance-scale",
                 "layoutType": "MANAGE",
@@ -2565,16 +2587,17 @@
                         "relationshipEntityPerspectiveName": "Products"
                     }
                 ],
-                "dataCount": "SELECT COUNT(*) AS COUNT FROM CODBEX_QUOTATIONITEM",
-                "dataName": "CODBEX_QUOTATIONITEM",
+                "caption": "Manage entity QuotationItem",
+                "dataCount": "SELECT COUNT(*) AS COUNT FROM \"${tablePrefix}_QUOTATIONITEM\"",
+                "dataName": "QUOTATIONITEM",
                 "dataQuery": "",
-                "icon": "file-o",
+                "icon": "/services/web/resources/unicons/file.svg",
                 "layoutType": "MANAGE_DETAILS",
                 "menuIndex": "100",
                 "menuKey": "quotationitem",
                 "menuLabel": "QuotationItem",
                 "name": "QuotationItem",
-                "perspectiveIcon": "files-o",
+                "perspectiveIcon": "/services/web/resources/unicons/copy.svg",
                 "perspectiveName": "Quotations",
                 "perspectiveOrder": "300",
                 "title": "QuotationItem",
@@ -2659,8 +2682,9 @@
                         "widgetType": "CHECKBOX"
                     }
                 ],
-                "dataCount": "SELECT COUNT(*) AS COUNT FROM CODBEX_CURRENCY",
-                "dataName": "CODBEX_CURRENCY",
+                "caption": "Manage entity Currency",
+                "dataCount": "SELECT COUNT(*) AS COUNT FROM \"${tablePrefix}_CURRENCY\"",
+                "dataName": "CURRENCY",
                 "dataQuery": "",
                 "icon": "dollar",
                 "layoutType": "MANAGE",
@@ -2833,8 +2857,9 @@
                         "relationshipEntityPerspectiveName": "Quotations"
                     }
                 ],
-                "dataCount": "SELECT COUNT(*) AS COUNT FROM CODBEX_SALESORDER",
-                "dataName": "CODBEX_SALESORDER",
+                "caption": "Manage entity SalesOrder",
+                "dataCount": "SELECT COUNT(*) AS COUNT FROM \"${tablePrefix}_SALESORDER\"",
+                "dataName": "SALESORDER",
                 "dataQuery": "",
                 "icon": "file-text",
                 "layoutType": "MANAGE_MASTER",
@@ -3009,8 +3034,9 @@
                         "widgetType": "TEXTBOX"
                     }
                 ],
-                "dataCount": "SELECT COUNT(*) AS COUNT FROM CODBEX_SALESORDERITEM",
-                "dataName": "CODBEX_SALESORDERITEM",
+                "caption": "Manage entity SalesOrderItem",
+                "dataCount": "SELECT COUNT(*) AS COUNT FROM \"${tablePrefix}_SALESORDERITEM\"",
+                "dataName": "SALESORDERITEM",
                 "dataQuery": "",
                 "icon": "file",
                 "layoutType": "MANAGE_DETAILS",
@@ -3113,8 +3139,9 @@
                         "relationshipEntityPerspectiveName": "Deliveries"
                     }
                 ],
-                "dataCount": "SELECT COUNT(*) AS COUNT FROM CODBEX_DELIVERY",
-                "dataName": "CODBEX_DELIVERY",
+                "caption": "Manage entity Delivery",
+                "dataCount": "SELECT COUNT(*) AS COUNT FROM \"${tablePrefix}_DELIVERY\"",
+                "dataName": "DELIVERY",
                 "dataQuery": "",
                 "icon": "truck",
                 "layoutType": "MANAGE_MASTER",
@@ -3195,8 +3222,9 @@
                         "widgetType": "TEXTAREA"
                     }
                 ],
-                "dataCount": "SELECT COUNT(*) AS COUNT FROM CODBEX_DELIVERYEVENT",
-                "dataName": "CODBEX_DELIVERYEVENT",
+                "caption": "Manage entity DeliveryEvent",
+                "dataCount": "SELECT COUNT(*) AS COUNT FROM \"${tablePrefix}_DELIVERYEVENT\"",
+                "dataName": "DELIVERYEVENT",
                 "dataQuery": "",
                 "icon": "envelope",
                 "layoutType": "MANAGE_DETAILS",
@@ -3369,16 +3397,17 @@
                         "relationshipEntityPerspectiveName": "Products"
                     }
                 ],
-                "dataCount": "SELECT COUNT(*) AS COUNT FROM CODBEX_SALESINVOICE",
-                "dataName": "CODBEX_SALESINVOICE",
+                "caption": "Manage entity SalesInvoice",
+                "dataCount": "SELECT COUNT(*) AS COUNT FROM \"${tablePrefix}_SALESINVOICE\"",
+                "dataName": "SALESINVOICE",
                 "dataQuery": "",
-                "icon": "file-o",
+                "icon": "/services/web/resources/unicons/file.svg",
                 "layoutType": "MANAGE_MASTER",
                 "menuIndex": "100",
                 "menuKey": "salesinvoice",
                 "menuLabel": "SalesInvoice",
                 "name": "SalesInvoice",
-                "perspectiveIcon": "files-o",
+                "perspectiveIcon": "/services/web/resources/unicons/copy.svg",
                 "perspectiveName": "SalesInvoices",
                 "perspectiveOrder": "500",
                 "title": "SalesInvoice",
@@ -3530,8 +3559,9 @@
                         "relationshipEntityPerspectiveName": "Products"
                     }
                 ],
-                "dataCount": "SELECT COUNT(*) AS COUNT FROM CODBEX_SALESINVOICEITEM",
-                "dataName": "CODBEX_SALESINVOICEITEM",
+                "caption": "Manage entity SalesInvoiceItem",
+                "dataCount": "SELECT COUNT(*) AS COUNT FROM \"${tablePrefix}_SALESINVOICEITEM\"",
+                "dataName": "SALESINVOICEITEM",
                 "dataQuery": "",
                 "icon": "arrow-circle-o-left",
                 "layoutType": "MANAGE_DETAILS",
@@ -3539,7 +3569,7 @@
                 "menuKey": "salesinvoiceitem",
                 "menuLabel": "SalesInvoiceItem",
                 "name": "SalesInvoiceItem",
-                "perspectiveIcon": "files-o",
+                "perspectiveIcon": "/services/web/resources/unicons/copy.svg",
                 "perspectiveName": "SalesInvoices",
                 "perspectiveOrder": "500",
                 "title": "SalesInvoiceItem",
@@ -3649,8 +3679,9 @@
                         "relationshipEntityPerspectiveName": "Contacts"
                     }
                 ],
-                "dataCount": "SELECT COUNT(*) AS COUNT FROM CODBEX_PAYMENT",
-                "dataName": "CODBEX_PAYMENT",
+                "caption": "Manage entity Payment",
+                "dataCount": "SELECT COUNT(*) AS COUNT FROM \"${tablePrefix}_PAYMENT\"",
+                "dataName": "PAYMENT",
                 "dataQuery": "",
                 "icon": "dollar",
                 "layoutType": "MANAGE_MASTER",
@@ -3713,8 +3744,9 @@
                         "widgetType": "TEXTBOX"
                     }
                 ],
-                "dataCount": "SELECT COUNT(*) AS COUNT FROM CODBEX_DELIVERYSTATUS",
-                "dataName": "CODBEX_DELIVERYSTATUS",
+                "caption": "Manage entity DeliveryStatus",
+                "dataCount": "SELECT COUNT(*) AS COUNT FROM \"${tablePrefix}_DELIVERYSTATUS\"",
+                "dataName": "DELIVERYSTATUS",
                 "dataQuery": "",
                 "icon": "asterisk",
                 "layoutType": "MANAGE",
@@ -3789,8 +3821,9 @@
                         "relationshipEntityPerspectiveName": "SalesInvoices"
                     }
                 ],
-                "dataCount": "SELECT COUNT(*) AS COUNT FROM CODBEX_PAYMENTSALESINVOICE",
-                "dataName": "CODBEX_PAYMENTSALESINVOICE",
+                "caption": "Manage entity PaymentSalesInvoice",
+                "dataCount": "SELECT COUNT(*) AS COUNT FROM \"${tablePrefix}_PAYMENTSALESINVOICE\"",
+                "dataName": "PAYMENTSALESINVOICE",
                 "dataQuery": "",
                 "icon": "arrows-h",
                 "layoutType": "MANAGE_DETAILS",
@@ -3853,8 +3886,9 @@
                         "widgetType": "TEXTBOX"
                     }
                 ],
-                "dataCount": "SELECT COUNT(*) AS COUNT FROM CODBEX_QUOTATIONSTATUS",
-                "dataName": "CODBEX_QUOTATIONSTATUS",
+                "caption": "Manage entity QuotationStatus",
+                "dataCount": "SELECT COUNT(*) AS COUNT FROM \"${tablePrefix}_QUOTATIONSTATUS\"",
+                "dataName": "QUOTATIONSTATUS",
                 "dataQuery": "",
                 "icon": "file-text-o",
                 "layoutType": "MANAGE",

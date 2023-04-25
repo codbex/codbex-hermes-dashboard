@@ -1,5 +1,0 @@
-{
-	"description": "Opportunities tiles",
-	"extensionPoint": "launchpad-hermes-tiles",
-	"module": "hermes-app/gen/ui/Opportunities/views/OpportunityType/extensions/tile/tile.js"
-}

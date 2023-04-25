@@ -1,5 +1,0 @@
-{
-	"description": "UoM view",
-	"extensionPoint": "launchpad-hermes-Products-view",
-	"module": "hermes-app/gen/ui/Products/views/UoM/extensions/view.js"
-}

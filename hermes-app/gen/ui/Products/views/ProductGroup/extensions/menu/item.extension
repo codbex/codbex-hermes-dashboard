@@ -1,5 +1,0 @@
-{
-	"description": "ProductGroup menu",
-	"extensionPoint": "shell-hermes-app-menu",
-	"module": "hermes-app/gen/ui/Products/views/ProductGroup/extensions/menu/item.js"
-}

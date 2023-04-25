@@ -1,8 +1,8 @@
-var query = require("db/v4/query");
-var producer = require("messaging/v4/producer");
-var daoApi = require("db/v4/dao");
+const query = require("db/query");
+const producer = require("messaging/producer");
+const daoApi = require("db/dao");
 
-var dao = daoApi.create({
+let dao = daoApi.create({
 	table: "CODBEX_QUOTATIONITEM",
 	properties: [
 		{
@@ -11,35 +11,43 @@ var dao = daoApi.create({
 			type: "INTEGER",
 			id: true,
 			autoIncrement: true,
-		}, {
+		},
+ {
 			name: "Quotation",
 			column: "QUOTATIONITEM_QUOTATION",
 			type: "INTEGER",
-		}, {
+		},
+ {
 			name: "Product",
 			column: "QUOTATIONITEM_PRODUCT",
 			type: "INTEGER",
-		}, {
+		},
+ {
 			name: "UoM",
 			column: "QUOTATIONITEM_UOM",
 			type: "INTEGER",
-		}, {
+		},
+ {
 			name: "Quantity",
 			column: "QUOTATIONITEM_QUANTITY",
 			type: "DOUBLE",
-		}, {
+		},
+ {
 			name: "Price",
 			column: "QUOTATIONITEM_PRICE",
 			type: "DOUBLE",
-		}, {
+		},
+ {
 			name: "Total",
 			column: "QUOTATIONITEM_TOTAL",
 			type: "DOUBLE",
-		}, {
+		},
+ {
 			name: "Currency",
 			column: "QUOTATIONITEM_CURRENCY",
 			type: "CHAR",
-		}]
+		}
+]
 });
 
 exports.list = function(settings) {
@@ -52,7 +60,7 @@ exports.get = function(id) {
 
 exports.create = function(entity) {
 	entity["Total"] = entity["Quantity"] * entity["Price"];
-	var id = dao.insert(entity);
+	let id = dao.insert(entity);
 	triggerEvent("Create", {
 		table: "CODBEX_QUOTATIONITEM",
 		key: {
@@ -89,12 +97,20 @@ exports.delete = function(id) {
 	});
 };
 
-exports.count = function() {
-	return dao.count();
+exports.count = function (Quotation) {
+	let resultSet = query.execute('SELECT COUNT(*) AS COUNT FROM "CODBEX_QUOTATIONITEM" WHERE "QUOTATIONITEM_QUOTATION" = ?', [Quotation]);
+	if (resultSet !== null && resultSet[0] !== null) {
+		if (resultSet[0].COUNT !== undefined && resultSet[0].COUNT !== null) {
+			return resultSet[0].COUNT;
+		} else if (resultSet[0].count !== undefined && resultSet[0].count !== null) {
+			return resultSet[0].count;
+		}
+	}
+	return 0;
 };
 
 exports.customDataCount = function() {
-	var resultSet = query.execute("SELECT COUNT(*) AS COUNT FROM CODBEX_QUOTATIONITEM");
+	let resultSet = query.execute('SELECT COUNT(*) AS COUNT FROM "CODBEX_QUOTATIONITEM"');
 	if (resultSet !== null && resultSet[0] !== null) {
 		if (resultSet[0].COUNT !== undefined && resultSet[0].COUNT !== null) {
 			return resultSet[0].COUNT;

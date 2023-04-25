@@ -1,5 +1,0 @@
-{
-	"description": "Employees tiles",
-	"extensionPoint": "launchpad-hermes-tiles",
-	"module": "hermes-app/gen/ui/Employees/views/Employee/extensions/tile/tile.js"
-}

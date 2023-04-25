@@ -1,9 +1,9 @@
-var query = require("db/v4/query");
-var producer = require("messaging/v4/producer");
-var daoApi = require("db/v4/dao");
-var EntityUtils = require("hermes-app/gen/dao/utils/EntityUtils");
+const query = require("db/query");
+const producer = require("messaging/producer");
+const daoApi = require("db/dao");
+const EntityUtils = require("hermes-app/gen/dao/utils/EntityUtils");
 
-var dao = daoApi.create({
+let dao = daoApi.create({
 	table: "CODBEX_DELIVERY",
 	properties: [
 		{
@@ -12,41 +12,46 @@ var dao = daoApi.create({
 			type: "INTEGER",
 			id: true,
 			autoIncrement: true,
-		}, {
+		},
+ {
 			name: "Initiated",
 			column: "DELIVERY_INITIATED",
 			type: "TIMESTAMP",
-		}, {
+		},
+ {
 			name: "ETA",
 			column: "DELIVERY_ETA",
 			type: "DATE",
-		}, {
+		},
+ {
 			name: "SalesOrderItem",
 			column: "DELIVERY_SALESORDERITEM",
 			type: "INTEGER",
-		}, {
+		},
+ {
 			name: "DeliveryStatus",
 			column: "DELIVERY_DELIVERYSTATUS",
 			type: "INTEGER",
-		}]
+		}
+]
 });
 
 exports.list = function(settings) {
 	return dao.list(settings).map(function(e) {
-		EntityUtils.setLocalDate(e, "ETA");
+		EntityUtils.setDate(e, "ETA");
 		return e;
 	});
 };
 
 exports.get = function(id) {
-	var entity = dao.find(id);
-	EntityUtils.setLocalDate(entity, "ETA");
+	let entity = dao.find(id);
+	EntityUtils.setDate(entity, "ETA");
 	return entity;
 };
 
 exports.create = function(entity) {
 	EntityUtils.setLocalDate(entity, "ETA");
-	var id = dao.insert(entity);
+	let id = dao.insert(entity);
 	triggerEvent("Create", {
 		table: "CODBEX_DELIVERY",
 		key: {
@@ -59,7 +64,7 @@ exports.create = function(entity) {
 };
 
 exports.update = function(entity) {
-	EntityUtils.setLocalDate(entity, "ETA");
+	// EntityUtils.setLocalDate(entity, "ETA");
 	dao.update(entity);
 	triggerEvent("Update", {
 		table: "CODBEX_DELIVERY",
@@ -88,7 +93,7 @@ exports.count = function() {
 };
 
 exports.customDataCount = function() {
-	var resultSet = query.execute("SELECT COUNT(*) AS COUNT FROM CODBEX_DELIVERY");
+	let resultSet = query.execute('SELECT COUNT(*) AS COUNT FROM "CODBEX_DELIVERY"');
 	if (resultSet !== null && resultSet[0] !== null) {
 		if (resultSet[0].COUNT !== undefined && resultSet[0].COUNT !== null) {
 			return resultSet[0].COUNT;

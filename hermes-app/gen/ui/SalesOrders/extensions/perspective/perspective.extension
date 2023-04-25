@@ -1,5 +1,0 @@
-{
-	"description": "SalesOrders perspective",
-	"extensionPoint": "launchpad-hermes-perspective",
-	"module": "hermes-app/gen/ui/SalesOrders/extensions/perspective/perspective.js"
-}
