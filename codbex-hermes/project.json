@@ -1,0 +1,46 @@
+{
+    "guid": "codbex-hermes",
+    "repository": {
+        "type": "git",
+        "branch": "main",
+        "url": "https://github.com/codbex/codbex-hermes.git"
+    },
+    "dependencies": [
+        {
+            "guid": "codbex-products",
+            "type": "git",
+            "url": "https://github.com/codbex/codbex-products.git",
+            "branch": "main"
+        },
+        {
+            "guid": "codbex-partners",
+            "type": "git",
+            "url": "https://github.com/codbex/codbex-partners.git",
+            "branch": "main"
+        },
+        {
+            "guid": "codbex-employees",
+            "type": "git",
+            "url": "https://github.com/codbex/codbex-employees.git",
+            "branch": "main"
+        },
+        {
+            "guid": "codbex-currencies",
+            "type": "git",
+            "url": "https://github.com/codbex/codbex-currencies.git",
+            "branch": "main"
+        },
+        {
+            "guid": "codbex-uoms",
+            "type": "git",
+            "url": "https://github.com/codbex/codbex-uoms.git",
+            "branch": "main"
+        },
+        {
+            "guid": "codbex-industries",
+            "type": "git",
+            "url": "https://github.com/codbex/codbex-industries.git",
+            "branch": "main"
+        }
+    ]
+}

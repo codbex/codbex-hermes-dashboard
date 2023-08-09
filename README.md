@@ -8,8 +8,6 @@ Customer Relationship Management
 
 ## Application
 
-![model](images/hermes-app.png)
-
 ## Build
 
 	docker build -t codbex-hermes:1.0.0 .
