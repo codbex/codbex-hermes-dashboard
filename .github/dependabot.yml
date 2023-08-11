@@ -6,10 +6,12 @@
 version: 2
 
 updates:
-  - package-ecosystem: maven
+  - package-ecosystem: docker
     directory: "/"
     schedule:
       interval: daily
     open-pull-requests-limit: 10
+    commit-message:
+      prefix: "[Docker] "
     labels:
       - dependencies
