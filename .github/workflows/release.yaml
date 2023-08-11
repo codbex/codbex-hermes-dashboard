@@ -17,7 +17,7 @@ jobs:
       application-name: codbex-hermes
       release-version: ${{ inputs.release-version }}
       release-content: |
-        ## codbex-hermes - ${{ github.event.inputs.release-version }}
+        ## codbex-hermes - ${{ inputs.release-version }}
   
         Customer Relationship Management
   
