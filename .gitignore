@@ -6,6 +6,8 @@ dist/
 target/
 dirigible_local/
 bin/
+.history/
+.vscode/
 
 .editorconfig
 .gitattributes
