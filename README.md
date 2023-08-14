@@ -24,16 +24,17 @@ Customer Relationship Management
 
 #### Launchpad
 
-![image](https://github.com/Mrgoblings/codbex-hermes/assets/80454439/8b74d2fb-388f-41f2-8454-1fce17c081b2)
+![image](https://github.com/Mrgoblings/codbex-hermes/assets/80454439/547df856-a9b2-4586-9a0c-4f454e995b42)
 
 #### Management
 
-![image](https://github.com/Mrgoblings/codbex-hermes/assets/80454439/fd85544e-6f53-469d-b304-1833b6280c74)
+![image](https://github.com/Mrgoblings/codbex-hermes/assets/80454439/b8deb4db-ea4b-4238-ac01-58fd0f4f8619)
 
-![image](https://github.com/Mrgoblings/codbex-hermes/assets/80454439/aefbd11c-cd84-472e-886d-7efff856cd37)
+![image](https://github.com/Mrgoblings/codbex-hermes/assets/80454439/eb101c8f-c1cb-4fc7-a6d3-5bf00a8a13b7)
 
-![image](https://github.com/Mrgoblings/codbex-hermes/assets/80454439/d8baf919-75d8-4367-89cb-376b16142b5d)
+![image](https://github.com/Mrgoblings/codbex-hermes/assets/80454439/b817e9f4-2642-454d-8271-4e8d90ec4f87)
 
-![image](https://github.com/Mrgoblings/codbex-hermes/assets/80454439/1f2377f7-a175-4bce-a20f-edcf5bbe4d09)
+![image](https://github.com/Mrgoblings/codbex-hermes/assets/80454439/a3d02ac5-37e8-4dfb-a107-4ab5cdbbe006)
 
-![image](https://github.com/Mrgoblings/codbex-hermes/assets/80454439/be84cc0d-b48e-44a2-bc05-6b4f9433fc61)
+![image](https://github.com/Mrgoblings/codbex-hermes/assets/80454439/86a91aa8-3d72-47d5-b0fa-b7638cfa8c97)
+
