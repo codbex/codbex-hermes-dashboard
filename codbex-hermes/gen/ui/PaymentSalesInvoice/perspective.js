@@ -7,8 +7,8 @@ const perspectiveData = {
 	id: "PaymentSalesInvoice",
 	name: "PaymentSalesInvoice",
 	link: "/services/web/codbex-hermes/gen/ui/PaymentSalesInvoice/index.html",
-	order: "130",
-	icon: "/services/web/resources/unicons/arrow-resize-diagonal.svg",
+	order: "100",
+	icon: "/services/web/resources/unicons/copy.svg",
 };
 
 if (typeof exports !== 'undefined') {

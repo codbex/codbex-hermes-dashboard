@@ -1,7 +1,7 @@
 {
   "tablePrefix": "CODBEX",
   "brand": "codbex",
-  "brandUrl": "htpps://www.codbex.com",
+  "brandUrl": "https://www.codbex.com",
   "title": "Codbex Hermes",
   "description": "Customer Relationship Management",
   "projectName": "codbex-hermes",
@@ -95,8 +95,8 @@
       ],
       "name": "PaymentSalesInvoice",
       "label": "PaymentSalesInvoice",
-      "order": "130",
-      "icon": "/services/web/resources/unicons/arrow-resize-diagonal.svg"
+      "order": "100",
+      "icon": "/services/web/resources/unicons/copy.svg"
     },
     "Sales Invoice": {
       "views": [
@@ -3814,9 +3814,9 @@
       "menuLabel": "PaymentSalesInvoice",
       "name": "PaymentSalesInvoice",
       "navigationPath": "/Home",
-      "perspectiveIcon": "/services/web/resources/unicons/arrow-resize-diagonal.svg",
+      "perspectiveIcon": "/services/web/resources/unicons/copy.svg",
       "perspectiveName": "PaymentSalesInvoice",
-      "perspectiveOrder": "130",
+      "perspectiveOrder": "100",
       "title": "PaymentSalesInvoice",
       "tooltip": "PaymentSalesInvoice",
       "type": "PRIMARY",

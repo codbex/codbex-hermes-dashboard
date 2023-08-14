@@ -12,6 +12,6 @@ exports.getTile = function () {
         // icon: "file-o",
         location: "/services/web/codbex-hermes/gen/ui/PaymentSalesInvoice/index.html",
         order: "100",
-        groupOrder: "130"
+        groupOrder: "100"
     };
 };

@@ -3048,9 +3048,9 @@
                 "menuLabel": "PaymentSalesInvoice",
                 "name": "PaymentSalesInvoice",
                 "navigationPath": "/Home",
-                "perspectiveIcon": "/services/web/resources/unicons/arrow-resize-diagonal.svg",
+                "perspectiveIcon": "/services/web/resources/unicons/copy.svg",
                 "perspectiveName": "PaymentSalesInvoice",
-                "perspectiveOrder": "130",
+                "perspectiveOrder": "100",
                 "title": "PaymentSalesInvoice",
                 "tooltip": "PaymentSalesInvoice",
                 "type": "PRIMARY"
@@ -3471,12 +3471,6 @@
                 "label": "Payment",
                 "icon": "/services/web/resources/unicons/dollar-alt.svg",
                 "order": "100"
-            },
-            {
-                "name": "PaymentSalesInvoice",
-                "label": "Payment Sales Invoice",
-                "icon": "/services/web/resources/unicons/arrow-resize-diagonal.svg",
-                "order": "130"
             },
             {
                 "name": "SalesOrder",
