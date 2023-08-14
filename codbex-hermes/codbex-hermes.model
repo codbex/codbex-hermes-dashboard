@@ -3425,12 +3425,6 @@
         ],
         "perspectives": [
             {
-                "name": "SalesInvoice",
-                "label": "Sales Invoice",
-                "icon": "/services/web/resources/unicons/envelope-receive.svg",
-                "order": "100"
-            },
-            {
                 "name": "Lead",
                 "label": "Lead",
                 "icon": "/services/web/resources/unicons/layers.svg",

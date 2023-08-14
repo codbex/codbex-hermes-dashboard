@@ -307,7 +307,6 @@
   </relation>
  </entities>
  <perspectives>
-  <perspective><name>SalesInvoice</name><label>Sales Invoice</label><icon>/services/web/resources/unicons/envelope-receive.svg</icon><order>100</order></perspective>
   <perspective><name>Lead</name><label>Lead</label><icon>/services/web/resources/unicons/layers.svg</icon><order>100</order></perspective>
   <perspective><name>Opportunity</name><label>Opportunity</label><icon>/services/web/resources/unicons/octagon.svg</icon><order>100</order></perspective>
   <perspective><name>Question</name><label>Question</label><icon>/services/web/resources/unicons/sign-alt.svg</icon><order>100</order></perspective>
