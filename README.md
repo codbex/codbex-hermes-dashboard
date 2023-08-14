@@ -37,5 +37,3 @@ Customer Relationship Management
 ![image](https://github.com/Mrgoblings/codbex-hermes/assets/80454439/1f2377f7-a175-4bce-a20f-edcf5bbe4d09)
 
 ![image](https://github.com/Mrgoblings/codbex-hermes/assets/80454439/be84cc0d-b48e-44a2-bc05-6b4f9433fc61)
-
-![image](https://github.com/Mrgoblings/codbex-hermes/assets/80454439/989db021-1c61-4e58-8c9d-102b303d90ed)
