@@ -118,7 +118,7 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 		$scope.optionsLead = [];
 		$scope.optionsNoteType = [];
 
-		$http.get("/services/js/codbex-hermes/gen/api/entities/Lead.js").then(function (response) {
+		$http.get("/services/js/codbex-hermes/gen/api/Lead/Lead.js").then(function (response) {
 			$scope.optionsLead = response.data.map(e => {
 				return {
 					value: e.Id,

@@ -126,7 +126,7 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 		$scope.optionsCustomer = [];
 		$scope.optionsCurrencyCode = [];
 
-		$http.get("/services/js/codbex-hermes/gen/api/entities/Quotation.js").then(function (response) {
+		$http.get("/services/js/codbex-hermes/gen/api/Question/Quotation.js").then(function (response) {
 			$scope.optionsQuotation = response.data.map(e => {
 				return {
 					value: e.Id,
