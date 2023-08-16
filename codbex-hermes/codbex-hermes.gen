@@ -1,7 +1,7 @@
 {
   "tablePrefix": "CODBEX",
   "brand": "codbex",
-  "brandUrl": "https://www.codbex.com/",
+  "brandUrl": "https://www.codbex.com",
   "title": "Codbex Hermes",
   "description": "Customer Relationship Management",
   "projectName": "codbex-hermes",
@@ -15,34 +15,106 @@
         "Product",
         "Currency",
         "Industry",
-        "Lead",
         "LeadStatus",
         "LeadNote",
         "NoteType",
-        "Opportunity",
         "OpportunityType",
         "OpportunityStatus",
         "OpportunityPriority",
         "Partner",
         "OpportunityProbability",
         "OpportunityNote",
-        "Quotation",
         "QuotationStatus",
-        "QuotationItem",
         "SalesOrder",
-        "SalesOrderItem",
-        "Delivery",
         "DeliveryStatus",
         "DeliveryEvent",
-        "Payment",
-        "PaymentSalesInvoice",
-        "SalesInvoice",
-        "SalesInvoiceItem"
+        "Payment"
       ],
       "name": "entities",
       "label": "entities",
       "order": "100",
       "icon": "/services/web/resources/unicons/copy.svg"
+    },
+    "Lead": {
+      "views": [
+        "Lead"
+      ],
+      "name": "Lead",
+      "label": "Lead",
+      "order": "100",
+      "icon": "/services/web/resources/unicons/layers.svg"
+    },
+    "Opportunity": {
+      "views": [
+        "Opportunity"
+      ],
+      "name": "Opportunity",
+      "label": "Opportunity",
+      "order": "100",
+      "icon": "/services/web/resources/unicons/octagon.svg"
+    },
+    "Question": {
+      "views": [
+        "Quotation"
+      ],
+      "name": "Question",
+      "label": "Question",
+      "order": "100",
+      "icon": "/services/web/resources/unicons/sign-alt.svg"
+    },
+    "QuestinItem": {
+      "views": [
+        "QuotationItem"
+      ],
+      "name": "QuestinItem",
+      "label": "QuestinItem",
+      "order": "100",
+      "icon": "/services/web/resources/unicons/copy.svg"
+    },
+    "SalesOrderItem": {
+      "views": [
+        "SalesOrderItem"
+      ],
+      "name": "SalesOrderItem",
+      "label": "SalesOrderItem",
+      "order": "110",
+      "icon": "/services/web/resources/unicons/cloud-bookmark.svg"
+    },
+    "Delivery": {
+      "views": [
+        "Delivery"
+      ],
+      "name": "Delivery",
+      "label": "Delivery",
+      "order": "100",
+      "icon": "/services/web/resources/unicons/car-sideview.svg"
+    },
+    "PaymentSalesInvoice": {
+      "views": [
+        "PaymentSalesInvoice"
+      ],
+      "name": "PaymentSalesInvoice",
+      "label": "PaymentSalesInvoice",
+      "order": "100",
+      "icon": "/services/web/resources/unicons/copy.svg"
+    },
+    "Sales Invoice": {
+      "views": [
+        "SalesInvoice"
+      ],
+      "name": "Sales Invoice",
+      "label": "Sales Invoice",
+      "order": "100",
+      "icon": "/services/web/resources/unicons/copy.svg"
+    },
+    "SalesInvoceItem": {
+      "views": [
+        "SalesInvoiceItem"
+      ],
+      "name": "SalesInvoceItem",
+      "label": "SalesInvoceItem",
+      "order": "110",
+      "icon": "/services/web/resources/unicons/dollar-sign-alt.svg"
     }
   },
   "models": [
@@ -956,6 +1028,8 @@
       "dataCount": "SELECT COUNT(*) AS COUNT FROM \"CODBEX_ENTITY7\"",
       "dataName": "LEAD",
       "dataQuery": "",
+      "feedPassword": "YWRtaW4=",
+      "feedUsername": "YWRtaW4=",
       "icon": "/services/web/resources/unicons/file.svg",
       "layoutType": "MANAGE",
       "menuIndex": "100",
@@ -963,8 +1037,8 @@
       "menuLabel": "Lead",
       "name": "Lead",
       "navigationPath": "/Home",
-      "perspectiveIcon": "/services/web/resources/unicons/copy.svg",
-      "perspectiveName": "entities",
+      "perspectiveIcon": "/services/web/resources/unicons/layers.svg",
+      "perspectiveName": "Lead",
       "perspectiveOrder": "100",
       "title": "Lead",
       "tooltip": "Lead",
@@ -1100,7 +1174,7 @@
           "widgetType": "DROPDOWN",
           "relationshipName": "LeadNote_Lead",
           "relationshipEntityName": "Lead",
-          "relationshipEntityPerspectiveName": "entities",
+          "relationshipEntityPerspectiveName": "Lead",
           "dataNotNull": false,
           "widgetLabel": "Lead",
           "inputRule": ""
@@ -1390,7 +1464,7 @@
           "widgetType": "DROPDOWN",
           "relationshipName": "Opportunity_Lead",
           "relationshipEntityName": "Lead",
-          "relationshipEntityPerspectiveName": "entities",
+          "relationshipEntityPerspectiveName": "Lead",
           "dataNotNull": false,
           "widgetLabel": "Lead",
           "inputRule": ""
@@ -1552,6 +1626,8 @@
       "dataCount": "SELECT COUNT(*) AS COUNT FROM \"CODBEX_OPPORTUNITY\"",
       "dataName": "OPPORTUNITY",
       "dataQuery": "",
+      "feedPassword": "YWRtaW4=",
+      "feedUsername": "YWRtaW4=",
       "icon": "/services/web/resources/unicons/file.svg",
       "layoutType": "MANAGE",
       "menuIndex": "100",
@@ -1559,8 +1635,8 @@
       "menuLabel": "Opportunity",
       "name": "Opportunity",
       "navigationPath": "/Home",
-      "perspectiveIcon": "/services/web/resources/unicons/copy.svg",
-      "perspectiveName": "entities",
+      "perspectiveIcon": "/services/web/resources/unicons/octagon.svg",
+      "perspectiveName": "Opportunity",
       "perspectiveOrder": "100",
       "title": "Opportunity",
       "tooltip": "Opportunity",
@@ -2117,7 +2193,7 @@
           "widgetType": "TEXTBOX",
           "relationshipName": "OpportunityNote_Opportunity",
           "relationshipEntityName": "Opportunity",
-          "relationshipEntityPerspectiveName": "entities",
+          "relationshipEntityPerspectiveName": "Opportunity",
           "dataNotNull": false,
           "widgetLabel": "Opportunity",
           "inputRule": ""
@@ -2410,7 +2486,7 @@
           "widgetType": "DROPDOWN",
           "relationshipName": "Quotation_Opportunity",
           "relationshipEntityName": "Opportunity",
-          "relationshipEntityPerspectiveName": "entities",
+          "relationshipEntityPerspectiveName": "Opportunity",
           "dataNotNull": false,
           "widgetLabel": "Opportunity",
           "inputRule": ""
@@ -2441,6 +2517,8 @@
       "dataCount": "SELECT COUNT(*) AS COUNT FROM \"CODBEX_QUOTATION\"",
       "dataName": "QUOTATION",
       "dataQuery": "",
+      "feedPassword": "YWRtaW4=",
+      "feedUsername": "YWRtaW4=",
       "icon": "/services/web/resources/unicons/file.svg",
       "layoutType": "MANAGE",
       "menuIndex": "100",
@@ -2448,8 +2526,8 @@
       "menuLabel": "Quotation",
       "name": "Quotation",
       "navigationPath": "/Home",
-      "perspectiveIcon": "/services/web/resources/unicons/copy.svg",
-      "perspectiveName": "entities",
+      "perspectiveIcon": "/services/web/resources/unicons/sign-alt.svg",
+      "perspectiveName": "Question",
       "perspectiveOrder": "100",
       "title": "Quotation",
       "tooltip": "Quotation",
@@ -2586,7 +2664,7 @@
           "widgetType": "DROPDOWN",
           "relationshipName": "QuotationItem_Quotation",
           "relationshipEntityName": "Quotation",
-          "relationshipEntityPerspectiveName": "entities",
+          "relationshipEntityPerspectiveName": "Question",
           "dataNotNull": false,
           "widgetLabel": "Quotation",
           "inputRule": ""
@@ -2733,6 +2811,8 @@
       "dataCount": "SELECT COUNT(*) AS COUNT FROM \"CODBEX_QUOTATIONITEM\"",
       "dataName": "QUOTATIONITEM",
       "dataQuery": "",
+      "feedPassword": "YWRtaW4=",
+      "feedUsername": "YWRtaW4=",
       "icon": "/services/web/resources/unicons/file.svg",
       "layoutType": "MANAGE",
       "menuIndex": "100",
@@ -2741,7 +2821,7 @@
       "name": "QuotationItem",
       "navigationPath": "/Home",
       "perspectiveIcon": "/services/web/resources/unicons/copy.svg",
-      "perspectiveName": "entities",
+      "perspectiveName": "QuestinItem",
       "perspectiveOrder": "100",
       "title": "QuotationItem",
       "tooltip": "QuotationItem",
@@ -2855,7 +2935,7 @@
           "widgetType": "DROPDOWN",
           "relationshipName": "SalesOrder_Quotation",
           "relationshipEntityName": "Quotation",
-          "relationshipEntityPerspectiveName": "entities",
+          "relationshipEntityPerspectiveName": "Question",
           "dataNotNull": false,
           "widgetLabel": "Quotation",
           "inputRule": ""
@@ -3090,8 +3170,6 @@
           "dataUnique": false,
           "isCalculatedProperty": false,
           "name": "Quantity",
-          "widgetDropDownKey": "",
-          "widgetDropDownValue": "",
           "widgetIsMajor": true,
           "widgetLength": "20",
           "widgetType": "TEXTBOX",
@@ -3171,6 +3249,8 @@
       "dataCount": "SELECT COUNT(*) AS COUNT FROM \"CODBEX_SALESORDERITEM\"",
       "dataName": "SALESORDERITEM",
       "dataQuery": "",
+      "feedPassword": "YWRtaW4=",
+      "feedUsername": "YWRtaW4=",
       "icon": "/services/web/resources/unicons/file.svg",
       "layoutType": "MANAGE",
       "menuIndex": "100",
@@ -3178,9 +3258,9 @@
       "menuLabel": "SalesOrderItem",
       "name": "SalesOrderItem",
       "navigationPath": "/Home",
-      "perspectiveIcon": "/services/web/resources/unicons/copy.svg",
-      "perspectiveName": "entities",
-      "perspectiveOrder": "100",
+      "perspectiveIcon": "/services/web/resources/unicons/cloud-bookmark.svg",
+      "perspectiveName": "SalesOrderItem",
+      "perspectiveOrder": "110",
       "title": "SalesOrderItem",
       "tooltip": "SalesOrderItem",
       "type": "PRIMARY",
@@ -3278,6 +3358,8 @@
       "dataCount": "SELECT COUNT(*) AS COUNT FROM \"CODBEX_DELIVERY\"",
       "dataName": "DELIVERY",
       "dataQuery": "",
+      "feedPassword": "YWRtaW4=",
+      "feedUsername": "YWRtaW4=",
       "icon": "/services/web/resources/unicons/file.svg",
       "layoutType": "MANAGE",
       "menuIndex": "100",
@@ -3285,8 +3367,8 @@
       "menuLabel": "Delivery",
       "name": "Delivery",
       "navigationPath": "/Home",
-      "perspectiveIcon": "/services/web/resources/unicons/copy.svg",
-      "perspectiveName": "entities",
+      "perspectiveIcon": "/services/web/resources/unicons/car-sideview.svg",
+      "perspectiveName": "Delivery",
       "perspectiveOrder": "100",
       "title": "Delivery",
       "tooltip": "Delivery",
@@ -3461,7 +3543,7 @@
           "widgetType": "TEXTBOX",
           "relationshipName": "DeliveryEvent_Delivery",
           "relationshipEntityName": "Delivery",
-          "relationshipEntityPerspectiveName": "entities",
+          "relationshipEntityPerspectiveName": "Delivery",
           "dataNotNull": false,
           "widgetLabel": "DeliveryId",
           "inputRule": ""
@@ -3713,7 +3795,7 @@
           "widgetType": "DROPDOWN",
           "relationshipName": "PaymentSalesInvoice_SalesInvoice",
           "relationshipEntityName": "SalesInvoice",
-          "relationshipEntityPerspectiveName": "entities",
+          "relationshipEntityPerspectiveName": "Sales Invoice",
           "dataNotNull": false,
           "widgetLabel": "SalesInvoice",
           "inputRule": ""
@@ -3723,6 +3805,8 @@
       "dataCount": "SELECT COUNT(*) AS COUNT FROM \"CODBEX_PAYMENTSALESINVOICE\"",
       "dataName": "PAYMENTSALESINVOICE",
       "dataQuery": "",
+      "feedPassword": "YWRtaW4=",
+      "feedUsername": "YWRtaW4=",
       "icon": "/services/web/resources/unicons/file.svg",
       "layoutType": "MANAGE",
       "menuIndex": "100",
@@ -3731,7 +3815,7 @@
       "name": "PaymentSalesInvoice",
       "navigationPath": "/Home",
       "perspectiveIcon": "/services/web/resources/unicons/copy.svg",
-      "perspectiveName": "entities",
+      "perspectiveName": "PaymentSalesInvoice",
       "perspectiveOrder": "100",
       "title": "PaymentSalesInvoice",
       "tooltip": "PaymentSalesInvoice",
@@ -3950,6 +4034,8 @@
       "dataCount": "SELECT COUNT(*) AS COUNT FROM \"CODBEX_SALESINVOICE\"",
       "dataName": "SALESINVOICE",
       "dataQuery": "",
+      "feedPassword": "YWRtaW4=",
+      "feedUsername": "YWRtaW4=",
       "icon": "/services/web/resources/unicons/file.svg",
       "layoutType": "MANAGE",
       "menuIndex": "100",
@@ -3958,7 +4044,7 @@
       "name": "SalesInvoice",
       "navigationPath": "/Home",
       "perspectiveIcon": "/services/web/resources/unicons/copy.svg",
-      "perspectiveName": "entities",
+      "perspectiveName": "Sales Invoice",
       "perspectiveOrder": "100",
       "title": "SalesInvoice",
       "tooltip": "SalesInvoice",
@@ -4010,7 +4096,7 @@
           "widgetType": "DROPDOWN",
           "relationshipName": "SalesInvoiceItem_SalesInvoice",
           "relationshipEntityName": "SalesInvoice",
-          "relationshipEntityPerspectiveName": "entities",
+          "relationshipEntityPerspectiveName": "Sales Invoice",
           "dataNotNull": false,
           "widgetLabel": "SalesInvoice",
           "inputRule": ""
@@ -4157,6 +4243,8 @@
       "dataCount": "SELECT COUNT(*) AS COUNT FROM \"CODBEX_SALESINVOICEITEM\"",
       "dataName": "SALESINVOICEITEM",
       "dataQuery": "",
+      "feedPassword": "YWRtaW4=",
+      "feedUsername": "YWRtaW4=",
       "icon": "/services/web/resources/unicons/file.svg",
       "layoutType": "MANAGE",
       "menuIndex": "100",
@@ -4164,9 +4252,9 @@
       "menuLabel": "SalesInvoiceItem",
       "name": "SalesInvoiceItem",
       "navigationPath": "/Home",
-      "perspectiveIcon": "/services/web/resources/unicons/copy.svg",
-      "perspectiveName": "entities",
-      "perspectiveOrder": "100",
+      "perspectiveIcon": "/services/web/resources/unicons/dollar-sign-alt.svg",
+      "perspectiveName": "SalesInvoceItem",
+      "perspectiveOrder": "110",
       "title": "SalesInvoiceItem",
       "tooltip": "SalesInvoiceItem",
       "type": "PRIMARY",

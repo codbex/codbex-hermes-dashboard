@@ -750,6 +750,8 @@
                 "dataCount": "SELECT COUNT(*) AS COUNT FROM \"${tablePrefix}_ENTITY7\"",
                 "dataName": "LEAD",
                 "dataQuery": "",
+                "feedPassword": "YWRtaW4=",
+                "feedUsername": "YWRtaW4=",
                 "icon": "/services/web/resources/unicons/file.svg",
                 "layoutType": "MANAGE",
                 "menuIndex": "100",
@@ -757,8 +759,8 @@
                 "menuLabel": "Lead",
                 "name": "Lead",
                 "navigationPath": "/Home",
-                "perspectiveIcon": "/services/web/resources/unicons/copy.svg",
-                "perspectiveName": "entities",
+                "perspectiveIcon": "/services/web/resources/unicons/layers.svg",
+                "perspectiveName": "Lead",
                 "perspectiveOrder": "100",
                 "title": "Lead",
                 "tooltip": "Lead",
@@ -869,7 +871,7 @@
                         "widgetType": "DROPDOWN",
                         "relationshipName": "LeadNote_Lead",
                         "relationshipEntityName": "Lead",
-                        "relationshipEntityPerspectiveName": "entities"
+                        "relationshipEntityPerspectiveName": "Lead"
                     },
                     {
                         "calculatedPropertyExpression": "",
@@ -1107,7 +1109,7 @@
                         "widgetType": "DROPDOWN",
                         "relationshipName": "Opportunity_Lead",
                         "relationshipEntityName": "Lead",
-                        "relationshipEntityPerspectiveName": "entities"
+                        "relationshipEntityPerspectiveName": "Lead"
                     },
                     {
                         "calculatedPropertyExpression": "",
@@ -1246,6 +1248,8 @@
                 "dataCount": "SELECT COUNT(*) AS COUNT FROM \"${tablePrefix}_OPPORTUNITY\"",
                 "dataName": "OPPORTUNITY",
                 "dataQuery": "",
+                "feedPassword": "YWRtaW4=",
+                "feedUsername": "YWRtaW4=",
                 "icon": "/services/web/resources/unicons/file.svg",
                 "layoutType": "MANAGE",
                 "menuIndex": "100",
@@ -1253,8 +1257,8 @@
                 "menuLabel": "Opportunity",
                 "name": "Opportunity",
                 "navigationPath": "/Home",
-                "perspectiveIcon": "/services/web/resources/unicons/copy.svg",
-                "perspectiveName": "entities",
+                "perspectiveIcon": "/services/web/resources/unicons/octagon.svg",
+                "perspectiveName": "Opportunity",
                 "perspectiveOrder": "100",
                 "title": "Opportunity",
                 "tooltip": "Opportunity",
@@ -1701,7 +1705,7 @@
                         "widgetType": "TEXTBOX",
                         "relationshipName": "OpportunityNote_Opportunity",
                         "relationshipEntityName": "Opportunity",
-                        "relationshipEntityPerspectiveName": "entities"
+                        "relationshipEntityPerspectiveName": "Opportunity"
                     },
                     {
                         "calculatedPropertyExpression": "",
@@ -1943,7 +1947,7 @@
                         "widgetType": "DROPDOWN",
                         "relationshipName": "Quotation_Opportunity",
                         "relationshipEntityName": "Opportunity",
-                        "relationshipEntityPerspectiveName": "entities"
+                        "relationshipEntityPerspectiveName": "Opportunity"
                     },
                     {
                         "calculatedPropertyExpression": "",
@@ -1968,6 +1972,8 @@
                 "dataCount": "SELECT COUNT(*) AS COUNT FROM \"${tablePrefix}_QUOTATION\"",
                 "dataName": "QUOTATION",
                 "dataQuery": "",
+                "feedPassword": "YWRtaW4=",
+                "feedUsername": "YWRtaW4=",
                 "icon": "/services/web/resources/unicons/file.svg",
                 "layoutType": "MANAGE",
                 "menuIndex": "100",
@@ -1975,8 +1981,8 @@
                 "menuLabel": "Quotation",
                 "name": "Quotation",
                 "navigationPath": "/Home",
-                "perspectiveIcon": "/services/web/resources/unicons/copy.svg",
-                "perspectiveName": "entities",
+                "perspectiveIcon": "/services/web/resources/unicons/sign-alt.svg",
+                "perspectiveName": "Question",
                 "perspectiveOrder": "100",
                 "title": "Quotation",
                 "tooltip": "Quotation",
@@ -2087,7 +2093,7 @@
                         "widgetType": "DROPDOWN",
                         "relationshipName": "QuotationItem_Quotation",
                         "relationshipEntityName": "Quotation",
-                        "relationshipEntityPerspectiveName": "entities"
+                        "relationshipEntityPerspectiveName": "Question"
                     },
                     {
                         "calculatedPropertyExpression": "",
@@ -2211,6 +2217,8 @@
                 "dataCount": "SELECT COUNT(*) AS COUNT FROM \"${tablePrefix}_QUOTATIONITEM\"",
                 "dataName": "QUOTATIONITEM",
                 "dataQuery": "",
+                "feedPassword": "YWRtaW4=",
+                "feedUsername": "YWRtaW4=",
                 "icon": "/services/web/resources/unicons/file.svg",
                 "layoutType": "MANAGE",
                 "menuIndex": "100",
@@ -2219,7 +2227,7 @@
                 "name": "QuotationItem",
                 "navigationPath": "/Home",
                 "perspectiveIcon": "/services/web/resources/unicons/copy.svg",
-                "perspectiveName": "entities",
+                "perspectiveName": "QuestinItem",
                 "perspectiveOrder": "100",
                 "title": "QuotationItem",
                 "tooltip": "QuotationItem",
@@ -2311,7 +2319,7 @@
                         "widgetType": "DROPDOWN",
                         "relationshipName": "SalesOrder_Quotation",
                         "relationshipEntityName": "Quotation",
-                        "relationshipEntityPerspectiveName": "entities"
+                        "relationshipEntityPerspectiveName": "Question"
                     },
                     {
                         "calculatedPropertyExpression": "",
@@ -2509,8 +2517,6 @@
                         "dataUnique": "false",
                         "isCalculatedProperty": "false",
                         "name": "Quantity",
-                        "widgetDropDownKey": "",
-                        "widgetDropDownValue": "",
                         "widgetIsMajor": "true",
                         "widgetLength": "20",
                         "widgetType": "TEXTBOX"
@@ -2576,6 +2582,8 @@
                 "dataCount": "SELECT COUNT(*) AS COUNT FROM \"${tablePrefix}_SALESORDERITEM\"",
                 "dataName": "SALESORDERITEM",
                 "dataQuery": "",
+                "feedPassword": "YWRtaW4=",
+                "feedUsername": "YWRtaW4=",
                 "icon": "/services/web/resources/unicons/file.svg",
                 "layoutType": "MANAGE",
                 "menuIndex": "100",
@@ -2583,9 +2591,9 @@
                 "menuLabel": "SalesOrderItem",
                 "name": "SalesOrderItem",
                 "navigationPath": "/Home",
-                "perspectiveIcon": "/services/web/resources/unicons/copy.svg",
-                "perspectiveName": "entities",
-                "perspectiveOrder": "100",
+                "perspectiveIcon": "/services/web/resources/unicons/cloud-bookmark.svg",
+                "perspectiveName": "SalesOrderItem",
+                "perspectiveOrder": "110",
                 "title": "SalesOrderItem",
                 "tooltip": "SalesOrderItem",
                 "type": "PRIMARY"
@@ -2664,6 +2672,8 @@
                 "dataCount": "SELECT COUNT(*) AS COUNT FROM \"${tablePrefix}_DELIVERY\"",
                 "dataName": "DELIVERY",
                 "dataQuery": "",
+                "feedPassword": "YWRtaW4=",
+                "feedUsername": "YWRtaW4=",
                 "icon": "/services/web/resources/unicons/file.svg",
                 "layoutType": "MANAGE",
                 "menuIndex": "100",
@@ -2671,8 +2681,8 @@
                 "menuLabel": "Delivery",
                 "name": "Delivery",
                 "navigationPath": "/Home",
-                "perspectiveIcon": "/services/web/resources/unicons/copy.svg",
-                "perspectiveName": "entities",
+                "perspectiveIcon": "/services/web/resources/unicons/car-sideview.svg",
+                "perspectiveName": "Delivery",
                 "perspectiveOrder": "100",
                 "title": "Delivery",
                 "tooltip": "Delivery",
@@ -2813,7 +2823,7 @@
                         "widgetType": "TEXTBOX",
                         "relationshipName": "DeliveryEvent_Delivery",
                         "relationshipEntityName": "Delivery",
-                        "relationshipEntityPerspectiveName": "entities"
+                        "relationshipEntityPerspectiveName": "Delivery"
                     }
                 ],
                 "caption": "Manage entity DeliveryEvent",
@@ -3022,13 +3032,15 @@
                         "widgetType": "DROPDOWN",
                         "relationshipName": "PaymentSalesInvoice_SalesInvoice",
                         "relationshipEntityName": "SalesInvoice",
-                        "relationshipEntityPerspectiveName": "entities"
+                        "relationshipEntityPerspectiveName": "Sales Invoice"
                     }
                 ],
                 "caption": "Manage entity PaymentSalesInvoice",
                 "dataCount": "SELECT COUNT(*) AS COUNT FROM \"${tablePrefix}_PAYMENTSALESINVOICE\"",
                 "dataName": "PAYMENTSALESINVOICE",
                 "dataQuery": "",
+                "feedPassword": "YWRtaW4=",
+                "feedUsername": "YWRtaW4=",
                 "icon": "/services/web/resources/unicons/file.svg",
                 "layoutType": "MANAGE",
                 "menuIndex": "100",
@@ -3037,7 +3049,7 @@
                 "name": "PaymentSalesInvoice",
                 "navigationPath": "/Home",
                 "perspectiveIcon": "/services/web/resources/unicons/copy.svg",
-                "perspectiveName": "entities",
+                "perspectiveName": "PaymentSalesInvoice",
                 "perspectiveOrder": "100",
                 "title": "PaymentSalesInvoice",
                 "tooltip": "PaymentSalesInvoice",
@@ -3217,6 +3229,8 @@
                 "dataCount": "SELECT COUNT(*) AS COUNT FROM \"${tablePrefix}_SALESINVOICE\"",
                 "dataName": "SALESINVOICE",
                 "dataQuery": "",
+                "feedPassword": "YWRtaW4=",
+                "feedUsername": "YWRtaW4=",
                 "icon": "/services/web/resources/unicons/file.svg",
                 "layoutType": "MANAGE",
                 "menuIndex": "100",
@@ -3225,7 +3239,7 @@
                 "name": "SalesInvoice",
                 "navigationPath": "/Home",
                 "perspectiveIcon": "/services/web/resources/unicons/copy.svg",
-                "perspectiveName": "entities",
+                "perspectiveName": "Sales Invoice",
                 "perspectiveOrder": "100",
                 "title": "SalesInvoice",
                 "tooltip": "SalesInvoice",
@@ -3268,7 +3282,7 @@
                         "widgetType": "DROPDOWN",
                         "relationshipName": "SalesInvoiceItem_SalesInvoice",
                         "relationshipEntityName": "SalesInvoice",
-                        "relationshipEntityPerspectiveName": "entities"
+                        "relationshipEntityPerspectiveName": "Sales Invoice"
                     },
                     {
                         "calculatedPropertyExpression": "",
@@ -3392,6 +3406,8 @@
                 "dataCount": "SELECT COUNT(*) AS COUNT FROM \"${tablePrefix}_SALESINVOICEITEM\"",
                 "dataName": "SALESINVOICEITEM",
                 "dataQuery": "",
+                "feedPassword": "YWRtaW4=",
+                "feedUsername": "YWRtaW4=",
                 "icon": "/services/web/resources/unicons/file.svg",
                 "layoutType": "MANAGE",
                 "menuIndex": "100",
@@ -3399,15 +3415,70 @@
                 "menuLabel": "SalesInvoiceItem",
                 "name": "SalesInvoiceItem",
                 "navigationPath": "/Home",
-                "perspectiveIcon": "/services/web/resources/unicons/copy.svg",
-                "perspectiveName": "entities",
-                "perspectiveOrder": "100",
+                "perspectiveIcon": "/services/web/resources/unicons/dollar-sign-alt.svg",
+                "perspectiveName": "SalesInvoceItem",
+                "perspectiveOrder": "110",
                 "title": "SalesInvoiceItem",
                 "tooltip": "SalesInvoiceItem",
                 "type": "PRIMARY"
             }
         ],
-        "perspectives": [],
+        "perspectives": [
+            {
+                "name": "Lead",
+                "label": "Lead",
+                "icon": "/services/web/resources/unicons/layers.svg",
+                "order": "100"
+            },
+            {
+                "name": "Opportunity",
+                "label": "Opportunity",
+                "icon": "/services/web/resources/unicons/octagon.svg",
+                "order": "100"
+            },
+            {
+                "name": "Question",
+                "label": "Question",
+                "icon": "/services/web/resources/unicons/sign-alt.svg",
+                "order": "100"
+            },
+            {
+                "name": "Questi￐ﾾnItem",
+                "label": "Questin Item",
+                "icon": "/services/web/resources/unicons/sign-left.svg",
+                "order": "90"
+            },
+            {
+                "name": "Delivery",
+                "label": "Delivery",
+                "icon": "/services/web/resources/unicons/car-sideview.svg",
+                "order": "100"
+            },
+            {
+                "name": "SalesInvoceItem",
+                "label": "Sales Invoice Item",
+                "icon": "/services/web/resources/unicons/dollar-sign-alt.svg",
+                "order": "110"
+            },
+            {
+                "name": "Payment",
+                "label": "Payment",
+                "icon": "/services/web/resources/unicons/dollar-alt.svg",
+                "order": "100"
+            },
+            {
+                "name": "SalesOrder",
+                "label": "Sales Order",
+                "icon": "/services/web/resources/unicons/cloud-block.svg",
+                "order": "100"
+            },
+            {
+                "name": "SalesOrderItem",
+                "label": "Sales Order Item",
+                "icon": "/services/web/resources/unicons/cloud-bookmark.svg",
+                "order": "110"
+            }
+        ],
         "navigations": []
     }
 }
