@@ -1,6 +1,0 @@
-DELIVERYSTATUS_ID,DELIVERYSTATUS_NAME,DELIVERYSTATUS_DESCRIPTION
-1,To be delivered,Item is prepared to be delivered
-2,Out for delivery,Item is picked up for delivery
-3,Delivered,Item has been delivered
-4,Exception,Item has not been delivered due to a reason
-5,Cancelled,Item delivery has been cancelled

@@ -4,68 +4,58 @@ const daoApi = require("db/dao");
 const EntityUtils = require("codbex-hermes/gen/dao/utils/EntityUtils");
 
 let dao = daoApi.create({
-	table: "CODBEX_SALESORDER",
+	table: "CODBEX_QUOTATION",
 	properties: [
 		{
 			name: "Id",
-			column: "SALESORDER_ID",
+			column: "QUOTATION_ID",
 			type: "INTEGER",
 			id: true,
 			autoIncrement: true,
 		},
  {
-			name: "Number",
-			column: "ORDER_NUMBER",
+			name: "Name",
+			column: "QUOTATION_NAME",
 			type: "VARCHAR",
 		},
  {
 			name: "Date",
-			column: "ORDER_DATE",
+			column: "QUOTATION_DATE",
 			type: "DATE",
 		},
  {
-			name: "Conditions",
-			column: "ORDER_CONDITIONS",
+			name: "Number",
+			column: "QUOTATION_NUMBER",
 			type: "VARCHAR",
 		},
  {
-			name: "Operator",
-			column: "ORDER_OPERATOR",
+			name: "Owner",
+			column: "QUOTATION_OWNER",
 			type: "INTEGER",
 		},
  {
-			name: "Supplier",
-			column: "ORDER_BUYER",
+			name: "Customer",
+			column: "QUOTATION_CUSTOMER",
 			type: "INTEGER",
-		},
- {
-			name: "Currency",
-			column: "ORDER_CURRENCY",
-			type: "VARCHAR",
-		},
- {
-			name: "Amount",
-			column: "ORDER_AMOUNT",
-			type: "DOUBLE",
-		},
- {
-			name: "Discount",
-			column: "ORDER_DISCOUNT",
-			type: "DOUBLE",
-		},
- {
-			name: "VAT",
-			column: "ORDER_VAT",
-			type: "DOUBLE",
 		},
  {
 			name: "Total",
-			column: "ORDER_TOTAL",
+			column: "QUOTATION_TOTAL",
 			type: "DOUBLE",
 		},
  {
-			name: "Status",
-			column: "SALESORDER_STATUS",
+			name: "CurrencyCode",
+			column: "QUOTATION_CURRENCYCODE",
+			type: "VARCHAR",
+		},
+ {
+			name: "Opportunity",
+			column: "QUOTATION_OPPORTUNITY",
+			type: "INTEGER",
+		},
+ {
+			name: "QuotationStatus",
+			column: "QUOTATION_QUOTATIONSTATUS",
 			type: "INTEGER",
 		}
 ]
@@ -88,10 +78,10 @@ exports.create = function(entity) {
 	EntityUtils.setLocalDate(entity, "Date");
 	let id = dao.insert(entity);
 	triggerEvent("Create", {
-		table: "CODBEX_SALESORDER",
+		table: "CODBEX_QUOTATION",
 		key: {
 			name: "Id",
-			column: "SALESORDER_ID",
+			column: "QUOTATION_ID",
 			value: id
 		}
 	});
@@ -102,10 +92,10 @@ exports.update = function(entity) {
 	// EntityUtils.setLocalDate(entity, "Date");
 	dao.update(entity);
 	triggerEvent("Update", {
-		table: "CODBEX_SALESORDER",
+		table: "CODBEX_QUOTATION",
 		key: {
 			name: "Id",
-			column: "SALESORDER_ID",
+			column: "QUOTATION_ID",
 			value: entity.Id
 		}
 	});
@@ -114,10 +104,10 @@ exports.update = function(entity) {
 exports.delete = function(id) {
 	dao.remove(id);
 	triggerEvent("Delete", {
-		table: "CODBEX_SALESORDER",
+		table: "CODBEX_QUOTATION",
 		key: {
 			name: "Id",
-			column: "SALESORDER_ID",
+			column: "QUOTATION_ID",
 			value: id
 		}
 	});
@@ -128,7 +118,7 @@ exports.count = function() {
 };
 
 exports.customDataCount = function() {
-	let resultSet = query.execute('SELECT COUNT(*) AS COUNT FROM "CODBEX_SALESORDER"');
+	let resultSet = query.execute('SELECT COUNT(*) AS COUNT FROM "CODBEX_QUOTATION"');
 	if (resultSet !== null && resultSet[0] !== null) {
 		if (resultSet[0].COUNT !== undefined && resultSet[0].COUNT !== null) {
 			return resultSet[0].COUNT;
@@ -140,5 +130,5 @@ exports.customDataCount = function() {
 };
 
 function triggerEvent(operation, data) {
-	producer.queue("codbex-hermes/entities/SalesOrder/" + operation).send(JSON.stringify(data));
+	producer.queue("codbex-hermes/entities/Quotation/" + operation).send(JSON.stringify(data));
 }
