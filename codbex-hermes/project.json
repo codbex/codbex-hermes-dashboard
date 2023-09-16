@@ -41,6 +41,30 @@
             "type": "git",
             "url": "https://github.com/codbex/codbex-industries.git",
             "branch": "main"
+        },
+        {
+            "guid": "codbex-opportunities",
+            "type": "git",
+            "url": "https://github.com/codbex/codbex-opportunities.git",
+            "branch": "main"
+        },
+        {
+            "guid": "codbex-orders",
+            "type": "git",
+            "url": "https://github.com/codbex/codbex-orders.git",
+            "branch": "main"
+        },
+        {
+            "guid": "codbex-invoices",
+            "type": "git",
+            "url": "https://github.com/codbex/codbex-invoices.git",
+            "branch": "main"
+        },
+        {
+            "guid": "codbex-payments",
+            "type": "git",
+            "url": "https://github.com/codbex/codbex-payments.git",
+            "branch": "main"
         }
     ]
 }
