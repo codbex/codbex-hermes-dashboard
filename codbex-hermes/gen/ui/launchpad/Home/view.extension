@@ -1,0 +1,5 @@
+{
+    "module": "codbex-hermes/gen/ui/launchpad/Home/view.js",
+    "extensionPoint": "codbex-hermes-view",
+    "description": "codbex-hermes - Application View"
+}
