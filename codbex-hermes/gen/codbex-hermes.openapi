@@ -2,7 +2,7 @@ openapi: 3.0.3
 info:
   title: Codbex Hermes - OpenAPI 3.0
   version: 1.0.0
-  description: Relationship Management
+  description: Customer Relationship Management
 externalDocs:
   description: Find out more about Eclipse Dirigible
   url: https://dirigible.io
