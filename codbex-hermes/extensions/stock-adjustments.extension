@@ -1,5 +1,0 @@
-{
-    "module": "codbex-hermes/services/stock-adjustments.js",
-    "extensionPoint": "ide-subview",
-    "description": "Stock Adjustments Subview"
-}
