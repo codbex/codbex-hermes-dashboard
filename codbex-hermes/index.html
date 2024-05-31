@@ -30,6 +30,48 @@
 							</fd-list-navigation-item-icon>
 							<span fd-list-navigation-item-text>Dashboard</span>
 						</fd-list-navigation-item>
+						<fd-list-navigation-group-header>People</fd-list-navigation-group-header>
+						<fd-list-navigation-item ng-init="employeesExpanded = false" expandable="true"
+							ng-click="employeesExpanded = !employeesExpanded" is-expanded="employeesExpanded">
+							<fd-list-navigation-item-icon glyph="sap-icon--folder">
+							</fd-list-navigation-item-icon>
+							<span fd-list-navigation-item-text>Employees</span>
+							<fd-list-navigation-item-arrow aria-label="expand submenu" is-expanded="purchasingExpanded">
+							</fd-list-navigation-item-arrow>
+							<fd-list>
+								<fd-list-navigation-item ng-click="switchView('organisations', $event)">
+									<span fd-list-navigation-item-text>Organisations</span>
+								</fd-list-navigation-item>
+							</fd-list>
+							<fd-list>
+								<fd-list-navigation-item ng-click="switchView('employees', $event)">
+									<span fd-list-navigation-item-text>Employees</span>
+								</fd-list-navigation-item>
+							</fd-list>
+						</fd-list-navigation-item>
+						<fd-list-navigation-item ng-init="opportunitiesExpanded = false" expandable="true"
+							ng-click="opportunitiesExpanded = !opportunitiesExpanded" is-expanded="opportunitiesExpanded">
+							<fd-list-navigation-item-icon glyph="sap-icon--folder">
+							</fd-list-navigation-item-icon>
+							<span fd-list-navigation-item-text>Opportunities</span>
+							<fd-list-navigation-item-arrow aria-label="expand submenu" is-expanded="opportunitiesExpanded">
+							</fd-list-navigation-item-arrow>
+							<fd-list>
+								<fd-list-navigation-item ng-click="switchView('opportunities', $event)">
+									<span fd-list-navigation-item-text>Opportunities</span>
+								</fd-list-navigation-item>
+							</fd-list>
+							<fd-list>
+								<fd-list-navigation-item ng-click="switchView('leads', $event)">
+									<span fd-list-navigation-item-text>Leads</span>
+								</fd-list-navigation-item>
+							</fd-list>
+							<fd-list>
+								<fd-list-navigation-item ng-click="switchView('quotations', $event)">
+									<span fd-list-navigation-item-text>quotations</span>
+								</fd-list-navigation-item>
+							</fd-list>
+						</fd-list-navigation-item>
 						<fd-list-navigation-group-header>Documents</fd-list-navigation-group-header>
 						<fd-list-navigation-item ng-init="purchasingExpanded = false" expandable="true"
 							ng-click="purchasingExpanded = !purchasingExpanded" is-expanded="purchasingExpanded">
@@ -41,6 +83,11 @@
 							<fd-list>
 								<fd-list-navigation-item ng-click="switchView('purchase-orders', $event)">
 									<span fd-list-navigation-item-text>Purchase Orders</span>
+								</fd-list-navigation-item>
+							</fd-list>
+							<fd-list>
+								<fd-list-navigation-item ng-click="switchView('purchase-orders-total-report', $event)">
+									<span fd-list-navigation-item-text>Purchase Orders Total</span>
 								</fd-list-navigation-item>
 							</fd-list>
 							<fd-list>
@@ -62,143 +109,110 @@
 								</fd-list-navigation-item>
 							</fd-list>
 							<fd-list>
-								<fd-list-navigation-item ng-click="switchView('customer-payments', $event)">
-									<span fd-list-navigation-item-text>Customer Payments</span>
-								</fd-list-navigation-item>
-							</fd-list>
-						</fd-list-navigation-item>
-						<fd-list-navigation-group-header>Reports</fd-list-navigation-group-header>
-						<fd-list-navigation-item ng-init="financeReportsExpanded = false" expandable="true"
-							ng-click="financeReportsExpanded = !financeReportsExpanded"
-							is-expanded="financeReportsExpanded">
-							<fd-list-navigation-item-icon glyph="sap-icon--folder">
-							</fd-list-navigation-item-icon>
-							<span fd-list-navigation-item-text>Finance</span>
-							<fd-list-navigation-item-arrow aria-label="expand submenu"
-								is-expanded="financeReportsExpanded">
-							</fd-list-navigation-item-arrow>
-							<fd-list>
-								<fd-list-navigation-item ng-click="switchView('sales-orders-report', $event)">
-									<span fd-list-navigation-item-text>Sales Orders</span>
-								</fd-list-navigation-item>
-							</fd-list>
-							<fd-list>
 								<fd-list-navigation-item ng-click="switchView('sales-orders-total-report', $event)">
 									<span fd-list-navigation-item-text>Sales Orders Total</span>
 								</fd-list-navigation-item>
 							</fd-list>
 							<fd-list>
-								<fd-list-navigation-item ng-click="switchView('purchase-orders-report', $event)">
-									<span fd-list-navigation-item-text>Purchase Orders</span>
+								<fd-list-navigation-item ng-click="switchView('customer-payments', $event)">
+									<span fd-list-navigation-item-text>Customer Payments</span>
+								</fd-list-navigation-item>
+							</fd-list>
+						</fd-list-navigation-item>
+						<fd-list-navigation-item ng-init="contractsExpanded = false" expandable="true"
+							ng-click="contractsExpanded = !contractsExpanded" is-expanded="contractsExpanded">
+							<fd-list-navigation-item-icon glyph="sap-icon--folder">
+							</fd-list-navigation-item-icon>
+							<span fd-list-navigation-item-text>Contracts</span>
+							<fd-list-navigation-item-arrow aria-label="expand submenu" is-expanded="contractsExpanded">
+							</fd-list-navigation-item-arrow>
+							<fd-list>
+								<fd-list-navigation-item ng-click="switchView('contracts', $event)">
+									<span fd-list-navigation-item-text>Contracts</span>
+								</fd-list-navigation-item>
+							</fd-list>
+						</fd-list-navigation-item>
+						<fd-list-navigation-group-header>Products</fd-list-navigation-group-header>
+						<fd-list-navigation-item ng-init="productExpanded = false" expandable="true"
+							ng-click="productExpanded = !productExpanded" is-expanded="productExpanded">
+							<fd-list-navigation-item-icon glyph="sap-icon--folder">
+							</fd-list-navigation-item-icon>
+							<span fd-list-navigation-item-text>Products</span>
+							<fd-list-navigation-item-arrow aria-label="expand submenu" is-expanded="productExpanded">
+							</fd-list-navigation-item-arrow>
+							<fd-list>
+								<fd-list-navigation-item ng-click="switchView('products', $event)">
+									<span fd-list-navigation-item-text>Products</span>
 								</fd-list-navigation-item>
 							</fd-list>
 							<fd-list>
-								<fd-list-navigation-item ng-click="switchView('purchase-orders-total-report', $event)">
-									<span fd-list-navigation-item-text>Purchase Orders Total</span>
+								<fd-list-navigation-item ng-click="switchView('categories', $event)">
+									<span fd-list-navigation-item-text>Categories</span>
 								</fd-list-navigation-item>
 							</fd-list>
-							<fd-list-navigation-group-header>Products</fd-list-navigation-group-header>
-							<fd-list-navigation-item ng-init="productExpanded = false" expandable="true"
-								ng-click="productExpanded = !productExpanded" is-expanded="productExpanded">
-								<fd-list-navigation-item-icon glyph="sap-icon--folder">
-								</fd-list-navigation-item-icon>
-								<span fd-list-navigation-item-text>Products</span>
-								<fd-list-navigation-item-arrow aria-label="expand submenu"
-									is-expanded="productExpanded">
-								</fd-list-navigation-item-arrow>
-								<fd-list>
-									<fd-list-navigation-item ng-click="switchView('products', $event)">
-										<span fd-list-navigation-item-text>Products</span>
-									</fd-list-navigation-item>
-								</fd-list>
-								<fd-list>
-									<fd-list-navigation-item ng-click="switchView('categories', $event)">
-										<span fd-list-navigation-item-text>Categories</span>
-									</fd-list-navigation-item>
-								</fd-list>
-								<fd-list>
-									<fd-list-navigation-item ng-click="switchView('catalogues', $event)">
-										<span fd-list-navigation-item-text>Catalogue</span>
-									</fd-list-navigation-item>
-								</fd-list>
-							</fd-list-navigation-item>
-							<fd-list-navigation-group-header>People</fd-list-navigation-group-header>
-							<fd-list-navigation-item ng-init="peopleExpanded = false" expandable="true"
-								ng-click="peopleExpanded = !peopleExpanded" is-expanded="peopleExpanded">
-								<fd-list-navigation-item-icon glyph="sap-icon--folder">
-								</fd-list-navigation-item-icon>
-								<span fd-list-navigation-item-text>Employees</span>
-								<fd-list-navigation-item-arrow aria-label="expand submenu" is-expanded="peopleExpanded">
-								</fd-list-navigation-item-arrow>
-								<fd-list>
-									<fd-list-navigation-item ng-click="switchView('organisations', $event)">
-										<span fd-list-navigation-item-text>Organisations</span>
-									</fd-list-navigation-item>
-								</fd-list>
-								<fd-list>
-									<fd-list-navigation-item ng-click="switchView('employees', $event)">
-										<span fd-list-navigation-item-text>Employees</span>
-									</fd-list-navigation-item>
-								</fd-list>
-							</fd-list-navigation-item>
-							<fd-list-navigation-group-header>Settings</fd-list-navigation-group-header>
-							<fd-list-navigation-item ng-init="partnersExpanded = false" expandable="true"
-								ng-click="partnersExpanded = !partnersExpanded" is-expanded="partnersExpanded">
-								<fd-list-navigation-item-icon glyph="sap-icon--folder">
-								</fd-list-navigation-item-icon>
-								<span fd-list-navigation-item-text>Partners</span>
-								<fd-list-navigation-item-arrow aria-label="expand submenu"
-									is-expanded="partnersExpanded">
-								</fd-list-navigation-item-arrow>
-								<fd-list>
-									<fd-list-navigation-item ng-click="switchView('customers', $event)">
-										<span fd-list-navigation-item-text>Customers</span>
-									</fd-list-navigation-item>
-								</fd-list>
-								<fd-list>
-									<fd-list-navigation-item ng-click="switchView('suppliers', $event)">
-										<span fd-list-navigation-item-text>Suppliers</span>
-									</fd-list-navigation-item>
-								</fd-list>
-								<fd-list>
-									<fd-list-navigation-item ng-click="switchView('manufacturers', $event)">
-										<span fd-list-navigation-item-text>Manufacturers</span>
-									</fd-list-navigation-item>
-								</fd-list>
-							</fd-list-navigation-item>
-							<fd-list-navigation-item ng-init="configurationsExpanded = false" expandable="true"
-								ng-click="configurationsExpanded = !configurationsExpanded"
+							<fd-list>
+								<fd-list-navigation-item ng-click="switchView('catalogues', $event)">
+									<span fd-list-navigation-item-text>Catalogue</span>
+								</fd-list-navigation-item>
+							</fd-list>
+						</fd-list-navigation-item>
+						<fd-list-navigation-group-header>Settings</fd-list-navigation-group-header>
+						<fd-list-navigation-item ng-init="partnersExpanded = false" expandable="true"
+							ng-click="partnersExpanded = !partnersExpanded" is-expanded="partnersExpanded">
+							<fd-list-navigation-item-icon glyph="sap-icon--folder">
+							</fd-list-navigation-item-icon>
+							<span fd-list-navigation-item-text>Partners</span>
+							<fd-list-navigation-item-arrow aria-label="expand submenu" is-expanded="partnersExpanded">
+							</fd-list-navigation-item-arrow>
+							<fd-list>
+								<fd-list-navigation-item ng-click="switchView('customers', $event)">
+									<span fd-list-navigation-item-text>Customers</span>
+								</fd-list-navigation-item>
+							</fd-list>
+							<fd-list>
+								<fd-list-navigation-item ng-click="switchView('suppliers', $event)">
+									<span fd-list-navigation-item-text>Suppliers</span>
+								</fd-list-navigation-item>
+							</fd-list>
+							<fd-list>
+								<fd-list-navigation-item ng-click="switchView('manufacturers', $event)">
+									<span fd-list-navigation-item-text>Manufacturers</span>
+								</fd-list-navigation-item>
+							</fd-list>
+						</fd-list-navigation-item>
+						<fd-list-navigation-item ng-init="configurationsExpanded = false" expandable="true"
+							ng-click="configurationsExpanded = !configurationsExpanded"
+							is-expanded="configurationsExpanded">
+							<fd-list-navigation-item-icon glyph="sap-icon--folder">
+							</fd-list-navigation-item-icon>
+							<span fd-list-navigation-item-text>Configurations</span>
+							<fd-list-navigation-item-arrow aria-label="expand submenu"
 								is-expanded="configurationsExpanded">
-								<fd-list-navigation-item-icon glyph="sap-icon--folder">
-								</fd-list-navigation-item-icon>
-								<span fd-list-navigation-item-text>Configurations</span>
-								<fd-list-navigation-item-arrow aria-label="expand submenu"
-									is-expanded="configurationsExpanded">
-								</fd-list-navigation-item-arrow>
-								<fd-list>
-									<fd-list-navigation-item ng-click="switchView('countries', $event)">
-										<span fd-list-navigation-item-text>Countries</span>
-									</fd-list-navigation-item>
-									<fd-list-navigation-item ng-click="switchView('cities', $event)">
-										<span fd-list-navigation-item-text>Cities</span>
-									</fd-list-navigation-item>
-									<fd-list-navigation-item ng-click="switchView('companies', $event)">
-										<span fd-list-navigation-item-text>Companies</span>
-									</fd-list-navigation-item>
-									<fd-list-navigation-item ng-click="switchView('currencies', $event)">
-										<span fd-list-navigation-item-text>Currencies</span>
-									</fd-list-navigation-item>
-									<fd-list-navigation-item ng-click="switchView('dimensions', $event)">
-										<span fd-list-navigation-item-text>Dimensions</span>
-									</fd-list-navigation-item>
-									<fd-list-navigation-item ng-click="switchView('uoms', $event)">
-										<span fd-list-navigation-item-text>Units of Measures</span>
-									</fd-list-navigation-item>
-									<fd-list-navigation-item ng-click="switchView('methods', $event)">
-										<span fd-list-navigation-item-text>Methods</span>
-									</fd-list-navigation-item>
-								</fd-list>
-							</fd-list-navigation-item>
+							</fd-list-navigation-item-arrow>
+							<fd-list>
+								<fd-list-navigation-item ng-click="switchView('countries', $event)">
+									<span fd-list-navigation-item-text>Countries</span>
+								</fd-list-navigation-item>
+								<fd-list-navigation-item ng-click="switchView('cities', $event)">
+									<span fd-list-navigation-item-text>Cities</span>
+								</fd-list-navigation-item>
+								<fd-list-navigation-item ng-click="switchView('companies', $event)">
+									<span fd-list-navigation-item-text>Companies</span>
+								</fd-list-navigation-item>
+								<fd-list-navigation-item ng-click="switchView('currencies', $event)">
+									<span fd-list-navigation-item-text>Currencies</span>
+								</fd-list-navigation-item>
+								<fd-list-navigation-item ng-click="switchView('dimensions', $event)">
+									<span fd-list-navigation-item-text>Dimensions</span>
+								</fd-list-navigation-item>
+								<fd-list-navigation-item ng-click="switchView('uoms', $event)">
+									<span fd-list-navigation-item-text>Units of Measures</span>
+								</fd-list-navigation-item>
+								<fd-list-navigation-item ng-click="switchView('methods', $event)">
+									<span fd-list-navigation-item-text>Methods</span>
+								</fd-list-navigation-item>
+							</fd-list>
+						</fd-list-navigation-item>
 					</fd-list>
 				</fd-vertical-nav-main-section>
 			</fd-vertical-nav>
@@ -237,6 +251,18 @@
 			</embedded-view>
 			<embedded-view class="dg-fill-parent" view-id="codbex-hermes-employees" dg-type="subview"
 				ng-show="currentViewId === 'employees'">
+			</embedded-view>
+			<embedded-view class="dg-fill-parent" view-id="codbex-hermes-leads" dg-type="subview"
+				ng-show="currentViewId === 'leads'">
+			</embedded-view>
+			<embedded-view class="dg-fill-parent" view-id="codbex-hermes-quotations" dg-type="subview"
+				ng-show="currentViewId === 'quotations'">
+			</embedded-view>
+			<embedded-view class="dg-fill-parent" view-id="codbex-hermes-contracts" dg-type="subview"
+				ng-show="currentViewId === 'contracts'">
+			</embedded-view>
+			<embedded-view class="dg-fill-parent" view-id="codbex-hermes-opportunities" dg-type="subview"
+				ng-show="currentViewId === 'opportunities'">
 			</embedded-view>
 			<embedded-view class="dg-fill-parent" view-id="codbex-hermes-purchase-orders" dg-type="subview"
 				ng-show="currentViewId === 'purchase-orders'">
