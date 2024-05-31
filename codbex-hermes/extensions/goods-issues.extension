@@ -1,0 +1,5 @@
+{
+    "module": "codbex-hermes/services/goods-issues.js",
+    "extensionPoint": "ide-subview",
+    "description": "Goods Issues Subview"
+}

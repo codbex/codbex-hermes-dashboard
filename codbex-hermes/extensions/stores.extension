@@ -1,0 +1,5 @@
+{
+    "module": "codbex-hermes/services/stores.js",
+    "extensionPoint": "ide-subview",
+    "description": "Stores Subview"
+}

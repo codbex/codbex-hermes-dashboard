@@ -1,0 +1,5 @@
+{
+    "module": "codbex-hermes/services/uoms.js",
+    "extensionPoint": "ide-subview",
+    "description": "UoMs Subview"
+}

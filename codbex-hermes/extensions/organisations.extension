@@ -1,0 +1,5 @@
+{
+    "module": "codbex-hermes/services/organisations.js",
+    "extensionPoint": "ide-subview",
+    "description": "Organisations Subview"
+}

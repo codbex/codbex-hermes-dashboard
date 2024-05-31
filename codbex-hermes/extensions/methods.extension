@@ -1,0 +1,5 @@
+{
+    "extensionPoint": "ide-subview",
+    "module": "codbex-hermes/services/methods.js",
+    "description": "Methods Subview"
+}

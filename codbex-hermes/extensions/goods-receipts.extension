@@ -1,0 +1,5 @@
+{
+    "module": "codbex-hermes/services/goods-receipts.js",
+    "extensionPoint": "ide-subview",
+    "description": "Goods Receipts Subview"
+}

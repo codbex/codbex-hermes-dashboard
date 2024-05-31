@@ -1,0 +1,5 @@
+{
+    "module": "codbex-hermes/services/categories.js",
+    "extensionPoint": "ide-subview",
+    "description": "Categories Subview"
+}

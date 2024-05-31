@@ -1,0 +1,5 @@
+{
+    "module": "codbex-hermes/services/companies.js",
+    "extensionPoint": "ide-subview",
+    "description": "Companies Subview"
+}

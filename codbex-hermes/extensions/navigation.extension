@@ -1,0 +1,5 @@
+{
+    "module": "codbex-hermes/services/navigation.js",
+    "extensionPoint": "portal",
+    "description": "Hestia Launchpad"
+}

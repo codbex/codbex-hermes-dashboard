@@ -1,0 +1,367 @@
+<!DOCTYPE HTML>
+<html lang="en" ng-app="launchpad" ng-controller="LaunchpadViewController" xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title dg-brand-title></title>
+		<link rel="icon" href="data:;base64,iVBORw0KGgo=" dg-brand-icon />
+		<script type="text/javascript" src="services/navigation.js"></script>
+		<theme></theme>
+		<script type="text/javascript"
+			src="/services/js/resources-core/services/loader.js?id=application-perspective-js">
+		</script>
+		<link type="text/css" rel="stylesheet"
+			href="/services/js/resources-core/services/loader.js?id=application-perspective-css" />
+		<script type="text/javascript" src="js/navigation.js"></script>
+
+	</head>
+
+	<body>
+		<ide-header menu-ext-id="codbex-hermes-menu"></ide-header>
+		<ide-contextmenu></ide-contextmenu>
+		<div class="dg-hbox dg-fill-parent">
+			<fd-vertical-nav can-scroll="true" class="dg-border-right"
+				style="box-shadow:none;max-height:calc(100vh - 4.375rem)">
+				<fd-vertical-nav-main-section aria-label="main navigation">
+					<fd-list>
+						<fd-list-navigation-item ng-click="switchView('dashboard')">
+							<fd-list-navigation-item-icon glyph="sap-icon--home">
+							</fd-list-navigation-item-icon>
+							<span fd-list-navigation-item-text>Dashboard</span>
+						</fd-list-navigation-item>
+						<fd-list-navigation-group-header>Documents</fd-list-navigation-group-header>
+						<fd-list-navigation-item ng-init="purchasingExpanded = false" expandable="true"
+							ng-click="purchasingExpanded = !purchasingExpanded" is-expanded="purchasingExpanded">
+							<fd-list-navigation-item-icon glyph="sap-icon--folder">
+							</fd-list-navigation-item-icon>
+							<span fd-list-navigation-item-text>Purchasing</span>
+							<fd-list-navigation-item-arrow aria-label="expand submenu" is-expanded="purchasingExpanded">
+							</fd-list-navigation-item-arrow>
+							<fd-list>
+								<fd-list-navigation-item ng-click="switchView('purchase-orders', $event)">
+									<span fd-list-navigation-item-text>Purchase Orders</span>
+								</fd-list-navigation-item>
+							</fd-list>
+							<fd-list>
+								<fd-list-navigation-item ng-click="switchView('purchase-invoices', $event)">
+									<span fd-list-navigation-item-text>Purchase Invoices</span>
+								</fd-list-navigation-item>
+							</fd-list>
+							<fd-list>
+								<fd-list-navigation-item ng-click="switchView('supplier-payments', $event)">
+									<span fd-list-navigation-item-text>Supplier Payments</span>
+								</fd-list-navigation-item>
+							</fd-list>
+						</fd-list-navigation-item>
+						<fd-list-navigation-item ng-init="salesExpanded = false" expandable="true"
+							ng-click="salesExpanded = !salesExpanded" is-expanded="salesExpanded">
+							<fd-list-navigation-item-icon glyph="sap-icon--folder">
+							</fd-list-navigation-item-icon>
+							<span fd-list-navigation-item-text>Sales</span>
+							<fd-list-navigation-item-arrow aria-label="expand submenu" is-expanded="salesExpanded">
+							</fd-list-navigation-item-arrow>
+							<fd-list>
+								<fd-list-navigation-item ng-click="switchView('sales-orders', $event)">
+									<span fd-list-navigation-item-text>Sales Orders</span>
+								</fd-list-navigation-item>
+							</fd-list>
+							<fd-list>
+								<fd-list-navigation-item ng-click="switchView('sales-invoices', $event)">
+									<span fd-list-navigation-item-text>Sales Invoices</span>
+								</fd-list-navigation-item>
+							</fd-list>
+							<fd-list>
+								<fd-list-navigation-item ng-click="switchView('customer-payments', $event)">
+									<span fd-list-navigation-item-text>Customer Payments</span>
+								</fd-list-navigation-item>
+							</fd-list>
+						</fd-list-navigation-item>
+						<fd-list-navigation-item ng-init="inventoryExpanded = false" expandable="true"
+							ng-click="inventoryExpanded = !inventoryExpanded" is-expanded="inventoryExpanded">
+							<fd-list-navigation-item-icon glyph="sap-icon--folder">
+							</fd-list-navigation-item-icon>
+							<span fd-list-navigation-item-text>Inventory</span>
+							<fd-list-navigation-item-arrow aria-label="expand submenu" is-expanded="inventoryExpanded">
+							</fd-list-navigation-item-arrow>
+							<fd-list>
+								<fd-list-navigation-item ng-click="switchView('goods-receipts', $event)">
+									<span fd-list-navigation-item-text>Goods Receipts</span>
+								</fd-list-navigation-item>
+							</fd-list>
+							<fd-list>
+								<fd-list-navigation-item ng-click="switchView('goods-issues', $event)">
+									<span fd-list-navigation-item-text>Goods Issues</span>
+								</fd-list-navigation-item>
+							</fd-list>
+							<fd-list>
+								<fd-list-navigation-item ng-click="switchView('stock-adjustments', $event)">
+									<span fd-list-navigation-item-text>Stock Adjustments</span>
+								</fd-list-navigation-item>
+							</fd-list>
+						</fd-list-navigation-item>
+						<fd-list-navigation-group-header>Reports</fd-list-navigation-group-header>
+						<fd-list-navigation-item ng-init="financeReportsExpanded = false" expandable="true"
+							ng-click="financeReportsExpanded = !financeReportsExpanded"
+							is-expanded="financeReportsExpanded">
+							<fd-list-navigation-item-icon glyph="sap-icon--folder">
+							</fd-list-navigation-item-icon>
+							<span fd-list-navigation-item-text>Finance</span>
+							<fd-list-navigation-item-arrow aria-label="expand submenu"
+								is-expanded="financeReportsExpanded">
+							</fd-list-navigation-item-arrow>
+							<fd-list>
+								<fd-list-navigation-item ng-click="switchView('sales-orders-report', $event)">
+									<span fd-list-navigation-item-text>Sales Orders</span>
+								</fd-list-navigation-item>
+							</fd-list>
+							<fd-list>
+								<fd-list-navigation-item ng-click="switchView('sales-orders-total-report', $event)">
+									<span fd-list-navigation-item-text>Sales Orders Total</span>
+								</fd-list-navigation-item>
+							</fd-list>
+							<fd-list>
+								<fd-list-navigation-item ng-click="switchView('purchase-orders-report', $event)">
+									<span fd-list-navigation-item-text>Purchase Orders</span>
+								</fd-list-navigation-item>
+							</fd-list>
+							<fd-list>
+								<fd-list-navigation-item ng-click="switchView('purchase-orders-total-report', $event)">
+									<span fd-list-navigation-item-text>Purchase Orders Total</span>
+								</fd-list-navigation-item>
+							</fd-list>
+							<!-- <fd-list>
+								<fd-list-navigation-item ng-click="switchView('accounts-payable', $event)">
+									<span fd-list-navigation-item-text>Accounts Payable</span>
+								</fd-list-navigation-item>
+							</fd-list>
+							<fd-list>
+								<fd-list-navigation-item ng-click="switchView('accounts-receivable', $event)">
+									<span fd-list-navigation-item-text>Accounts Receivable</span>
+								</fd-list-navigation-item>
+							</fd-list>
+							<fd-list>
+								<fd-list-navigation-item ng-click="switchView('balance-sheet', $event)">
+									<span fd-list-navigation-item-text>Balance Sheet</span>
+								</fd-list-navigation-item>
+							</fd-list> -->
+						</fd-list-navigation-item>
+						<!-- <fd-list-navigation-item ng-init="inventoryReportsExpanded = false" expandable="true"
+							ng-click="inventoryReportsExpanded = !inventoryReportsExpanded"
+							is-expanded="inventoryReportsExpanded">
+							<fd-list-navigation-item-icon glyph="sap-icon--folder">
+							</fd-list-navigation-item-icon>
+							<span fd-list-navigation-item-text>Inventory</span>
+							<fd-list-navigation-item-arrow aria-label="expand submenu"
+								is-expanded="inventoryReportsExpanded">
+							</fd-list-navigation-item-arrow>
+							<fd-list>
+								<fd-list-navigation-item ng-click="switchView('sku-listing', $event)">
+									<span fd-list-navigation-item-text>SKU Listing</span>
+								</fd-list-navigation-item>
+							</fd-list>
+						</fd-list-navigation-item> -->
+						<fd-list-navigation-group-header>Products</fd-list-navigation-group-header>
+						<fd-list-navigation-item ng-init="productExpanded = false" expandable="true"
+							ng-click="productExpanded = !productExpanded" is-expanded="productExpanded">
+							<fd-list-navigation-item-icon glyph="sap-icon--folder">
+							</fd-list-navigation-item-icon>
+							<span fd-list-navigation-item-text>Products</span>
+							<fd-list-navigation-item-arrow aria-label="expand submenu" is-expanded="productExpanded">
+							</fd-list-navigation-item-arrow>
+							<fd-list>
+								<fd-list-navigation-item ng-click="switchView('products', $event)">
+									<span fd-list-navigation-item-text>Products</span>
+								</fd-list-navigation-item>
+							</fd-list>
+							<fd-list>
+								<fd-list-navigation-item ng-click="switchView('categories', $event)">
+									<span fd-list-navigation-item-text>Categories</span>
+								</fd-list-navigation-item>
+							</fd-list>
+							<fd-list>
+								<fd-list-navigation-item ng-click="switchView('catalogues', $event)">
+									<span fd-list-navigation-item-text>Catalogue</span>
+								</fd-list-navigation-item>
+							</fd-list>
+						</fd-list-navigation-item>
+						<fd-list-navigation-group-header>People</fd-list-navigation-group-header>
+						<fd-list-navigation-item ng-init="peopleExpanded = false" expandable="true"
+							ng-click="peopleExpanded = !peopleExpanded" is-expanded="peopleExpanded">
+							<fd-list-navigation-item-icon glyph="sap-icon--folder">
+							</fd-list-navigation-item-icon>
+							<span fd-list-navigation-item-text>Employees</span>
+							<fd-list-navigation-item-arrow aria-label="expand submenu" is-expanded="peopleExpanded">
+							</fd-list-navigation-item-arrow>
+							<fd-list>
+								<fd-list-navigation-item ng-click="switchView('organisations', $event)">
+									<span fd-list-navigation-item-text>Organisations</span>
+								</fd-list-navigation-item>
+							</fd-list>
+							<fd-list>
+								<fd-list-navigation-item ng-click="switchView('employees', $event)">
+									<span fd-list-navigation-item-text>Employees</span>
+								</fd-list-navigation-item>
+							</fd-list>
+						</fd-list-navigation-item>
+						<fd-list-navigation-group-header>Settings</fd-list-navigation-group-header>
+						<fd-list-navigation-item ng-init="partnersExpanded = false" expandable="true"
+							ng-click="partnersExpanded = !partnersExpanded" is-expanded="partnersExpanded">
+							<fd-list-navigation-item-icon glyph="sap-icon--folder">
+							</fd-list-navigation-item-icon>
+							<span fd-list-navigation-item-text>Partners</span>
+							<fd-list-navigation-item-arrow aria-label="expand submenu" is-expanded="partnersExpanded">
+							</fd-list-navigation-item-arrow>
+							<fd-list>
+								<fd-list-navigation-item ng-click="switchView('customers', $event)">
+									<span fd-list-navigation-item-text>Customers</span>
+								</fd-list-navigation-item>
+							</fd-list>
+							<fd-list>
+								<fd-list-navigation-item ng-click="switchView('suppliers', $event)">
+									<span fd-list-navigation-item-text>Suppliers</span>
+								</fd-list-navigation-item>
+							</fd-list>
+							<fd-list>
+								<fd-list-navigation-item ng-click="switchView('manufacturers', $event)">
+									<span fd-list-navigation-item-text>Manufacturers</span>
+								</fd-list-navigation-item>
+							</fd-list>
+						</fd-list-navigation-item>
+						<fd-list-navigation-item ng-init="configurationsExpanded = false" expandable="true"
+							ng-click="configurationsExpanded = !configurationsExpanded"
+							is-expanded="configurationsExpanded">
+							<fd-list-navigation-item-icon glyph="sap-icon--folder">
+							</fd-list-navigation-item-icon>
+							<span fd-list-navigation-item-text>Configurations</span>
+							<fd-list-navigation-item-arrow aria-label="expand submenu"
+								is-expanded="configurationsExpanded">
+							</fd-list-navigation-item-arrow>
+							<fd-list>
+								<fd-list-navigation-item ng-click="switchView('countries', $event)">
+									<span fd-list-navigation-item-text>Countries</span>
+								</fd-list-navigation-item>
+								<fd-list-navigation-item ng-click="switchView('cities', $event)">
+									<span fd-list-navigation-item-text>Cities</span>
+								</fd-list-navigation-item>
+								<fd-list-navigation-item ng-click="switchView('companies', $event)">
+									<span fd-list-navigation-item-text>Companies</span>
+								</fd-list-navigation-item>
+								<fd-list-navigation-item ng-click="switchView('stores', $event)">
+									<span fd-list-navigation-item-text>Stores</span>
+								</fd-list-navigation-item>
+								<fd-list-navigation-item ng-click="switchView('currencies', $event)">
+									<span fd-list-navigation-item-text>Currencies</span>
+								</fd-list-navigation-item>
+								<fd-list-navigation-item ng-click="switchView('dimensions', $event)">
+									<span fd-list-navigation-item-text>Dimensions</span>
+								</fd-list-navigation-item>
+								<fd-list-navigation-item ng-click="switchView('uoms', $event)">
+									<span fd-list-navigation-item-text>Units of Measures</span>
+								</fd-list-navigation-item>
+								<fd-list-navigation-item ng-click="switchView('methods', $event)">
+									<span fd-list-navigation-item-text>Methods</span>
+								</fd-list-navigation-item>
+							</fd-list>
+						</fd-list-navigation-item>
+					</fd-list>
+				</fd-vertical-nav-main-section>
+			</fd-vertical-nav>
+			<embedded-view class="dg-fill-parent" view-id="codbex-hermes-dashboard" dg-type="normal"
+				ng-show="currentViewId === 'dashboard'">
+			</embedded-view>
+			<embedded-view class="dg-fill-parent" view-id="codbex-hermes-customers" dg-type="subview"
+				ng-show="currentViewId === 'customers'">
+			</embedded-view>
+			<embedded-view class="dg-fill-parent" view-id="codbex-hermes-suppliers" dg-type="subview"
+				ng-show="currentViewId === 'suppliers'">
+			</embedded-view>
+			<embedded-view class="dg-fill-parent" view-id="codbex-hermes-manufacturers" dg-type="subview"
+				ng-show="currentViewId === 'manufacturers'">
+			</embedded-view>
+			<embedded-view class="dg-fill-parent" view-id="codbex-hermes-countries" dg-type="subview"
+				ng-show="currentViewId === 'countries'">
+			</embedded-view>
+			<embedded-view class="dg-fill-parent" view-id="codbex-hermes-cities" dg-type="subview"
+				ng-show="currentViewId === 'cities'">
+			</embedded-view>
+			<embedded-view class="dg-fill-parent" view-id="codbex-hermes-companies" dg-type="subview"
+				ng-show="currentViewId === 'companies'">
+			</embedded-view>
+			<embedded-view class="dg-fill-parent" view-id="codbex-hermes-stores" dg-type="subview"
+				ng-show="currentViewId === 'stores'">
+			</embedded-view>
+			<embedded-view class="dg-fill-parent" view-id="codbex-hermes-currencies" dg-type="subview"
+				ng-show="currentViewId === 'currencies'">
+			</embedded-view>
+			<embedded-view class="dg-fill-parent" view-id="codbex-hermes-dimensions" dg-type="subview"
+				ng-show="currentViewId === 'dimensions'">
+			</embedded-view>
+			<embedded-view class="dg-fill-parent" view-id="codbex-hermes-uoms" dg-type="subview"
+				ng-show="currentViewId === 'uoms'">
+			</embedded-view>
+			<embedded-view class="dg-fill-parent" view-id="codbex-hermes-organisations" dg-type="subview"
+				ng-show="currentViewId === 'organisations'">
+			</embedded-view>
+			<embedded-view class="dg-fill-parent" view-id="codbex-hermes-employees" dg-type="subview"
+				ng-show="currentViewId === 'employees'">
+			</embedded-view>
+			<embedded-view class="dg-fill-parent" view-id="codbex-hermes-purchase-orders" dg-type="subview"
+				ng-show="currentViewId === 'purchase-orders'">
+			</embedded-view>
+			<embedded-view class="dg-fill-parent" view-id="codbex-hermes-purchase-invoices" dg-type="subview"
+				ng-show="currentViewId === 'purchase-invoices'">
+			</embedded-view>
+			<embedded-view class="dg-fill-parent" view-id="codbex-hermes-sales-orders" dg-type="subview"
+				ng-show="currentViewId === 'sales-orders'">
+			</embedded-view>
+			<embedded-view class="dg-fill-parent" view-id="codbex-hermes-sales-invoices" dg-type="subview"
+				ng-show="currentViewId === 'sales-invoices'">
+			</embedded-view>
+			<embedded-view class="dg-fill-parent" view-id="codbex-hermes-goods-receipts" dg-type="subview"
+				ng-show="currentViewId === 'goods-receipts'">
+			</embedded-view>
+			<embedded-view class="dg-fill-parent" view-id="codbex-hermes-goods-issues" dg-type="subview"
+				ng-show="currentViewId === 'goods-issues'">
+			</embedded-view>
+			<embedded-view class="dg-fill-parent" view-id="codbex-hermes-stock-adjustments" dg-type="subview"
+				ng-show="currentViewId === 'stock-adjustments'">
+			</embedded-view>
+			<embedded-view class="dg-fill-parent" view-id="codbex-hermes-methods" dg-type="subview"
+				ng-show="currentViewId === 'methods'">
+			</embedded-view>
+			<embedded-view class="dg-fill-parent" view-id="codbex-hermes-products" dg-type="subview"
+				ng-show="currentViewId === 'products'">
+			</embedded-view>
+			<embedded-view class="dg-fill-parent" view-id="codbex-hermes-categories" dg-type="subview"
+				ng-show="currentViewId === 'categories'">
+			</embedded-view>
+			<embedded-view class="dg-fill-parent" view-id="codbex-hermes-catalogues" dg-type="subview"
+				ng-show="currentViewId === 'catalogues'">
+			</embedded-view>
+			<embedded-view class="dg-fill-parent" view-id="codbex-hermes-customer-payments" dg-type="subview"
+				ng-show="currentViewId === 'customer-payments'">
+			</embedded-view>
+			<embedded-view class="dg-fill-parent" view-id="codbex-hermes-supplier-payments" dg-type="subview"
+				ng-show="currentViewId === 'supplier-payments'">
+			</embedded-view>
+			<!-- Reports -->
+			<embedded-view class="dg-fill-parent" view-id="codbex-hermes-sales-orders-report" dg-type="subview"
+				ng-show="currentViewId === 'sales-orders-report'">
+			</embedded-view>
+			<embedded-view class="dg-fill-parent" view-id="codbex-hermes-sales-orders-total-report" dg-type="subview"
+				ng-show="currentViewId === 'sales-orders-total-report'">
+			</embedded-view>
+			<embedded-view class="dg-fill-parent" view-id="codbex-hermes-purchase-orders-report" dg-type="subview"
+				ng-show="currentViewId === 'purchase-orders-report'">
+			</embedded-view>
+			<embedded-view class="dg-fill-parent" view-id="codbex-hermes-purchase-orders-total-report" dg-type="subview"
+				ng-show="currentViewId === 'purchase-orders-total-report'">
+			</embedded-view>
+		</div>
+
+		<ide-dialogs extension-points="::extraExtensionPoints"></ide-dialogs>
+		<ide-status-bar></ide-status-bar>
+	</body>
+
+</html>
