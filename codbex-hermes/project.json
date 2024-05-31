@@ -7,42 +7,6 @@
     },
     "dependencies": [
         {
-            "guid": "codbex-products",
-            "type": "git",
-            "url": "https://github.com/codbex/codbex-products.git",
-            "branch": "main"
-        },
-        {
-            "guid": "codbex-partners",
-            "type": "git",
-            "url": "https://github.com/codbex/codbex-partners.git",
-            "branch": "main"
-        },
-        {
-            "guid": "codbex-employees",
-            "type": "git",
-            "url": "https://github.com/codbex/codbex-employees.git",
-            "branch": "main"
-        },
-        {
-            "guid": "codbex-currencies",
-            "type": "git",
-            "url": "https://github.com/codbex/codbex-currencies.git",
-            "branch": "main"
-        },
-        {
-            "guid": "codbex-uoms",
-            "type": "git",
-            "url": "https://github.com/codbex/codbex-uoms.git",
-            "branch": "main"
-        },
-        {
-            "guid": "codbex-industries",
-            "type": "git",
-            "url": "https://github.com/codbex/codbex-industries.git",
-            "branch": "main"
-        },
-        {
             "guid": "codbex-opportunities",
             "type": "git",
             "url": "https://github.com/codbex/codbex-opportunities.git",
@@ -55,16 +19,26 @@
             "branch": "main"
         },
         {
-            "guid": "codbex-invoices",
+            "guid": "codbex-contracts",
             "type": "git",
-            "url": "https://github.com/codbex/codbex-invoices.git",
+            "url": "https://github.com/codbex/codbex-contracts.git",
             "branch": "main"
-        },
+        }
+    ],
+    "actions": [
         {
-            "guid": "codbex-payments",
-            "type": "git",
-            "url": "https://github.com/codbex/codbex-payments.git",
-            "branch": "main"
+            "name": "Build TypeScript",
+            "commands": [
+                {
+                    "os": "unix",
+                    "command": "tsc"
+                },
+                {
+                    "os": "windows",
+                    "command": "cmd /c tsc"
+                }
+            ],
+            "registry": "true"
         }
     ]
 }
