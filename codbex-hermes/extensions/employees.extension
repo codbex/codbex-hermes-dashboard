@@ -1,0 +1,5 @@
+{
+    "module": "codbex-hermes/services/employees.js",
+    "extensionPoint": "ide-subview",
+    "description": "Employees Subview"
+}

@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" ng-app="dashboard" ng-controller="DashboardController">
+
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" sizes="any" href="data:;base64,iVBORw0KGgo=">
+        <title dg-view-title></title>
+        <script type="text/javascript" src="../services/dashboard.js"></script>
+        <theme></theme>
+        <script type="text/javascript" src="/services/js/resources-core/services/loader.js?id=application-view-js">
+        </script>
+        <link type="text/css" rel="stylesheet"
+            href="/services/js/resources-core/services/loader.js?id=application-view-css" />
+        </script>
+        <script type="text/javascript" src="dashboard.js"></script>
+        <script type="text/javascript" src="/webjars/chart.js/4.4.2/dist/chart.umd.js"></script>
+        <style>
+            .tile-auto-layout {
+                min-height: auto;
+                height: auto;
+                width: auto;
+                max-width: 100%;
+            }
+
+        </style>
+    </head>
+
+    <body fd-scrollbar class="fd-padding-begin-end--tiny">
+        <fd-busy-indicator-extended class="dg-fill-parent" ng-hide="state.error || !state.isBusy" dg-size="l">
+            {{state.busyText}}
+        </fd-busy-indicator-extended>
+
+        <div class="fd-container" ng-show="!state.error && !state.isBusy">
+            <h2 fd-title header-size="2" class="fd-margin-top--sm fd-margin-bottom--tiny">Welcome to Hermes Dashboard
+            </h2>
+
+            <fd-panel expanded="true" class="fd-col fd-col--12">
+                <fd-panel-header>
+                    <fd-panel-expand></fd-panel-expand>
+                    <h4 fd-panel-title>Orders</h4>
+                </fd-panel-header>
+                <fd-panel-content aria-label="Orders Content">
+                    <div class="fd-row" style="margin: 0.5em">
+                        <div class="fd-col fd-col--6 fd-col-md--3 fd-col-lg--3 fd-col-xl--3">
+                            <div role="button" tabindex="0" class="fd-tile fd-tile--feed tile-auto-layout"
+                                ng-click="openPerspective('sales-orders')">
+                                <div class="fd-tile__header tile-auto-layout">
+                                    <div class="fd-tile__title">New Sales Orders</div>
+                                </div>
+                                <fd-card-subtitle><br></fd-card-subtitle>
+                                <div class="fd-tile__content tile-auto-layout">
+                                    <div class="fd-tile__section">
+                                        <div class="fd-numeric-content">
+                                            <div class="fd-numeric-content__kpi-container">
+                                                <div class="fd-numeric-content__kpi">{{OrderData.SalesOrdersToday}}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="fd-tile__footer tile-auto-layout">
+                                    <span class="fd-tile__footer-text">Today: {{ today | date:'dd-MM-yyyy' }}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="fd-col fd-col--6 fd-col-md--3 fd-col-lg--3 fd-col-xl--3">
+                            <div role="button" tabindex="0" class="fd-tile fd-tile--feed tile-auto-layout"
+                                ng-click="openPerspective('sales-orders')">
+                                <div class="fd-tile__header tile-auto-layout">
+                                    <div class="fd-tile__title">Average Sales Order Price</div>
+                                </div>
+                                <fd-card-subtitle>last month
+                                </fd-card-subtitle>
+                                <div class="fd-tile__content tile-auto-layout">
+                                    <div class="fd-tile__section">
+                                        <div class="fd-numeric-content">
+                                            <div class="fd-numeric-content__kpi-container">
+                                                <div class="fd-numeric-content__kpi">
+                                                    {{OrderData.AverageSalesOrderPrice | number:2 }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="fd-tile__footer tile-auto-layout">
+                                    <span class="fd-tile__footer-text">BGN</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="fd-col fd-col--6 fd-col-md--3 fd-col-lg--3 fd-col-xl--3">
+                            <div role="button" tabindex="0" class="fd-tile fd-tile--feed tile-auto-layout"
+                                ng-click="openPerspective('sales-orders')">
+                                <div class="fd-tile__header tile-auto-layout">
+                                    <div class="fd-tile__title">Average Purchase Order Price</div>
+                                </div>
+                                <fd-card-subtitle>last month
+                                </fd-card-subtitle>
+                                <div class="fd-tile__content tile-auto-layout">
+                                    <div class="fd-tile__section">
+                                        <div class="fd-numeric-content">
+                                            <div class="fd-numeric-content__kpi-container">
+                                                <div class="fd-numeric-content__kpi">
+                                                    {{OrderData.AveragePurchaseOrderPrice | number:2 }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="fd-tile__footer tile-auto-layout">
+                                    <span class="fd-tile__footer-text">BGN</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="fd-col fd-col--6 fd-col-md--3 fd-col-lg--3 fd-col-xl--3">
+                            <div role="button" tabindex="0" class="fd-tile fd-tile--feed tile-auto-layout"
+                                ng-click="openPerspective('sales-orders')">
+                                <div class="fd-tile__header tile-auto-layout">
+                                    <div class="fd-tile__title">Unpaid Purchase Orders</div>
+                                </div>
+                                <fd-card-subtitle><br>
+                                </fd-card-subtitle>
+                                <div class="fd-tile__content tile-auto-layout">
+                                    <div class="fd-tile__section">
+                                        <div class="fd-numeric-content">
+                                            <div class="fd-numeric-content__kpi-container">
+                                                <div class="fd-numeric-content__kpi">
+                                                    {{OrderData.UnpaidPurchaseOrders }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="fd-tile__footer tile-auto-layout">
+                                    <span class="fd-tile__footer-text">Today: {{ today | date:'dd-MM-yyyy' }}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fd-row" style="margin: 0.5em">
+                        <div class="fd-col fd-col--12 fd-col-md--6 fd-col-lg--6 fd-col-xl--6">
+                            <fd-card card-type="table">
+                                <fd-card-header ng-click="openPerspective('sales-orders')">
+                                    <fd-card-title>Top Sales Orders</fd-card-title>
+                                </fd-card-header>
+                                <fd-card-content>
+                                    <table
+                                        class="fd-table fd-table--no-horizontal-borders fd-table--no-vertical-borders">
+                                        <thead class="fd-table__header">
+                                            <tr class="fd-table__row">
+                                                <th class="fd-table__cell" scope="col">Order</th>
+                                                <th class="fd-table__cell" scope="col">Customer</th>
+                                                <th class="fd-table__cell" scope="col" style="text-align:right">Revenue
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="fd-table__body" id="top_sales">
+                                            <tr ng-repeat="next in topSalesOrders">
+                                                <td class="fd-table__cell"><a class="fd-link"><span
+                                                            class="fd-link__content">{{next.Number}}</span></a></td>
+                                                <td class="fd-table__cell">{{next.Customer}}</td>
+                                                <td class="fd-table__cell" style="text-align:right">
+                                                    {{next.Gross | number : 2}}
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </fd-card-content>
+                            </fd-card>
+                        </div>
+                        <div class="fd-col fd-col--12 fd-col-md--6 fd-col-lg--6 fd-col-xl--6">
+                            <fd-card card-type="table">
+                                <fd-card-header ng-click="openPerspective('purchase-orders')">
+                                    <fd-card-title>Top Purchase Orders</fd-card-title>
+                                </fd-card-header>
+                                <fd-card-content>
+                                    <table
+                                        class="fd-table fd-table--no-horizontal-borders fd-table--no-vertical-borders">
+                                        <thead class="fd-table__header">
+                                            <tr class="fd-table__row">
+                                                <th class="fd-table__cell" scope="col">Order</th>
+                                                <th class="fd-table__cell" scope="col">Supplier</th>
+                                                <th class="fd-table__cell" scope="col" style="text-align:right">Revenue
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="fd-table__body" id="top_sales">
+                                            <tr ng-repeat="next in topPurchaseOrders">
+                                                <td class="fd-table__cell"><a class="fd-link"><span
+                                                            class="fd-link__content">{{next.Number}}</span></a></td>
+                                                <td class="fd-table__cell">{{next.Supplier}}</td>
+                                                <td class="fd-table__cell" style="text-align:right">
+                                                    {{next.Gross | number : 2}}
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </fd-card-content>
+                            </fd-card>
+                        </div>
+                    </div>
+                    <div class="fd-row" style="margin: 0.5em">
+                        <div class="fd-col fd-col--12 fd-col-md--6 fd-col-lg--6 fd-col-xl--6">
+                            <fd-card card-type="table">
+                                <fd-card-header ng-click="openPerspective('sales-orders')">
+                                    <fd-card-title>Top Customers</fd-card-title>
+                                </fd-card-header>
+                                <fd-card-content>
+                                    <table
+                                        class="fd-table fd-table--no-horizontal-borders fd-table--no-vertical-borders">
+                                        <thead class="fd-table__header">
+                                            <tr class="fd-table__row">
+                                                <th class="fd-table__cell" scope="col">Customer</th>
+                                                <th class="fd-table__cell" scope="col">Orders</th>
+                                                <th class="fd-table__cell" scope="col" style="text-align:right">Revenue
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="fd-table__body" id="top_customers">
+                                            <tr ng-repeat="next in topCustomers">
+                                                <td class="fd-table__cell"><a class="fd-link"><span
+                                                            class="fd-link__content">{{next.Name}}</span></a>
+                                                </td>
+                                                <td class="fd-table__cell">{{next.Orders}}</td>
+                                                <td class="fd-table__cell" style="text-align:right">
+                                                    {{next.Revenue}}
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </fd-card-content>
+                            </fd-card>
+                        </div>
+                    </div>
+                </fd-panel-content>
+            </fd-panel>
+            <fd-panel expanded="true" class="fd-col fd-col--12">
+            </fd-panel>
+            <fd-panel expanded="true" class="fd-col fd-col--12">
+                <fd-panel-header>
+                    <fd-panel-expand></fd-panel-expand>
+                    <h4 fd-panel-title>Products</h4>
+                </fd-panel-header>
+                <fd-panel-content aria-label="Products Content">
+                    <div class="fd-row" style="margin: 0.5em">
+                        <div class="fd-col fd-col--12 fd-col-md--6 fd-col-lg--6 fd-col-xl--6">
+                            <fd-card card-type="table">
+                                <fd-card-header ng-click="openPerspective('products')">
+                                    <fd-card-title>Product Details</fd-card-title>
+                                </fd-card-header>
+                                <fd-card-content>
+                                    <table fd-table inner-borders="horizontal" outer-borders="none"
+                                        style="min-height:12.5rem">
+                                        <tbody fd-table-body>
+                                            <tr fd-table-row>
+                                                <td fd-table-cell class="fd-padding--none" width="50%">
+                                                    <fd-list>
+                                                        <fd-list-item>
+                                                            <div class="dg-hbox dg-full-width">
+                                                                <span style="flex:1">Product Categories</span>
+                                                                <span>{{ProductData.ActiveCategories}}</span>
+                                                            </div>
+                                                        </fd-list-item>
+                                                        <fd-list-item class="dg-no-border-bottom">
+                                                            <div class="dg-hbox dg-full-width">
+                                                                <span style="flex:1">All Products</span>
+                                                                <span>{{ProductData.AllProducts}}</span>
+                                                            </div>
+                                                        </fd-list-item>
+                                                    </fd-list>
+                                                </td>
+                                                <td fd-table-cell width="50%">
+                                                    <!-- Right section for doughnut chart -->
+                                                    <canvas id="doughnutChart" width="200" height="200"></canvas>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </fd-card-content>
+                            </fd-card>
+                        </div>
+                        <div class="fd-col fd-col--12 fd-col-md--6 fd-col-lg--6 fd-col-xl--6">
+                            <fd-card card-type="table">
+                                <fd-card-header ng-click="openPerspective('sales-orders')">
+                                    <fd-card-title>Top Products</fd-card-title>
+                                </fd-card-header>
+                                <fd-card-content>
+                                    <table
+                                        class="fd-table fd-table--no-horizontal-borders fd-table--no-vertical-borders">
+                                        <thead class="fd-table__header">
+                                            <tr class="fd-table__row">
+                                                <th class="fd-table__cell" scope="col">Product</th>
+                                                <th class="fd-table__cell" scope="col">Quantity</th>
+                                                <th class="fd-table__cell" scope="col">Revenue
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="fd-table__body" id="top_products">
+                                            <tr ng-repeat="next in topProducts">
+                                                <td class="fd-table__cell"><a class="fd-link"><span
+                                                            class="fd-link__content">{{next.productName}}</span></a>
+                                                </td>
+                                                <td class="fd-table__cell">{{next.orderCount}}</td>
+                                                <td class="fd-table__cell">
+                                                    {{next.revenue}}
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </fd-card-content>
+                            </fd-card>
+                        </div>
+                    </div>
+                    <div class="fd-row" style="margin: 0.5em">
+                        <div class="fd-col fd-col--6 fd-col-md--3 fd-col-lg--3 fd-col-xl--3">
+                            <div role="button" tabindex="0" class="fd-tile fd-tile--feed tile-auto-layout">
+                                <div class="fd-tile__footer tile-auto-layout">
+                                    <span class="fd-tile__footer-text">Today: {{ today | date:'dd-MM-yyyy' }}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </fd-panel-content>
+            </fd-panel>
+            <fd-message-page glyph="sap-icon--error" ng-if="state.error">
+                <fd-message-page-title>Dashboard encounterd an error!</fd-message-page-title>
+                <fd-message-page-subtitle>{{errorMessage}}</fd-message-page-subtitle>
+            </fd-message-page>
+        </div>
+    </body>
+
+</html>
