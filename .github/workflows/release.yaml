@@ -31,5 +31,5 @@ jobs:
   
         ## Access points:
   
-        - [/services/web/codbex-hermes/gen/](http://localhost:8080/services/web/codbex-hermes/gen/) - Admin Panel
+        - [/services/web/codbex-hermes/](http://localhost:8080/services/web/codbex-hermes/) - Admin Panel
     secrets: inherit
