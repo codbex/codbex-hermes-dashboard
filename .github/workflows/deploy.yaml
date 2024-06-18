@@ -21,7 +21,7 @@ jobs:
     - name: Authenticate with Kubernetes
       env:
         KUBECONFIG: ${{ secrets.KUBECONFIG }}
-      run: echo "${KUBECONFIG}" > $HOME/.kube/config
+      run: echo "${{ secrets.KUBECONFIG }}" > $HOME/.kube/config
 
     - name: Deploy to Kubernetes
       run: |
