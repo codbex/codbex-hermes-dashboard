@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: codbex-hermes
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: codbex-hermes
+  template:
+    metadata:
+      labels:
+        app: codbex-hermes
+    spec:
+      containers:
+        - name: codbex-hermes
+          image: ghcr.io/codbex/codbex-hermes:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
