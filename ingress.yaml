@@ -1,80 +1,19 @@
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: codbex-hermes
-  namespace: dev
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: codbex-hermes
-  template:
-    metadata:
-      labels:
-        app: codbex-hermes
-    spec:
-      containers:
-        - name: codbex-hermes
-          image: ghcr.io/codbex/codbex-hermes:latest
-          imagePullPolicy: Always
-          resources:
-            requests:
-              memory: "1Gi"
-              cpu: "0.5"
-            limits:
-              memory: "4Gi"
-              cpu: "2"
-          ports:
-            - name: http
-              containerPort: 80
-          env:
-            - name: spring.profiles.active
-              value: keycloak
-            - name: DIRIGIBLE_KEYCLOAK_AUTH_SERVER_URL
-              value: https://auth.eu1.codbex.com/auth/realms/platform
-            - name: DIRIGIBLE_KEYCLOAK_CLIENT_ID
-              value: hermes
-            - name: DIRIGIBLE_MULTI_TENANT_MODE
-              value: "false"
-            - name: DIRIGIBLE_TRIAL_ENABLED
-              value: "false"
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: codbex-hermes
-  namespace: dev
-  labels:
-    app: codbex-hermes
-spec:
-  ports:
-    - name: http
-      port: 80
-  type: ClusterIP
-  selector:
-    app: codbex-hermes
----
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  annotations:
-    cert-manager.io/cluster-issuer: letsencrypt
   name: codbex-hermes
   namespace: dev
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt
 spec:
-  ingressClassName: nginx
   rules:
-  - host: dev.hermes.eu1.codbex.com
-    http:
-      paths:
-      - backend:
-          service:
-            name: codbex-hermes
-            port:
-              number: 80
-        path: /
-        pathType: Prefix
-  tls:
-  - hosts:
-    - dev.hermes.eu1.codbex.com
-    secretName: codbex-platform-tls-secret
+    - host: dev.hermes.eu1.codbex.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: codbex-hermes
+                port:
+                  number: 80
