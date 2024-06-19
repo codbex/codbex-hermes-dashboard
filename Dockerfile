@@ -5,5 +5,5 @@ FROM dirigiblelabs/dirigible:latest
 
 COPY codbex-hermes target/dirigible/repository/root/registry/public/codbex-hermes
 
-ENV DIRIGIBLE_HOME_URL=/services/web/codbex-hermes/ndex.html
+ENV DIRIGIBLE_HOME_URL=/services/web/codbex-hermes/index.html
 
