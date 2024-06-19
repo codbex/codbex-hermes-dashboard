@@ -2,9 +2,10 @@ name: Deploy to Kubernetes
 
 on:
   workflow_run:
-    workflows: ["Build - Application"]
-    types:
-      - completed
+    workflows: ['Build - Application']
+    types: [completed]
+    branches:
+        - main
 
 jobs:
   deploy:
