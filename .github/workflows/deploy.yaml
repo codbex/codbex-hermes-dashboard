@@ -10,24 +10,24 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-    - name: Set up Kubernetes
-      uses: azure/setup-kubectl@v3
-      with:
-        version: 'latest'
+      - name: Set up Kubernetes
+        uses: azure/setup-kubectl@v3
+        with:
+          version: 'latest'
 
-    - name: Create .kube directory
-      run: mkdir -p $HOME/.kube
+      - name: Create .kube directory
+        run: mkdir -p $HOME/.kube
 
-    - name: Authenticate with Kubernetes
-      env:
-        KUBECONFIG: ${{ secrets.KUBECONFIG }}
-      run: echo "${{ secrets.KUBECONFIG }}" > $HOME/.kube/config
+      - name: Authenticate with Kubernetes
+        env:
+          KUBECONFIG: ${{ secrets.KUBECONFIG }}
+        run: echo "${{ secrets.KUBECONFIG }}" > $HOME/.kube/config
 
-    - name: Deploy to Kubernetes
-      run: |
-        kubectl apply -f deployment.yaml
-        kubectl apply -f service.yaml
-        kubectl apply -f ingress.yaml
+      - name: Deploy to Kubernetes
+        run: |
+          kubectl apply -f deployment.yaml
+          kubectl apply -f service.yaml
+          kubectl apply -f ingress.yaml
