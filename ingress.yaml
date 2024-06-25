@@ -18,3 +18,7 @@ spec:
                 name: codbex-hermes
                 port:
                   number: 80
+  tls:
+    - hosts:
+        - dev.hermes.eu1.codbex.com
+      secretName: codbex-hermes-tls-secret
