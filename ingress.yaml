@@ -6,6 +6,7 @@ metadata:
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt
 spec:
+  ingressClassName: nginx
   rules:
     - host: dev.hermes.eu1.codbex.com
       http:
