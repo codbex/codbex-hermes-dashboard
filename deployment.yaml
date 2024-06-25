@@ -17,5 +17,12 @@ spec:
         - name: codbex-hermes
           image: ghcr.io/codbex/codbex-hermes:latest
           imagePullPolicy: Always
+          resources:
+            requests:
+              memory: "1Gi"
+              cpu: "0.5"
+            limits:
+              memory: "4Gi"
+              cpu: "2"
           ports:
             - containerPort: 80
