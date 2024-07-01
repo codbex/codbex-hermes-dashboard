@@ -89,16 +89,6 @@ dashboard.controller('DashboardController', ['$scope', '$document', '$http', 'me
 
     angular.element($document[0]).ready(async function () {
         const orderData = await getOrderData();
-        $scope.topSalesOrders = orderData.TopSalesOrders;
-    });
-
-    angular.element($document[0]).ready(async function () {
-        const orderData = await getOrderData();
-        $scope.topPurchaseOrders = orderData.TopPurchaseOrders;
-    });
-
-    angular.element($document[0]).ready(async function () {
-        const orderData = await getOrderData();
         $scope.$apply(function () {
             $scope.topCustomers = orderData.TopCustomers;
         });
