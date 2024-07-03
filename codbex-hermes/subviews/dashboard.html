@@ -26,7 +26,7 @@
 
         </style>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
-        <script src="/path/to/your/applicationTiles.js"></script>
+        <script src="/services/js/codbex-hermes-tiles/tiles.mjs"></script>
     </head>
 
     <body fd-scrollbar class="fd-padding-begin-end--tiny">
@@ -49,6 +49,10 @@
                 <fd-panel-content aria-label="Leads Content">
                     <div class="fd-row" style="margin: 0.5em">
                         <div class="fd-col fd-col--12 fd-col-md--6 fd-col-lg--6 fd-col-xl--6">
+                            <div ng-controller="applicationTilesController">
+                                <numeric-tile perspective="somePerspective" title="Sample Title" numeric-data="123">
+                                </numeric-tile>
+                            </div>
 
                         </div>
                         <div class="fd-col fd-col--12 fd-col-md--6 fd-col-lg--6 fd-col-xl--6">
