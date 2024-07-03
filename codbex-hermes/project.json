@@ -13,6 +13,18 @@
             "branch": "main"
         },
         {
+            "guid": "codbex-hermes-tiles",
+            "type": "git",
+            "url": "https://github.com/TIVMOF/codbex-hermes-tiles.git",
+            "branch": "main"
+        },
+        {
+            "guid": "codbex-hermes-data-sample",
+            "type": "git",
+            "url": "https://github.com/codbex/codbex-hermes-data-sample.git",
+            "branch": "main"
+        },
+        {
             "guid": "codbex-orders",
             "type": "git",
             "url": "https://github.com/codbex/codbex-orders.git",
