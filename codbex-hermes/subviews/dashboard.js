@@ -16,13 +16,4 @@ dashboard.controller('DashboardController', ['$scope', '$document', '$http', 'me
 
     $scope.today = new Date();
 
-    async function getProductData() {
-        try {
-            const response = await $http.get("/services/ts/codbex-athena/api/ProductService.ts/productData");
-            return response.data;
-        } catch (error) {
-            console.error('Error fetching product data:', error);
-        }
-    }
-
 }]);
