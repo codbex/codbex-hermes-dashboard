@@ -6,8 +6,8 @@ on:
       - main
 
 jobs:
-  main:
-    uses: codbex/codbex-infra/.github/workflows/application-pull-request.yaml@main
+  modules:
+    uses: codbex/codbex-infra/.github/workflows/module-pull-request.yaml@main
     with:
-      application-name: codbex-hermes
+      packages-build: codbex-hermes
     secrets: inherit
