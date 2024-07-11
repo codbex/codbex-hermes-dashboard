@@ -1,7 +1,7 @@
-import { SalesOrderRepository as SalesOrderDao } from "codbex-orders/gen/dao/SalesOrder/SalesOrderRepository";
-import { PurchaseOrderRepository as PurchaseOrderDao } from "codbex-orders/gen/dao/PurchaseOrder/PurchaseOrderRepository";
-import { CustomerRepository as CustomerDao } from "codbex-partners/gen/dao/Customers/CustomerRepository";
-import { SupplierRepository as SupplierDao } from "codbex-partners/gen/dao/Suppliers/SupplierRepository";
+import { SalesOrderRepository as SalesOrderDao } from "codbex-orders/gen/codbex-orders/dao/SalesOrder/SalesOrderRepository";
+import { PurchaseOrderRepository as PurchaseOrderDao } from "codbex-orders/gen/codbex-orders/dao/PurchaseOrder/PurchaseOrderRepository";
+import { CustomerRepository as CustomerDao } from "codbex-partners/gen/codbex-partners/dao/Customers/CustomerRepository";
+import { SupplierRepository as SupplierDao } from "codbex-partners/gen/codbex-partners/dao/Suppliers/SupplierRepository";
 
 import { Controller, Get } from "sdk/http";
 import { query } from "sdk/db";
