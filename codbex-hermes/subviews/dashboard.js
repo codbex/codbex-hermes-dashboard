@@ -16,16 +16,16 @@ dashboard.controller('DashboardController', ['$scope', '$document', '$http', 'me
 
     $scope.today = new Date();
 
-    $scope.leadData = {
-        Initial: 10,
-        Open: 8,
-        Contacted: 6,
-        Replied: 5,
-        Opportunity: 4,
-        Quotation: 3,
-        Lost: 2,
-        Confirmed: 1,
-        Closed: 0
-    };
+    $scope.leadData = [
+        { label: 'Initial', value: 60 },
+        { label: 'Open', value: 54 },
+        { label: 'Contacted', value: 39 },
+        { label: 'Replied', value: 26 },
+        { label: 'Opportunity', value: 22 },
+        { label: 'Quotation', value: 16 },
+        { label: 'Lost', value: 14 },
+        { label: 'Confirmed', value: 12 },
+        { label: 'Closed', value: 10 }
+    ];
 
 }]);
