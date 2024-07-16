@@ -1,0 +1,19 @@
+{
+    "name": "@codbex/codbex-hermes",
+    "version": "0.0.1",
+    "repository": {
+        "url": "https://github.com/codbex/codbex-hermes-dashboard.git",
+        "type": "git"
+    },
+    "publishConfig": {
+        "registry": "https://npm.pkg.github.com"
+    },
+    "dependencies": {
+        "@codbex/codbex-opportunities": "0.0.1",
+        "@codbex/codbex-opportunities-data": "0.0.1",
+        "@codbex/codbex-orders": "0.1.0",
+        "@codbex/codbex-orders-data": "0.1.0",
+        "@codbex/codbex-contracts": "0.1.0",
+        "@codbex/codbex-contracts-data": "0.1.0",
+    }
+}
