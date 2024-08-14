@@ -1,0 +1,11 @@
+{
+    "name": "@codbex/codbex-hermes",
+    "version": "0.0.1",
+    "repository": {
+        "url": "https://github.com/codbex/codbex-hermes-dashboard.git",
+        "type": "git"
+    },
+    "publishConfig": {
+        "registry": "https://npm.pkg.github.com"
+    }
+}
