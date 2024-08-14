@@ -1,4 +1,4 @@
-name: Release - Application
+name: Release - Module
 
 on:
   workflow_dispatch:
@@ -12,24 +12,23 @@ run-name: 'version set to ${{ inputs.release-version }} for release'
 
 jobs:
   main:
-    uses: codbex/codbex-infra/.github/workflows/application-release.yaml@main
+    uses: codbex/codbex-infra/.github/workflows/module-release.yaml@main
     with:
-      application-name: codbex-hermes
+      packages: codbex-herkes
+      packages-build: codbex-herkes
       release-version: ${{ inputs.release-version }}
       release-content: |
         ## codbex-hermes - ${{ inputs.release-version }}
   
-        Customer Relationship Management
+        Customer Relationship Management Dashboard
   
-        ## Deployment
+        ## Installation
   
         ```
-        docker run --name codbex-hermes \
-        --rm -p 8080:8080 -p 8081:8081 \
-        ghcr.io/codbex/codbex-hermes:${{ inputs.release-version }}
+        npm install @codbex/codbex-hermes@${{ inputs.release-version }}
         ```
   
         ## Access points:
   
-        - [/services/web/codbex-hermes/](http://localhost:8080/services/web/codbex-hermes/) - Admin Panel
+        - [/services/web/codbex-hermes/gen/](http://localhost:80/services/web/codbex-hermes/gen/) - Admin Panel
     secrets: inherit

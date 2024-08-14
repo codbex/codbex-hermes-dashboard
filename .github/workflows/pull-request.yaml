@@ -1,4 +1,4 @@
-name: Pull Request - Application
+name: Pull Request - Module
 
 on:
   pull_request:
@@ -7,7 +7,7 @@ on:
 
 jobs:
   main:
-    uses: codbex/codbex-infra/.github/workflows/application-pull-request.yaml@main
+    uses: codbex/codbex-infra/.github/workflows/module-pull-request.yaml@main
     with:
-      application-name: codbex-hermes
+      packages-build: codbex-hermes
     secrets: inherit
