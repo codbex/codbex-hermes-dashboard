@@ -14,8 +14,8 @@ jobs:
   main:
     uses: codbex/codbex-infra/.github/workflows/module-release.yaml@main
     with:
-      packages: codbex-herkes
-      packages-build: codbex-herkes
+      packages: codbex-hermes
+      packages-build: codbex-hermes
       release-version: ${{ inputs.release-version }}
       release-content: |
         ## codbex-hermes - ${{ inputs.release-version }}
