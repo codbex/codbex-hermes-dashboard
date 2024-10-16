@@ -1,5 +1,0 @@
-{
-    "module": "codbex-hermes/services/currencies.js",
-    "extensionPoint": "ide-subview",
-    "description": "Currencies Subview"
-}

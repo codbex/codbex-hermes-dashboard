@@ -1,5 +1,0 @@
-{
-    "extensionPoint": "ide-subview",
-    "module": "codbex-hermes/services/leads.js",
-    "description": "Leads Subview"
-}

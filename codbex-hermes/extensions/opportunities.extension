@@ -1,5 +1,0 @@
-{
-    "extensionPoint": "ide-subview",
-    "module": "codbex-hermes/services/opportunities.js",
-    "description": "Opportunities Subview"
-}

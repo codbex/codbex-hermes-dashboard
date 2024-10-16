@@ -1,5 +1,0 @@
-{
-    "extensionPoint": "ide-subview",
-    "module": "codbex-hermes/services/quotations.js",
-    "description": "Quotations Subview"
-}

@@ -1,5 +1,0 @@
-{
-    "module": "codbex-hermes/services/cities.js",
-    "extensionPoint": "ide-subview",
-    "description": "Cities Subview"
-}

@@ -1,5 +1,5 @@
 {
     "module": "codbex-hermes/services/dashboard.js",
     "extensionPoint": "ide-view",
-    "description": "Dashboard View"
+    "description": "Dashboard Loaded by Application"
 }

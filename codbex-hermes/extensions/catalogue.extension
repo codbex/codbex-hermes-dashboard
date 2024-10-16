@@ -1,5 +1,0 @@
-{
-    "module": "codbex-hermes/services/catalogues.js",
-    "extensionPoint": "ide-subview",
-    "description": "Catalogues Subview"
-}

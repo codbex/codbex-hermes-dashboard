@@ -1,5 +1,0 @@
-{
-    "module": "codbex-hermes/services/sales-orders-report.js",
-    "extensionPoint": "ide-subview",
-    "description": "Sales Orders Report Subview"
-}

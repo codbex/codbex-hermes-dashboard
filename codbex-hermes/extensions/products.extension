@@ -1,5 +1,0 @@
-{
-    "module": "codbex-hermes/services/products.js",
-    "extensionPoint": "ide-subview",
-    "description": "Products Subview"
-}
