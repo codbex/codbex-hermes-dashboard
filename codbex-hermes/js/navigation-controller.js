@@ -60,7 +60,7 @@ navigation.controller("LaunchpadViewController", ["$scope", "messageHub", "$http
             "label": "Configurations", "expanded": "configurationsExpanded", "icon": "wrench"
         }
     ]
-    $http.get("http://localhost:8080/services/ts/codbex-hermes/api/NavigationService.ts")
+    $http.get("http://localhost:8080/services/ts/codbex-hermes/api/NavigationExtension/NavigationService.ts")
         .then(function (response) {
             $scope.navigationList = response.data;
 

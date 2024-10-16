@@ -11,7 +11,7 @@ dashboard.controller('DashboardController', ['$scope', '$http', 'messageHub', fu
         busyText: "Loading...",
     };
 
-    $http.get("http://localhost:8080/services/js/codbex-hermes/api/WidgetService.js")
+    $http.get("http://localhost:8080/services/js/codbex-hermes/api/WidgetsExtension/WidgetService.js")
         .then(function (response) {
             $scope.widgetList = response.data;
 
