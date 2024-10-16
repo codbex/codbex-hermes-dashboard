@@ -35,7 +35,7 @@ dashboard.controller('DashboardController', ['$scope', '$http', 'messageHub', fu
             widgetContainer.className = 'fd-col fd-col--6 fd-col-md--3 fd-col-lg--3 fd-col-xl--3';
         } else if (widgetData.size == "medium") {
             widgetContainer.className = 'fd-col fd-col--12 fd-col-md--6 fd-col-lg--6 fd-col-xl--6';
-        } else { // large - TODO: needs to be made higher.
+        } else {
             widgetContainer.className = 'fd-col fd-col--12 fd-col-md--6 fd-col-lg--6 fd-col-xl--6';
         }
 
