@@ -26,7 +26,7 @@ navigation.controller("LaunchpadViewController", ["$scope", "messageHub", "$http
     $scope.groupItems = [];
     $scope.groupItems["purchasing"] = [];
     $scope.groupItems["sales"] = [];
-    $scope.groupItems["inventory"] = [];
+    $scope.groupItems["opportunity"] = [];
     $scope.groupItems["finance"] = [];
     $scope.groupItems["products"] = [];
     $scope.groupItems["employees"] = [];
@@ -42,7 +42,7 @@ navigation.controller("LaunchpadViewController", ["$scope", "messageHub", "$http
             "label": "Sales", "expanded": "salesExpanded", "icon": "currency"
         },
         {
-            "label": "Inventory", "expanded": "inventoryExpanded", "icon": "retail-store"
+            "label": "Opportunity", "expanded": "opportunityExpanded", "icon": "account"
         },
         {
             "label": "Finance", "expanded": "financeReportsExpanded", "icon": "area-chart"
