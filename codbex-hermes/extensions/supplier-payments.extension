@@ -1,5 +1,0 @@
-{
-    "module": "codbex-hermes/services/supplier-payments.js",
-    "extensionPoint": "ide-subview",
-    "description": "Supplier Payments Subview"
-}

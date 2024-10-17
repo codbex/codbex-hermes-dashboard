@@ -1,5 +1,0 @@
-{
-    "module": "codbex-hermes/services/suppliers.js",
-    "extensionPoint": "ide-subview",
-    "description": "Suppliers Subview"
-}

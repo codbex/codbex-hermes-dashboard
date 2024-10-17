@@ -1,5 +1,0 @@
-{
-    "module": "codbex-hermes/services/purchase-orders-total-report.js",
-    "extensionPoint": "ide-subview",
-    "description": "Purchase Orders Total Report Subview"
-}
