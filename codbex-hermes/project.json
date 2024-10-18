@@ -17,12 +17,6 @@
             "type": "git",
             "url": "https://github.com/codbex/codbex-orders.git",
             "branch": "main"
-        },
-        {
-            "guid": "codbex-contracts",
-            "type": "git",
-            "url": "https://github.com/codbex/codbex-contracts.git",
-            "branch": "main"
         }
     ],
     "actions": [
