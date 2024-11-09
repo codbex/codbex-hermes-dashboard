@@ -19,9 +19,15 @@
             "branch": "main"
         },
         {
-            "guid": "codbex-contracts",
+            "guid": "codbex-inventory",
             "type": "git",
-            "url": "https://github.com/codbex/codbex-contracts.git",
+            "url": "https://github.com/codbex/codbex-inventory.git",
+            "branch": "main"
+        },
+        {
+            "guid": "codbex-products",
+            "type": "git",
+            "url": "https://github.com/codbex/codbex-products.git",
             "branch": "main"
         }
     ],
